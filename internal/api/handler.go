@@ -40,7 +40,9 @@ import (
 // @externalDocs.description  GoDoxy Docs
 // @externalDocs.url          https://docs.godoxy.dev
 func NewHandler() *gin.Engine {
-	gin.SetMode("release")
+	if !common.IsDebug {
+		gin.SetMode("release")
+	}
 	r := gin.New()
 	r.Use(ErrorHandler())
 	r.Use(ErrorLoggingMiddleware())
