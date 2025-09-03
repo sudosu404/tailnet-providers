@@ -24,7 +24,6 @@ import (
 	"github.com/yusing/go-proxy/internal/common"
 	config "github.com/yusing/go-proxy/internal/config/types"
 	"github.com/yusing/go-proxy/internal/logging/accesslog"
-	"github.com/yusing/go-proxy/internal/route/routes"
 	"github.com/yusing/go-proxy/internal/route/rules"
 	route "github.com/yusing/go-proxy/internal/route/types"
 	"github.com/yusing/go-proxy/internal/utils"
@@ -46,7 +45,7 @@ type (
 		HealthCheck  *types.HealthCheckConfig       `json:"healthcheck"`
 		LoadBalance  *types.LoadBalancerConfig      `json:"load_balance,omitempty" extensions:"x-nullable"`
 		Middlewares  map[string]types.LabelMap      `json:"middlewares,omitempty" extensions:"x-nullable"`
-		Homepage     *homepage.ItemConfig           `json:"homepage"`
+		Homepage     homepage.ItemConfig            `json:"homepage"`
 		AccessLog    *accesslog.RequestLoggerConfig `json:"access_log,omitempty" extensions:"x-nullable"`
 		Agent        string                         `json:"agent,omitempty"`
 
@@ -287,25 +286,27 @@ func (r *Route) start(parent task.Parent) gperr.Error {
 	}
 	defer close(r.started)
 
-	if err := r.impl.Start(parent); err != nil {
-		return err
+	// skip checking for excluded routes
+	if !r.ShouldExclude() {
+		if err := checkExists(r); err != nil {
+			return err
+		}
 	}
 
-	if conflict, added := routes.All.AddIfNotExists(r.impl); !added {
-		err := gperr.Errorf("route %s already exists: from %s and %s", r.Alias, r.ProviderName(), conflict.ProviderName())
-		r.task.FinishAndWait(err)
+	if cont := r.ContainerInfo(); cont != nil {
+		docker.SetDockerHostByContainerID(cont.ContainerID, cont.DockerHost)
+	}
+
+	if err := r.impl.Start(parent); err != nil {
 		return err
-	} else {
-		// reference here because r.impl will be nil after Finish() is called.
-		impl := r.impl
-		r.task.OnCancel("remove_routes_from_all", func() {
-			routes.All.Del(impl)
-		})
 	}
 	return nil
 }
 
 func (r *Route) Finish(reason any) {
+	if cont := r.ContainerInfo(); cont != nil {
+		docker.DeleteDockerHostByContainerID(cont.ContainerID)
+	}
 	r.FinishAndWait(reason)
 }
 
@@ -410,16 +411,16 @@ func (r *Route) LoadBalanceConfig() *types.LoadBalancerConfig {
 	return r.LoadBalance
 }
 
-func (r *Route) HomepageConfig() *homepage.ItemConfig {
-	return r.Homepage.GetOverride(r.Alias)
-}
-
-func (r *Route) HomepageItem() *homepage.Item {
-	return &homepage.Item{
+func (r *Route) HomepageItem() homepage.Item {
+	return homepage.Item{
 		Alias:      r.Alias,
 		Provider:   r.Provider,
-		ItemConfig: r.HomepageConfig(),
-	}
+		ItemConfig: r.Homepage,
+	}.GetOverride()
+}
+
+func (r *Route) DisplayName() string {
+	return r.Homepage.Name
 }
 
 func (r *Route) ContainerInfo() *types.Container {
@@ -629,10 +630,8 @@ func (r *Route) FinalizeHomepageConfig() {
 
 	isDocker := r.Container != nil
 
-	if r.Homepage == nil {
-		r.Homepage = &homepage.ItemConfig{Show: true}
-	}
-	r.Homepage = r.Homepage.GetOverride(r.Alias)
+	// apply override config
+	r.Homepage = r.HomepageItem().ItemConfig
 
 	if r.ShouldExclude() && isDocker {
 		r.Homepage.Show = false
