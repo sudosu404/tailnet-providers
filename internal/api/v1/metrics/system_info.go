@@ -17,11 +17,12 @@ import (
 
 type SystemInfoRequest struct {
 	AgentAddr string                             `query:"agent_addr"`
+	AgentName string                             `query:"agent_name"`
 	Aggregate systeminfo.SystemInfoAggregateMode `query:"aggregate"`
 	Period    period.Filter                      `query:"period"`
 } // @name SystemInfoRequest
 
-type SystemInfoAggregate period.ResponseType[systeminfo.Aggregated] // @name SystemInfoAggregate
+type SystemInfoAggregate period.ResponseType[systeminfo.AggregatedJSON] // @name SystemInfoAggregate
 
 // @x-id				"system_info"
 // @BasePath		/api/v1
@@ -34,21 +35,25 @@ type SystemInfoAggregate period.ResponseType[systeminfo.Aggregated] // @name Sys
 // @Success		200			{object}	SystemInfoAggregate "period specified"
 // @Failure		400			{object}	apitypes.ErrorResponse
 // @Failure		403			{object}	apitypes.ErrorResponse
-// @Failure		404			{object}	apitypes.ErrorResponse
 // @Failure		500			{object}	apitypes.ErrorResponse
 // @Router	 /metrics/system_info [get]
 func SystemInfo(c *gin.Context) {
 	query := c.Request.URL.Query()
 	agentAddr := query.Get("agent_addr")
+	agentName := query.Get("agent_name")
 	query.Del("agent_addr")
-	if agentAddr == "" {
+	query.Del("agent_name")
+	if agentAddr == "" && agentName == "" {
 		systeminfo.Poller.ServeHTTP(c)
 		return
 	}
 
 	agent, ok := agentPkg.GetAgent(agentAddr)
 	if !ok {
-		c.JSON(http.StatusNotFound, apitypes.Error("agent_addr not found"))
+		agent, ok = agentPkg.GetAgentByName(agentName)
+	}
+	if !ok {
+		c.JSON(http.StatusNotFound, apitypes.Error("agent_addr or agent_name not found"))
 		return
 	}
 
