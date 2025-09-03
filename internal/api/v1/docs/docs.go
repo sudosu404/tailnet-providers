@@ -176,54 +176,6 @@ const docTemplate = `{
             }
         },
         "/auth/callback": {
-            "get": {
-                "description": "Handles the callback from the provider after successful authentication",
-                "produces": [
-                    "text/plain"
-                ],
-                "tags": [
-                    "auth"
-                ],
-                "summary": "Auth Callback",
-                "parameters": [
-                    {
-                        "description": "Userpass only",
-                        "name": "body",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/auth.UserPassAuthCallbackRequest"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Userpass: OK",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    "302": {
-                        "description": "OIDC: Redirects to home page",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    "400": {
-                        "description": "Userpass: invalid request / credentials",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    "500": {
-                        "description": "Internal server error",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                },
-                "x-id": "callback"
-            },
             "post": {
                 "description": "Handles the callback from the provider after successful authentication",
                 "produces": [
@@ -427,6 +379,48 @@ const docTemplate = `{
                 "x-id": "renew"
             }
         },
+        "/docker/container/{id}": {
+            "get": {
+                "description": "Get container by container id",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "docker"
+                ],
+                "summary": "Get container",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Container ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ContainerResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                },
+                "x-id": "container"
+            }
+        },
         "/docker/containers": {
             "get": {
                 "description": "Get containers",
@@ -496,9 +490,9 @@ const docTemplate = `{
                 "x-id": "info"
             }
         },
-        "/docker/logs/{server}/{container}": {
+        "/docker/logs/{id}": {
             "get": {
-                "description": "Get docker container logs",
+                "description": "Get docker container logs by container id",
                 "consumes": [
                     "application/json"
                 ],
@@ -513,15 +507,8 @@ const docTemplate = `{
                 "parameters": [
                     {
                         "type": "string",
-                        "description": "server name",
-                        "name": "server",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "type": "string",
                         "description": "container id",
-                        "name": "container",
+                        "name": "id",
                         "in": "path",
                         "required": true
                     },
@@ -985,6 +972,12 @@ const docTemplate = `{
                 "parameters": [
                     {
                         "type": "string",
+                        "description": "Search query",
+                        "name": "search",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
                         "description": "Category filter",
                         "name": "category",
                         "in": "query"
@@ -1000,7 +993,10 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/HomepageItems"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/HomepageCategory"
+                            }
                         }
                     },
                     "400": {
@@ -1111,6 +1107,194 @@ const docTemplate = `{
                     }
                 },
                 "x-id": "set-item"
+            }
+        },
+        "/homepage/set/item_all_sort_order": {
+            "post": {
+                "description": "Set homepage item all sort order.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "homepage"
+                ],
+                "summary": "Set homepage item all sort order",
+                "parameters": [
+                    {
+                        "description": "Set item all sort order",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/HomepageOverrideItemAllSortOrderParams"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                },
+                "x-id": "set-item-all-sort-order"
+            }
+        },
+        "/homepage/set/item_fav_sort_order": {
+            "post": {
+                "description": "Set homepage item fav sort order.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "homepage"
+                ],
+                "summary": "Set homepage item fav sort order",
+                "parameters": [
+                    {
+                        "description": "Set item fav sort order",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/HomepageOverrideItemFavSortOrderParams"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                },
+                "x-id": "set-item-fav-sort-order"
+            }
+        },
+        "/homepage/set/item_favorite": {
+            "post": {
+                "description": "Set homepage item favorite.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "homepage"
+                ],
+                "summary": "Set homepage item favorite",
+                "parameters": [
+                    {
+                        "description": "Set item favorite",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/HomepageOverrideItemFavoriteParams"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                },
+                "x-id": "set-item-favorite"
+            }
+        },
+        "/homepage/set/item_sort_order": {
+            "post": {
+                "description": "Set homepage item sort order.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "homepage"
+                ],
+                "summary": "Set homepage item sort order",
+                "parameters": [
+                    {
+                        "description": "Set item sort order",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/HomepageOverrideItemSortOrderParams"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                },
+                "x-id": "set-item-sort-order"
             }
         },
         "/homepage/set/item_visible": {
@@ -1260,6 +1444,105 @@ const docTemplate = `{
                 "x-id": "icons"
             }
         },
+        "/metrics/all_system_info": {
+            "get": {
+                "description": "Get system info",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "metrics",
+                    "websocket"
+                ],
+                "summary": "Get system info",
+                "parameters": [
+                    {
+                        "enum": [
+                            "cpu_average",
+                            "memory_usage",
+                            "memory_usage_percent",
+                            "disks_read_speed",
+                            "disks_write_speed",
+                            "disks_iops",
+                            "disk_usage",
+                            "network_speed",
+                            "network_transfer",
+                            "sensor_temperature"
+                        ],
+                        "type": "string",
+                        "x-enum-varnames": [
+                            "SystemInfoAggregateModeCPUAverage",
+                            "SystemInfoAggregateModeMemoryUsage",
+                            "SystemInfoAggregateModeMemoryUsagePercent",
+                            "SystemInfoAggregateModeDisksReadSpeed",
+                            "SystemInfoAggregateModeDisksWriteSpeed",
+                            "SystemInfoAggregateModeDisksIOPS",
+                            "SystemInfoAggregateModeDiskUsage",
+                            "SystemInfoAggregateModeNetworkSpeed",
+                            "SystemInfoAggregateModeNetworkTransfer",
+                            "SystemInfoAggregateModeSensorTemperature"
+                        ],
+                        "name": "aggregate",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "format": "duration",
+                        "name": "interval",
+                        "in": "query"
+                    },
+                    {
+                        "enum": [
+                            "5m",
+                            "15m",
+                            "1h",
+                            "1d",
+                            "1mo"
+                        ],
+                        "type": "string",
+                        "x-enum-varnames": [
+                            "MetricsPeriod5m",
+                            "MetricsPeriod15m",
+                            "MetricsPeriod1h",
+                            "MetricsPeriod1d",
+                            "MetricsPeriod1mo"
+                        ],
+                        "name": "period",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "period specified, aggregated system info by agent name",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "$ref": "#/definitions/SystemInfoAggregate"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                },
+                "x-id": "all_system_info"
+            }
+        },
         "/metrics/system_info": {
             "get": {
                 "description": "Get system info",
@@ -1275,6 +1558,11 @@ const docTemplate = `{
                     {
                         "type": "string",
                         "name": "agentAddr",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "agentName",
                         "in": "query"
                     },
                     {
@@ -1341,12 +1629,6 @@ const docTemplate = `{
                     },
                     "403": {
                         "description": "Forbidden",
-                        "schema": {
-                            "$ref": "#/definitions/ErrorResponse"
-                        }
-                    },
-                    "404": {
-                        "description": "Not Found",
                         "schema": {
                             "$ref": "#/definitions/ErrorResponse"
                         }
@@ -1723,9 +2005,6 @@ const docTemplate = `{
                 "addr": {
                     "type": "string"
                 },
-                "is_nerdctl": {
-                    "type": "boolean"
-                },
                 "name": {
                     "type": "string"
                 },
@@ -1864,6 +2143,9 @@ const docTemplate = `{
                 },
                 "running": {
                     "type": "boolean"
+                },
+                "state": {
+                    "$ref": "#/definitions/container.ContainerState"
                 }
             }
         },
@@ -1903,7 +2185,12 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "state": {
-                    "$ref": "#/definitions/ContainerState"
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/ContainerState"
+                        }
+                    ],
+                    "x-nullable": true
                 }
             }
         },
@@ -2125,12 +2412,125 @@ const docTemplate = `{
                 "$ref": "#/definitions/routes.HealthInfo"
             }
         },
-        "HomepageItems": {
+        "HomepageCategory": {
             "type": "object",
-            "additionalProperties": {
-                "type": "array",
+            "properties": {
                 "items": {
-                    "$ref": "#/definitions/homepage.Item"
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/HomepageItem"
+                    }
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "HomepageItem": {
+            "type": "object",
+            "properties": {
+                "alias": {
+                    "type": "string"
+                },
+                "all_sort_order": {
+                    "description": "sort order in all",
+                    "type": "integer"
+                },
+                "category": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "fav_sort_order": {
+                    "description": "sort order in favorite",
+                    "type": "integer"
+                },
+                "favorite": {
+                    "type": "boolean"
+                },
+                "icon": {
+                    "type": "string"
+                },
+                "name": {
+                    "description": "display name",
+                    "type": "string"
+                },
+                "origin_url": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "show": {
+                    "type": "boolean"
+                },
+                "sort_order": {
+                    "description": "sort order in category",
+                    "type": "integer"
+                },
+                "url": {
+                    "type": "string"
+                },
+                "widget_config": {
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/widgets.Config"
+                        }
+                    ],
+                    "x-nullable": true
+                },
+                "widgets": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/HomepageItemWidget"
+                    }
+                }
+            }
+        },
+        "HomepageItemConfig": {
+            "type": "object",
+            "properties": {
+                "category": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "favorite": {
+                    "type": "boolean"
+                },
+                "icon": {
+                    "type": "string"
+                },
+                "name": {
+                    "description": "display name",
+                    "type": "string"
+                },
+                "show": {
+                    "type": "boolean"
+                },
+                "url": {
+                    "type": "string"
+                },
+                "widget_config": {
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/widgets.Config"
+                        }
+                    ],
+                    "x-nullable": true
+                }
+            }
+        },
+        "HomepageItemWidget": {
+            "type": "object",
+            "properties": {
+                "label": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
                 }
             }
         },
@@ -2145,11 +2545,58 @@ const docTemplate = `{
                 }
             }
         },
+        "HomepageOverrideItemAllSortOrderParams": {
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "integer"
+                },
+                "which": {
+                    "type": "string"
+                }
+            }
+        },
+        "HomepageOverrideItemFavSortOrderParams": {
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "integer"
+                },
+                "which": {
+                    "type": "string"
+                }
+            }
+        },
+        "HomepageOverrideItemFavoriteParams": {
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "boolean"
+                },
+                "which": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
         "HomepageOverrideItemParams": {
             "type": "object",
             "properties": {
                 "value": {
-                    "$ref": "#/definitions/homepage.ItemConfig"
+                    "$ref": "#/definitions/HomepageItemConfig"
+                },
+                "which": {
+                    "type": "string"
+                }
+            }
+        },
+        "HomepageOverrideItemSortOrderParams": {
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "integer"
                 },
                 "which": {
                     "type": "string"
@@ -2176,7 +2623,7 @@ const docTemplate = `{
                 "value": {
                     "type": "object",
                     "additionalProperties": {
-                        "$ref": "#/definitions/homepage.ItemConfig"
+                        "$ref": "#/definitions/HomepageItemConfig"
                     }
                 }
             }
@@ -2388,18 +2835,6 @@ const docTemplate = `{
                 "type"
             ],
             "properties": {
-                "container_runtime": {
-                    "enum": [
-                        "docker",
-                        "podman",
-                        "nerdctl"
-                    ],
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/agent.ContainerRuntime"
-                        }
-                    ]
-                },
                 "host": {
                     "type": "string"
                 },
@@ -2580,7 +3015,12 @@ const docTemplate = `{
                     "type": "boolean"
                 },
                 "excluded": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "x-nullable": true
+                },
+                "excluded_reason": {
+                    "type": "string",
+                    "x-nullable": true
                 },
                 "health": {
                     "description": "for swagger",
@@ -2594,7 +3034,7 @@ const docTemplate = `{
                     "$ref": "#/definitions/HealthCheckConfig"
                 },
                 "homepage": {
-                    "$ref": "#/definitions/homepage.ItemConfig"
+                    "$ref": "#/definitions/HomepageItemConfig"
                 },
                 "host": {
                     "type": "string"
@@ -2744,6 +3184,16 @@ const docTemplate = `{
                 "avg_latency": {
                     "type": "number"
                 },
+                "current_status": {
+                    "type": "string",
+                    "enum": [
+                        "healthy",
+                        "unhealthy",
+                        "unknown",
+                        "napping",
+                        "starting"
+                    ]
+                },
                 "display_name": {
                     "type": "string"
                 },
@@ -2752,6 +3202,9 @@ const docTemplate = `{
                 },
                 "idle": {
                     "type": "number"
+                },
+                "is_docker": {
+                    "type": "boolean"
                 },
                 "statuses": {
                     "type": "array",
@@ -2925,9 +3378,6 @@ const docTemplate = `{
                 "client": {
                     "$ref": "#/definitions/PEMPairResponse"
                 },
-                "container_runtime": {
-                    "$ref": "#/definitions/agent.ContainerRuntime"
-                },
                 "host": {
                     "type": "string"
                 }
@@ -3008,19 +3458,6 @@ const docTemplate = `{
                 }
             }
         },
-        "agent.ContainerRuntime": {
-            "type": "string",
-            "enum": [
-                "docker",
-                "podman",
-                "nerdctl"
-            ],
-            "x-enum-varnames": [
-                "ContainerRuntimeDocker",
-                "ContainerRuntimePodman",
-                "ContainerRuntimeNerdctl"
-            ]
-        },
         "auth.UserPassAuthCallbackRequest": {
             "type": "object",
             "properties": {
@@ -3031,6 +3468,45 @@ const docTemplate = `{
                     "type": "string"
                 }
             }
+        },
+        "container.ContainerState": {
+            "type": "string",
+            "enum": [
+                "created",
+                "running",
+                "paused",
+                "restarting",
+                "removing",
+                "exited",
+                "dead"
+            ],
+            "x-enum-comments": {
+                "StateCreated": "StateCreated indicates the container is created, but not (yet) started.",
+                "StateDead": "StateDead indicates that the container failed to be deleted. Containers in this state are attempted to be cleaned up when the daemon restarts.",
+                "StateExited": "StateExited indicates that the container exited.",
+                "StatePaused": "StatePaused indicates that the container's current state is paused.",
+                "StateRemoving": "StateRemoving indicates that the container is being removed.",
+                "StateRestarting": "StateRestarting indicates that the container is currently restarting.",
+                "StateRunning": "StateRunning indicates that the container is running."
+            },
+            "x-enum-descriptions": [
+                "StateCreated indicates the container is created, but not (yet) started.",
+                "StateRunning indicates that the container is running.",
+                "StatePaused indicates that the container's current state is paused.",
+                "StateRestarting indicates that the container is currently restarting.",
+                "StateRemoving indicates that the container is being removed.",
+                "StateExited indicates that the container exited.",
+                "StateDead indicates that the container failed to be deleted. Containers in this state are attempted to be cleaned up when the daemon restarts."
+            ],
+            "x-enum-varnames": [
+                "StateCreated",
+                "StateRunning",
+                "StatePaused",
+                "StateRestarting",
+                "StateRemoving",
+                "StateExited",
+                "StateDead"
+            ]
         },
         "container.Port": {
             "type": "object",
@@ -3169,77 +3645,6 @@ const docTemplate = `{
                 "IconSourceSelfhSt"
             ]
         },
-        "homepage.Item": {
-            "type": "object",
-            "properties": {
-                "alias": {
-                    "type": "string"
-                },
-                "category": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "icon": {
-                    "type": "string"
-                },
-                "name": {
-                    "description": "display name",
-                    "type": "string"
-                },
-                "origin_url": {
-                    "type": "string"
-                },
-                "provider": {
-                    "type": "string"
-                },
-                "show": {
-                    "type": "boolean"
-                },
-                "sort_order": {
-                    "type": "integer"
-                },
-                "url": {
-                    "type": "string"
-                },
-                "widget_config": {
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/widgets.Config"
-                        }
-                    ],
-                    "x-nullable": true
-                }
-            }
-        },
-        "homepage.ItemConfig": {
-            "type": "object",
-            "properties": {
-                "category": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "icon": {
-                    "type": "string"
-                },
-                "name": {
-                    "description": "display name",
-                    "type": "string"
-                },
-                "show": {
-                    "type": "boolean"
-                },
-                "sort_order": {
-                    "type": "integer"
-                },
-                "url": {
-                    "type": "string"
-                }
-            }
-        },
         "mem.VirtualMemoryStat": {
             "type": "object",
             "properties": {
@@ -3327,7 +3732,12 @@ const docTemplate = `{
                     "type": "boolean"
                 },
                 "excluded": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "x-nullable": true
+                },
+                "excluded_reason": {
+                    "type": "string",
+                    "x-nullable": true
                 },
                 "health": {
                     "description": "for swagger",
@@ -3341,7 +3751,7 @@ const docTemplate = `{
                     "$ref": "#/definitions/HealthCheckConfig"
                 },
                 "homepage": {
-                    "$ref": "#/definitions/homepage.ItemConfig"
+                    "$ref": "#/definitions/HomepageItemConfig"
                 },
                 "host": {
                     "type": "string"
@@ -3466,25 +3876,19 @@ const docTemplate = `{
                 }
             }
         },
-        "rules.Command": {
-            "type": "object"
-        },
         "rules.Rule": {
             "type": "object",
             "properties": {
                 "do": {
-                    "$ref": "#/definitions/rules.Command"
+                    "type": "string"
                 },
                 "name": {
                     "type": "string"
                 },
                 "on": {
-                    "$ref": "#/definitions/rules.RuleOn"
+                    "type": "string"
                 }
             }
-        },
-        "rules.RuleOn": {
-            "type": "object"
         },
         "sensors.TemperatureStat": {
             "type": "object",
