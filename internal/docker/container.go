@@ -66,6 +66,7 @@ func FromDocker(c *container.Summary, dockerHost string) (res *types.Container) 
 		IsExplicit:        isExplicit,
 		IsHostNetworkMode: c.HostConfig.NetworkMode == "host",
 		Running:           c.Status == "running" || c.State == "running",
+		State:             c.State,
 	}
 
 	if agent.IsDockerHostAgent(dockerHost) {
