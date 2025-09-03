@@ -94,8 +94,8 @@ func NewIconKey(source IconSource, reference string) IconKey {
 }
 
 func (k IconKey) SourceRef() (IconSource, string) {
-	parts := strings.Split(string(k), "/")
-	return IconSource(parts[0]), parts[1]
+	source, ref, _ := strings.Cut(string(k), "/")
+	return IconSource(source), ref
 }
 
 func InitIconListCache() {
