@@ -10,14 +10,10 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/rs/zerolog/log"
 	apitypes "github.com/yusing/go-proxy/internal/api/types"
+	"github.com/yusing/go-proxy/internal/docker"
 	"github.com/yusing/go-proxy/internal/net/gphttp/websocket"
 	"github.com/yusing/go-proxy/internal/task"
 )
-
-type LogsPathParams struct {
-	Server      string `uri:"server" binding:"required"`
-	ContainerID string `uri:"container" binding:"required"`
-} //	@name	LogsPathParams
 
 type LogsQueryParams struct {
 	Stdout bool   `form:"stdout,default=true"`
@@ -30,12 +26,11 @@ type LogsQueryParams struct {
 // @x-id				"logs"
 // @BasePath		/api/v1
 // @Summary		Get docker container logs
-// @Description	Get docker container logs
+// @Description	Get docker container logs by container id
 // @Tags			docker,websocket
 // @Accept			json
 // @Produce		json
-// @Param			server		path	string	true	"server name"
-// @Param			container	path	string	true	"container id"
+// @Param			id	path	string	true	"container id"
 // @Param			stdout		query	bool	false	"show stdout"
 // @Param			stderr		query	bool	false	"show stderr"
 // @Param			from		query	string	false	"from timestamp"
@@ -46,29 +41,34 @@ type LogsQueryParams struct {
 // @Failure		403	{object}	apitypes.ErrorResponse
 // @Failure		404	{object}	apitypes.ErrorResponse
 // @Failure		500	{object}	apitypes.ErrorResponse
-// @Router			/docker/logs/{server}/{container} [get]
+// @Router			/docker/logs/{id} [get]
 func Logs(c *gin.Context) {
-	var pathParams LogsPathParams
+	id := c.Param("id")
+	if id == "" {
+		c.JSON(http.StatusBadRequest, apitypes.Error("container id is required"))
+		return
+	}
+
 	var queryParams LogsQueryParams
 	if err := c.ShouldBindQuery(&queryParams); err != nil {
 		c.JSON(http.StatusBadRequest, apitypes.Error("invalid query params"))
 		return
 	}
-	if err := c.ShouldBindUri(&pathParams); err != nil {
-		c.JSON(http.StatusBadRequest, apitypes.Error("invalid path params"))
-		return
-	}
+
 	// TODO: implement levels
 
-	dockerClient, found, err := getDockerClient(pathParams.Server)
+	dockerHost, ok := docker.GetDockerHostByContainerID(id)
+	if !ok {
+		c.JSON(http.StatusNotFound, apitypes.Error("container not found"))
+		return
+	}
+
+	dockerClient, err := docker.NewClient(dockerHost)
 	if err != nil {
-		c.Error(apitypes.InternalServerError(err, "failed to get docker client"))
+		c.Error(apitypes.InternalServerError(err, "failed to create docker client"))
 		return
 	}
-	if !found {
-		c.JSON(http.StatusNotFound, apitypes.Error("server not found"))
-		return
-	}
+
 	defer dockerClient.Close()
 
 	opts := container.LogsOptions{
@@ -84,7 +84,7 @@ func Logs(c *gin.Context) {
 		opts.Details = true
 	}
 
-	logs, err := dockerClient.ContainerLogs(c.Request.Context(), pathParams.ContainerID, opts)
+	logs, err := dockerClient.ContainerLogs(c.Request.Context(), id, opts)
 	if err != nil {
 		c.Error(apitypes.InternalServerError(err, "failed to get container logs"))
 		return
@@ -106,8 +106,8 @@ func Logs(c *gin.Context) {
 			return
 		}
 		log.Err(err).
-			Str("server", pathParams.Server).
-			Str("container", pathParams.ContainerID).
+			Str("server", dockerHost).
+			Str("container", id).
 			Msg("failed to de-multiplex logs")
 	}
 }
