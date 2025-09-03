@@ -38,4 +38,5 @@ node_modules/
 tsconfig.tsbuildinfo
 
 !agent.compose.yml
+!dev.compose.yml
 !agent/pkg/**
