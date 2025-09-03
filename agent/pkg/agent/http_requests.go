@@ -16,7 +16,7 @@ func (cfg *AgentConfig) Do(ctx context.Context, method, endpoint string, body io
 	return cfg.httpClient.Do(req)
 }
 
-func (cfg *AgentConfig) Forward(req *http.Request, endpoint string) ([]byte, int, error) {
+func (cfg *AgentConfig) Forward(req *http.Request, endpoint string) (*http.Response, error) {
 	req = req.WithContext(req.Context())
 	req.URL.Host = AgentHost
 	req.URL.Scheme = "https"
@@ -24,11 +24,9 @@ func (cfg *AgentConfig) Forward(req *http.Request, endpoint string) ([]byte, int
 	req.RequestURI = ""
 	resp, err := cfg.httpClient.Do(req)
 	if err != nil {
-		return nil, 0, err
+		return nil, err
 	}
-	defer resp.Body.Close()
-	data, _ := io.ReadAll(resp.Body)
-	return data, resp.StatusCode, nil
+	return resp, nil
 }
 
 func (cfg *AgentConfig) Fetch(ctx context.Context, endpoint string) ([]byte, int, error) {

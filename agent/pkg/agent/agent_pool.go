@@ -1,6 +1,8 @@
 package agent
 
 import (
+	"iter"
+
 	"github.com/yusing/go-proxy/internal/common"
 	"github.com/yusing/go-proxy/internal/utils/functional"
 )
@@ -49,6 +51,14 @@ func ListAgents() []*AgentConfig {
 		agents = append(agents, agent)
 	}
 	return agents
+}
+
+func IterAgents() iter.Seq2[string, *AgentConfig] {
+	return agentPool.Range
+}
+
+func NumAgents() int {
+	return agentPool.Size()
 }
 
 func getAgentByAddr(addr string) (agent *AgentConfig, ok bool) {
