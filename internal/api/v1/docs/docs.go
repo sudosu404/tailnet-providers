@@ -575,6 +575,138 @@ const docTemplate = `{
                 "x-id": "logs"
             }
         },
+        "/docker/restart": {
+            "post": {
+                "description": "Restart container by container id",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "docker"
+                ],
+                "summary": "Restart container",
+                "parameters": [
+                    {
+                        "description": "Request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/dockerapi.StopRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                },
+                "x-id": "restart"
+            }
+        },
+        "/docker/start": {
+            "post": {
+                "description": "Start container by container id",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "docker"
+                ],
+                "summary": "Start container",
+                "parameters": [
+                    {
+                        "description": "Request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/dockerapi.StartRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                },
+                "x-id": "start"
+            }
+        },
+        "/docker/stop": {
+            "post": {
+                "description": "Stop container by container id",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "docker"
+                ],
+                "summary": "Stop container",
+                "parameters": [
+                    {
+                        "description": "Request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/dockerapi.StopRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                },
+                "x-id": "stop"
+            }
+        },
         "/favicon": {
             "get": {
                 "description": "Get favicon",
@@ -3583,6 +3715,42 @@ const docTemplate = `{
                 },
                 "used_percent": {
                     "type": "number"
+                }
+            }
+        },
+        "dockerapi.StartRequest": {
+            "type": "object",
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "checkpointDir": {
+                    "type": "string"
+                },
+                "checkpointID": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                }
+            }
+        },
+        "dockerapi.StopRequest": {
+            "type": "object",
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "signal": {
+                    "description": "Signal (optional) is the signal to send to the container to (gracefully)\nstop it before forcibly terminating the container with SIGKILL after the\ntimeout expires. If not value is set, the default (SIGTERM) is used.",
+                    "type": "string"
+                },
+                "timeout": {
+                    "description": "Timeout (optional) is the timeout (in seconds) to wait for the container\nto stop gracefully before forcibly terminating it with SIGKILL.\n\n- Use nil to use the default timeout (10 seconds).\n- Use '-1' to wait indefinitely.\n- Use '0' to not wait for the container to exit gracefully, and\n  immediately proceeds to forcibly terminating the container.\n- Other positive values are used as timeout (in seconds).",
+                    "type": "integer"
                 }
             }
         },

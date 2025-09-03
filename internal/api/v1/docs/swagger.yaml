@@ -1097,6 +1097,41 @@ definitions:
       used_percent:
         type: number
     type: object
+  dockerapi.StartRequest:
+    properties:
+      checkpointDir:
+        type: string
+      checkpointID:
+        type: string
+      id:
+        type: string
+    required:
+    - id
+    type: object
+  dockerapi.StopRequest:
+    properties:
+      id:
+        type: string
+      signal:
+        description: |-
+          Signal (optional) is the signal to send to the container to (gracefully)
+          stop it before forcibly terminating the container with SIGKILL after the
+          timeout expires. If not value is set, the default (SIGTERM) is used.
+        type: string
+      timeout:
+        description: |-
+          Timeout (optional) is the timeout (in seconds) to wait for the container
+          to stop gracefully before forcibly terminating it with SIGKILL.
+
+          - Use nil to use the default timeout (10 seconds).
+          - Use '-1' to wait indefinitely.
+          - Use '0' to not wait for the container to exit gracefully, and
+            immediately proceeds to forcibly terminating the container.
+          - Other positive values are used as timeout (in seconds).
+        type: integer
+    required:
+    - id
+    type: object
   homepage.FetchResult:
     properties:
       errMsg:
@@ -1747,6 +1782,93 @@ paths:
       - docker
       - websocket
       x-id: logs
+  /docker/restart:
+    post:
+      description: Restart container by container id
+      parameters:
+      - description: Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/dockerapi.StopRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/SuccessResponse'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+      summary: Restart container
+      tags:
+      - docker
+      x-id: restart
+  /docker/start:
+    post:
+      description: Start container by container id
+      parameters:
+      - description: Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/dockerapi.StartRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/SuccessResponse'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+      summary: Start container
+      tags:
+      - docker
+      x-id: start
+  /docker/stop:
+    post:
+      description: Stop container by container id
+      parameters:
+      - description: Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/dockerapi.StopRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/SuccessResponse'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+      summary: Stop container
+      tags:
+      - docker
+      x-id: stop
   /favicon:
     get:
       consumes:
