@@ -31,7 +31,12 @@ blacklists = [
   "cloudxns",
   "dnspod",
   "mythicbeasts", 
-  "yandexcloud"
+  "yandexcloud",
+  # dependencies issue
+  "namesilo",
+  "binarylane",
+  "edgeone",
+  "baiducloud",
 ]
 
 for item in data:

@@ -8,7 +8,7 @@ replace github.com/yusing/go-proxy/internal/utils => ../utils
 
 require (
 	github.com/go-acme/lego/v4 v4.25.2
-	github.com/yusing/go-proxy v0.17.1
+	github.com/yusing/go-proxy v0.17.2
 )
 
 require (
@@ -31,28 +31,28 @@ require (
 	github.com/alibabacloud-go/tea v1.3.11 // indirect
 	github.com/alibabacloud-go/tea-utils/v2 v2.0.7 // indirect
 	github.com/aliyun/credentials-go v1.4.7 // indirect
-	github.com/aws/aws-sdk-go-v2 v1.38.2 // indirect
-	github.com/aws/aws-sdk-go-v2/config v1.31.4 // indirect
-	github.com/aws/aws-sdk-go-v2/credentials v1.18.8 // indirect
-	github.com/aws/aws-sdk-go-v2/feature/ec2/imds v1.18.5 // indirect
-	github.com/aws/aws-sdk-go-v2/internal/configsources v1.4.5 // indirect
-	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2 v2.7.5 // indirect
+	github.com/aws/aws-sdk-go-v2 v1.38.3 // indirect
+	github.com/aws/aws-sdk-go-v2/config v1.31.6 // indirect
+	github.com/aws/aws-sdk-go-v2/credentials v1.18.10 // indirect
+	github.com/aws/aws-sdk-go-v2/feature/ec2/imds v1.18.6 // indirect
+	github.com/aws/aws-sdk-go-v2/internal/configsources v1.4.6 // indirect
+	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2 v2.7.6 // indirect
 	github.com/aws/aws-sdk-go-v2/internal/ini v1.8.3 // indirect
 	github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding v1.13.1 // indirect
-	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.13.5 // indirect
-	github.com/aws/aws-sdk-go-v2/service/lightsail v1.48.1 // indirect
-	github.com/aws/aws-sdk-go-v2/service/route53 v1.57.1 // indirect
-	github.com/aws/aws-sdk-go-v2/service/sso v1.28.3 // indirect
-	github.com/aws/aws-sdk-go-v2/service/ssooidc v1.34.1 // indirect
-	github.com/aws/aws-sdk-go-v2/service/sts v1.38.1 // indirect
+	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.13.6 // indirect
+	github.com/aws/aws-sdk-go-v2/service/lightsail v1.48.2 // indirect
+	github.com/aws/aws-sdk-go-v2/service/route53 v1.58.0 // indirect
+	github.com/aws/aws-sdk-go-v2/service/sso v1.29.1 // indirect
+	github.com/aws/aws-sdk-go-v2/service/ssooidc v1.34.2 // indirect
+	github.com/aws/aws-sdk-go-v2/service/sts v1.38.2 // indirect
 	github.com/aws/smithy-go v1.23.0 // indirect
-	github.com/baidubce/bce-sdk-go v0.9.241 // indirect
+	github.com/aziontech/azionapi-go-sdk v0.142.0 // indirect
 	github.com/benbjohnson/clock v1.3.5 // indirect
 	github.com/boombuler/barcode v1.1.0 // indirect
 	github.com/cenkalti/backoff/v4 v4.3.0 // indirect
 	github.com/clbanning/mxj/v2 v2.7.0 // indirect
 	github.com/dnsimple/dnsimple-go/v4 v4.0.0 // indirect
-	github.com/exoscale/egoscale/v3 v3.1.25 // indirect
+	github.com/exoscale/egoscale/v3 v3.1.26 // indirect
 	github.com/fatih/structs v1.1.0 // indirect
 	github.com/felixge/httpsnoop v1.0.4 // indirect
 	github.com/fsnotify/fsnotify v1.9.0 // indirect
@@ -111,10 +111,9 @@ require (
 	github.com/nrdcg/goacmedns v0.2.0 // indirect
 	github.com/nrdcg/goinwx v0.11.0 // indirect
 	github.com/nrdcg/mailinabox v0.2.0 // indirect
-	github.com/nrdcg/namesilo v0.2.1 // indirect
 	github.com/nrdcg/nodion v0.1.0 // indirect
-	github.com/nrdcg/oci-go-sdk/common/v1065 v1065.99.1 // indirect
-	github.com/nrdcg/oci-go-sdk/dns/v1065 v1065.99.1 // indirect
+	github.com/nrdcg/oci-go-sdk/common/v1065 v1065.99.2 // indirect
+	github.com/nrdcg/oci-go-sdk/dns/v1065 v1065.99.2 // indirect
 	github.com/nrdcg/porkbun v0.4.0 // indirect
 	github.com/nzdjb/go-metaname v1.0.0 // indirect
 	github.com/ovh/go-ovh v1.9.0 // indirect
@@ -144,10 +143,10 @@ require (
 	github.com/sourcegraph/conc v0.3.1-0.20240121214520-5f936abd7ae8 // indirect
 	github.com/spf13/afero v1.14.0 // indirect
 	github.com/spf13/cast v1.9.2 // indirect
-	github.com/spf13/pflag v1.0.7 // indirect
+	github.com/spf13/pflag v1.0.10 // indirect
 	github.com/spf13/viper v1.20.1 // indirect
 	github.com/subosito/gotenv v1.6.0 // indirect
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.1.18 // indirect
+	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.1.22 // indirect
 	github.com/tjfoc/gmsm v1.4.1 // indirect
 	github.com/transip/gotransip/v6 v6.26.0 // indirect
 	github.com/ultradns/ultradns-go-sdk v1.8.1-20250722213956-faef419 // indirect
@@ -158,10 +157,10 @@ require (
 	github.com/yusing/go-proxy/internal/utils v0.0.0 // indirect
 	go.mongodb.org/mongo-driver v1.17.4 // indirect
 	go.opentelemetry.io/auto/sdk v1.1.0 // indirect
-	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.62.0 // indirect
-	go.opentelemetry.io/otel v1.37.0 // indirect
-	go.opentelemetry.io/otel/metric v1.37.0 // indirect
-	go.opentelemetry.io/otel/trace v1.37.0 // indirect
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.63.0 // indirect
+	go.opentelemetry.io/otel v1.38.0 // indirect
+	go.opentelemetry.io/otel/metric v1.38.0 // indirect
+	go.opentelemetry.io/otel/trace v1.38.0 // indirect
 	go.uber.org/atomic v1.11.0 // indirect
 	go.uber.org/ratelimit v0.3.1 // indirect
 	golang.org/x/crypto v0.41.0 // indirect
