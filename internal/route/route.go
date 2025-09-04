@@ -83,6 +83,7 @@ type (
 		once    sync.Once
 	}
 	Routes map[string]*Route
+	Port   = route.Port
 )
 
 const DefaultHost = "localhost"
