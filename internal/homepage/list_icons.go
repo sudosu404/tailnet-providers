@@ -384,7 +384,8 @@ func UpdateSelfhstIcons() error {
 	for _, item := range data {
 		var tag string
 		if item.Tags != "" {
-			tag = strutils.CommaSeperatedList(item.Tags)[0]
+			tag, _, _ = strings.Cut(item.Tags, ",")
+			tag = strings.TrimSpace(tag)
 		}
 		icon := &IconMeta{
 			DisplayName: item.Name,

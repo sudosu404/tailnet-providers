@@ -6,12 +6,12 @@ import (
 	"path"
 	"sync"
 
+	"github.com/puzpuzpuz/xsync/v4"
 	"github.com/rs/zerolog/log"
 	"github.com/yusing/go-proxy/internal/common"
 	"github.com/yusing/go-proxy/internal/gperr"
 	"github.com/yusing/go-proxy/internal/task"
 	U "github.com/yusing/go-proxy/internal/utils"
-	F "github.com/yusing/go-proxy/internal/utils/functional"
 	W "github.com/yusing/go-proxy/internal/watcher"
 	"github.com/yusing/go-proxy/internal/watcher/events"
 )
@@ -21,7 +21,7 @@ const errPagesBasePath = common.ErrorPagesBasePath
 var (
 	setupOnce      sync.Once
 	dirWatcher     W.Watcher
-	fileContentMap = F.NewMapOf[string, []byte]()
+	fileContentMap = xsync.NewMap[string, []byte](xsync.WithGrowOnly())
 )
 
 func setup() {
@@ -52,7 +52,7 @@ func loadContent() {
 		return
 	}
 	for _, file := range files {
-		if fileContentMap.Has(file) {
+		if _, ok := fileContentMap.Load(file); ok {
 			continue
 		}
 		content, err := os.ReadFile(file)
