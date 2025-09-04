@@ -9,12 +9,16 @@ import (
 	expect "github.com/yusing/go-proxy/internal/utils/testing"
 )
 
+// FIXME:
 var ep = NewEntrypoint()
 
 func addRoute(alias string) {
 	routes.HTTP.Add(&route.ReveseProxyRoute{
 		Route: &route.Route{
 			Alias: alias,
+			Port: route.Port{
+				Proxy: 80,
+			},
 		},
 	})
 }
