@@ -1,22 +1,6 @@
 services:
-  socket-proxy:
-    container_name: socket-proxy-dev
-    image: ghcr.io/yusing/socket-proxy:latest
-    environment:
-      - CONTAINERS=1
-      - EVENTS=1
-      - INFO=1
-      - PING=1
-      - POST=0
-      - VERSION=1
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    restart: unless-stopped
-    tmpfs:
-      - /run
   app:
     image: godoxy-dev
-    user: 1000:1000
     build:
       context: .
       dockerfile: dev.Dockerfile
@@ -24,9 +8,6 @@ services:
         - TARGET=godoxy
     container_name: godoxy-proxy-dev
     restart: unless-stopped
-    depends_on:
-      socket-proxy:
-        condition: service_started
     environment:
       TZ: Asia/Hong_Kong
       API_ADDR: :8999
@@ -36,13 +17,14 @@ services:
       API_JWT_SECURE: false
       API_JWT_TTL: 24h
       DEBUG: true
-      DOCKER_HOST: tcp://socket-proxy:2375
       API_SECRET: 1234567891234567
-    ports:
-      - 8999:8999
-      - 80:80
-      - 443:443
+    labels:
+      proxy.exclude: true
+      proxy.#1.healthcheck.disable: true
+    ipc: host
+    network_mode: host
     volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
       - ./dev-data/config:/app/config
       - ./dev-data/certs:/app/certs
       - ./dev-data/error_pages:/app/error_pages:ro
