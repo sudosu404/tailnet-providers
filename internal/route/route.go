@@ -45,7 +45,7 @@ type (
 		HealthCheck  *types.HealthCheckConfig       `json:"healthcheck"`
 		LoadBalance  *types.LoadBalancerConfig      `json:"load_balance,omitempty" extensions:"x-nullable"`
 		Middlewares  map[string]types.LabelMap      `json:"middlewares,omitempty" extensions:"x-nullable"`
-		Homepage     homepage.ItemConfig            `json:"homepage"`
+		Homepage     *homepage.ItemConfig           `json:"homepage"`
 		AccessLog    *accesslog.RequestLoggerConfig `json:"access_log,omitempty" extensions:"x-nullable"`
 		Agent        string                         `json:"agent,omitempty"`
 
@@ -415,7 +415,7 @@ func (r *Route) HomepageItem() homepage.Item {
 	return homepage.Item{
 		Alias:      r.Alias,
 		Provider:   r.Provider,
-		ItemConfig: r.Homepage,
+		ItemConfig: *r.Homepage,
 	}.GetOverride()
 }
 
@@ -631,7 +631,12 @@ func (r *Route) FinalizeHomepageConfig() {
 	isDocker := r.Container != nil
 
 	// apply override config
-	r.Homepage = r.HomepageItem().ItemConfig
+	if r.Homepage == nil {
+		r.Homepage = &homepage.ItemConfig{
+			Show: true,
+			Name: r.Alias,
+		}
+	}
 
 	if r.ShouldExclude() && isDocker {
 		r.Homepage.Show = false
