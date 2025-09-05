@@ -73,12 +73,13 @@ func (ep *Entrypoint) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		w = accesslog.NewResponseRecorder(w)
 		defer ep.accessLogger.Log(r, w.(*accesslog.ResponseRecorder).Response())
 	}
-	mux, err := ep.findRouteFunc(r.Host)
+	route, err := ep.findRouteFunc(r.Host)
 	if err == nil {
+		r = routes.WithRouteContext(r, route)
 		if ep.middleware != nil {
-			ep.middleware.ServeHTTP(mux.ServeHTTP, w, routes.WithRouteContext(r, mux))
+			ep.middleware.ServeHTTP(route.ServeHTTP, w, r)
 		} else {
-			mux.ServeHTTP(w, r)
+			route.ServeHTTP(w, r)
 		}
 		return
 	}
