@@ -1114,7 +1114,8 @@
           "application/json"
         ],
         "tags": [
-          "homepage"
+          "homepage",
+          "websocket"
         ],
         "summary": "Homepage items",
         "parameters": [

@@ -6,11 +6,14 @@ import (
 	"net/url"
 	"slices"
 	"strings"
+	"time"
 
 	"github.com/gin-gonic/gin"
 	"github.com/lithammer/fuzzysearch/fuzzy"
 	apitypes "github.com/yusing/go-proxy/internal/api/types"
 	"github.com/yusing/go-proxy/internal/homepage"
+	"github.com/yusing/go-proxy/internal/net/gphttp/httpheaders"
+	"github.com/yusing/go-proxy/internal/net/gphttp/websocket"
 	"github.com/yusing/go-proxy/internal/route/routes"
 )
 
@@ -24,7 +27,7 @@ type HomepageItemsRequest struct {
 // @BasePath		/api/v1
 // @Summary		Homepage items
 // @Description	Homepage items
-// @Tags			homepage
+// @Tags			homepage,websocket
 // @Accept			json
 // @Produce		json
 // @Param			search		query		string	false	"Search query"
@@ -50,7 +53,13 @@ func Items(c *gin.Context) {
 		hostname = host
 	}
 
-	c.JSON(http.StatusOK, HomepageItems(proto, hostname, &request))
+	if httpheaders.IsWebsocket(c.Request.Header) {
+		websocket.PeriodicWrite(c, 2*time.Second, func() (any, error) {
+			return HomepageItems(proto, hostname, &request), nil
+		})
+	} else {
+		c.JSON(http.StatusOK, HomepageItems(proto, hostname, &request))
+	}
 }
 
 func HomepageItems(proto, hostname string, request *HomepageItemsRequest) homepage.Homepage {

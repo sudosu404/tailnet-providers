@@ -2169,6 +2169,7 @@ paths:
       summary: Homepage items
       tags:
       - homepage
+      - websocket
       x-id: items
   /homepage/set/category_order:
     post:
