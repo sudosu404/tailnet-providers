@@ -1,6 +1,6 @@
 module github.com/yusing/go-proxy/internal/utils
 
-go 1.25.0
+go 1.25.1
 
 require (
 	github.com/puzpuzpuz/xsync/v4 v4.1.0
