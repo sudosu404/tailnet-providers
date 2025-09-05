@@ -301,6 +301,9 @@ definitions:
         type: integer
       category:
         type: string
+      container_id:
+        type: string
+        x-nullable: true
       description:
         type: string
       fav_sort_order:
@@ -724,7 +727,7 @@ definitions:
         type: array
         x-nullable: true
       port:
-        $ref: '#/definitions/route.Port'
+        $ref: '#/definitions/github_com_yusing_go-proxy_internal_route_types.Port'
       provider:
         description: for backward compatibility
         type: string
@@ -1132,6 +1135,13 @@ definitions:
     required:
     - id
     type: object
+  github_com_yusing_go-proxy_internal_route_types.Port:
+    properties:
+      listening:
+        type: integer
+      proxy:
+        type: integer
+    type: object
   homepage.FetchResult:
     properties:
       errMsg:
@@ -1218,13 +1228,6 @@ definitions:
         description: godoxy
         type: number
     type: object
-  route.Port:
-    properties:
-      listening:
-        type: integer
-      proxy:
-        type: integer
-    type: object
   route.Route:
     properties:
       access_log:
@@ -1283,7 +1286,7 @@ definitions:
         type: array
         x-nullable: true
       port:
-        $ref: '#/definitions/route.Port'
+        $ref: '#/definitions/github_com_yusing_go-proxy_internal_route_types.Port'
       provider:
         description: for backward compatibility
         type: string

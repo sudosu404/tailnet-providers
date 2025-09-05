@@ -412,10 +412,15 @@ func (r *Route) LoadBalanceConfig() *types.LoadBalancerConfig {
 }
 
 func (r *Route) HomepageItem() homepage.Item {
+	containerID := ""
+	if r.Container != nil {
+		containerID = r.Container.ContainerID
+	}
 	return homepage.Item{
-		Alias:      r.Alias,
-		Provider:   r.Provider,
-		ItemConfig: *r.Homepage,
+		Alias:       r.Alias,
+		Provider:    r.Provider,
+		ItemConfig:  *r.Homepage,
+		ContainerID: containerID,
 	}.GetOverride()
 }
 

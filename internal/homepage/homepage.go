@@ -45,9 +45,10 @@ type (
 
 		Widgets []Widget `json:"widgets,omitempty"`
 
-		Alias     string `json:"alias"`
-		Provider  string `json:"provider"`
-		OriginURL string `json:"origin_url"`
+		Alias       string `json:"alias"`
+		Provider    string `json:"provider"`
+		OriginURL   string `json:"origin_url"`
+		ContainerID string `json:"container_id,omitempty" extensions:"x-nullable"`
 	} // @name HomepageItem
 )
 

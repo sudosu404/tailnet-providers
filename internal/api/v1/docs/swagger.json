@@ -2795,6 +2795,10 @@
           "x-nullable": false,
           "x-omitempty": false
         },
+        "container_id": {
+          "type": "string",
+          "x-nullable": true
+        },
         "description": {
           "type": "string",
           "x-nullable": false,
@@ -3692,7 +3696,7 @@
           "x-nullable": true
         },
         "port": {
-          "$ref": "#/definitions/route.Port",
+          "$ref": "#/definitions/github_com_yusing_go-proxy_internal_route_types.Port",
           "x-nullable": false,
           "x-omitempty": false
         },
@@ -4458,6 +4462,23 @@
       "x-nullable": false,
       "x-omitempty": false
     },
+    "github_com_yusing_go-proxy_internal_route_types.Port": {
+      "type": "object",
+      "properties": {
+        "listening": {
+          "type": "integer",
+          "x-nullable": false,
+          "x-omitempty": false
+        },
+        "proxy": {
+          "type": "integer",
+          "x-nullable": false,
+          "x-omitempty": false
+        }
+      },
+      "x-nullable": false,
+      "x-omitempty": false
+    },
     "homepage.FetchResult": {
       "type": "object",
       "properties": {
@@ -4611,23 +4632,6 @@
       "x-nullable": false,
       "x-omitempty": false
     },
-    "route.Port": {
-      "type": "object",
-      "properties": {
-        "listening": {
-          "type": "integer",
-          "x-nullable": false,
-          "x-omitempty": false
-        },
-        "proxy": {
-          "type": "integer",
-          "x-nullable": false,
-          "x-omitempty": false
-        }
-      },
-      "x-nullable": false,
-      "x-omitempty": false
-    },
     "route.Route": {
       "type": "object",
       "properties": {
@@ -4737,7 +4741,7 @@
           "x-nullable": true
         },
         "port": {
-          "$ref": "#/definitions/route.Port",
+          "$ref": "#/definitions/github_com_yusing_go-proxy_internal_route_types.Port",
           "x-nullable": false,
           "x-omitempty": false
         },
