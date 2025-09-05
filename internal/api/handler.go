@@ -117,11 +117,13 @@ func NewHandler() *gin.Engine {
 		metrics := v1.Group("/metrics")
 		{
 			metrics.GET("/system_info", metricsApi.SystemInfo)
+			metrics.GET("/all_system_info", metricsApi.AllSystemInfo)
 			metrics.GET("/uptime", metricsApi.Uptime)
 		}
 
 		docker := v1.Group("/docker")
 		{
+			docker.GET("/container/:id", dockerApi.GetContainer)
 			docker.GET("/containers", dockerApi.Containers)
 			docker.GET("/info", dockerApi.Info)
 			docker.GET("/logs/:server/:container", dockerApi.Logs)
