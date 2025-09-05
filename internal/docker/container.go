@@ -144,9 +144,11 @@ var databaseMPs = map[string]struct{}{
 }
 
 func isDatabase(c *types.Container) bool {
-	for _, m := range c.Mounts.Iter {
-		if _, ok := databaseMPs[m]; ok {
-			return true
+	if c.Mounts != nil { // only happens in test
+		for _, m := range c.Mounts.Iter {
+			if _, ok := databaseMPs[m]; ok {
+				return true
+			}
 		}
 	}
 

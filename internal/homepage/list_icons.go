@@ -120,6 +120,10 @@ func InitIconListCache() {
 	})
 }
 
+func TestClearIconsCache() {
+	clear(iconsCache.Icons)
+}
+
 func ListAvailableIcons() (*Cache, error) {
 	if common.IsTest {
 		return iconsCache, nil
