@@ -148,8 +148,6 @@ func SetItemSortOrder(c *gin.Context) {
 }
 
 // @x-id				"set-item-all-sort-order"
-
-// @x-id				"set-item-all-sort-order"
 // @BasePath		/api/v1
 // @Summary		Set homepage item all sort order
 // @Description	Set homepage item all sort order.
@@ -171,8 +169,6 @@ func SetItemAllSortOrder(c *gin.Context) {
 	overrides.SetAllSortOrder(params.Which, params.Value)
 	c.JSON(http.StatusOK, apitypes.Success("success"))
 }
-
-// @x-id				"set-item-fav-sort-order"
 
 // @x-id				"set-item-fav-sort-order"
 // @BasePath		/api/v1
