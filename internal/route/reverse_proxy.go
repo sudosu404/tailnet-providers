@@ -175,13 +175,13 @@ func (r *ReveseProxyRoute) addToLoadBalancer(parent task.Parent) {
 		_ = lb.Start(parent) // always return nil
 		linked = &ReveseProxyRoute{
 			Route: &Route{
-				Alias:     cfg.Link,
-				Homepage:  r.Homepage,
-				HealthMon: lb,
+				Alias:    cfg.Link,
+				Homepage: r.Homepage,
 			},
 			loadBalancer: lb,
 			handler:      lb,
 		}
+		linked.SetHealthMonitor(lb)
 		routes.HTTP.AddKey(cfg.Link, linked)
 		r.task.OnFinished("remove_loadbalancer_route", func() {
 			routes.HTTP.DelKey(cfg.Link)
