@@ -102,6 +102,7 @@ func (w DockerWatcher) EventsWithOptions(ctx context.Context, options DockerList
 				retry := time.NewTicker(dockerWatcherRetryInterval)
 				defer retry.Stop()
 				ok := false
+			outer:
 				for !ok {
 					select {
 					case <-ctx.Done():
@@ -109,7 +110,7 @@ func (w DockerWatcher) EventsWithOptions(ctx context.Context, options DockerList
 					case <-retry.C:
 						if checkConnection(ctx, client) {
 							ok = true
-							break
+							break outer
 						}
 					}
 				}
