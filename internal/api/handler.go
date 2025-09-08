@@ -130,7 +130,7 @@ func NewHandler() *gin.Engine {
 			docker.GET("/container/:id", dockerApi.GetContainer)
 			docker.GET("/containers", dockerApi.Containers)
 			docker.GET("/info", dockerApi.Info)
-			docker.GET("/logs/:server/:container", dockerApi.Logs)
+			docker.GET("/logs/:id", dockerApi.Logs)
 			docker.POST("/start", dockerApi.Start)
 			docker.POST("/stop", dockerApi.Stop)
 			docker.POST("/restart", dockerApi.Restart)
