@@ -67,6 +67,9 @@ func NewFileProvider(filename string) (p *Provider, err error) {
 }
 
 func NewDockerProvider(name string, dockerHost string) *Provider {
+	if dockerHost == common.DockerHostFromEnv {
+		dockerHost = common.GetEnvString("DOCKER_HOST", client.DefaultDockerHost)
+	}
 	p := newProvider(provider.ProviderTypeDocker)
 	p.ProviderImpl = DockerProviderImpl(name, dockerHost)
 	p.watcher = p.NewWatcher()

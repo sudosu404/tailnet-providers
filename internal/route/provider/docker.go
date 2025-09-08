@@ -8,7 +8,6 @@ import (
 	"github.com/goccy/go-yaml"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
-	"github.com/yusing/go-proxy/internal/common"
 	"github.com/yusing/go-proxy/internal/docker"
 	"github.com/yusing/go-proxy/internal/gperr"
 	"github.com/yusing/go-proxy/internal/route"
@@ -30,10 +29,7 @@ const (
 
 var ErrAliasRefIndexOutOfRange = gperr.New("index out of range")
 
-func DockerProviderImpl(name, dockerHost string) ProviderImpl {
-	if dockerHost == common.DockerHostFromEnv {
-		dockerHost = common.GetEnvString("DOCKER_HOST", client.DefaultDockerHost)
-	}
+func DockerProviderImpl(name, dockerHost string, isNerdctl bool) ProviderImpl {
 	return &DockerProvider{
 		name,
 		dockerHost,
@@ -62,7 +58,12 @@ func (p *DockerProvider) NewWatcher() watcher.Watcher {
 }
 
 func (p *DockerProvider) loadRoutesImpl() (route.Routes, gperr.Error) {
-	containers, err := docker.ListContainers(p.dockerHost)
+	var (
+		containers []container.Summary
+		err        error
+	)
+	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
+		containers, err = docker.ListContainers(ctx, p.dockerHost)
 	if err != nil {
 		return nil, gperr.Wrap(err)
 	}
