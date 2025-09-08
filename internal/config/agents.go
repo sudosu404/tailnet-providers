@@ -9,10 +9,10 @@ import (
 )
 
 func (cfg *Config) VerifyNewAgent(host string, ca agent.PEMPair, client agent.PEMPair) (int, gperr.Error) {
-	if slices.ContainsFunc(cfg.value.Providers.Agents, func(a *agent.AgentConfig) bool {
-		return a.Addr == host
-	}) {
-		return 0, gperr.New("agent already exists")
+	for _, a := range cfg.value.Providers.Agents {
+		if a.Addr == host {
+			return 0, gperr.New("agent already exists")
+		}
 	}
 
 	agentCfg := agent.AgentConfig{
@@ -28,11 +28,14 @@ func (cfg *Config) VerifyNewAgent(host string, ca agent.PEMPair, client agent.PE
 		return 0, gperr.Errorf("provider %s already exists", provider.String())
 	}
 
+	// agent must be added before loading routes
+	agent.AddAgent(&agentCfg)
 	err = provider.LoadRoutes()
 	if err != nil {
+		cfg.providers.Delete(provider.String())
+		agent.RemoveAgent(&agentCfg)
 		return 0, gperr.Wrap(err, "failed to load routes")
 	}
 
-	agent.AddAgent(&agentCfg)
 	return provider.NumRoutes(), nil
 }
