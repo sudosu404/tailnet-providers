@@ -63,6 +63,10 @@ Have questions? Ask [ChatGPT](https://chatgpt.com/g/g-6825390374b481919ad482f2e4
   - Automatic SSL certificate management with Let's Encrypt ([using DNS-01 Challenge](https://docs.godoxy.dev/DNS-01-Providers))
   - Auto-configuration for Docker containers
   - Hot-reloading of configurations and container state changes
+- **Container Runtime Support**
+  - Docker
+  - Nerdctl
+  - Podman
 - **Idle-sleep**: stop and wake containers based on traffic _(see [screenshots](#idlesleeper))_
   - Docker containers
   - Proxmox LXCs
@@ -70,6 +74,7 @@ Have questions? Ask [ChatGPT](https://chatgpt.com/g/g-6825390374b481919ad482f2e4
   - HTTP reserve proxy
   - TCP/UDP port forwarding
   - **OpenID Connect support**: SSO and secure your apps easily
+  - **ForwardAuth support**: integrate with any auth provider (e.g. TinyAuth)
 - **Customization**
   - [HTTP middlewares](https://docs.godoxy.dev/Middlewares)
   - [Custom error pages support](https://docs.godoxy.dev/Custom-Error-Pages)
