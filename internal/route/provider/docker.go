@@ -1,15 +1,19 @@
 package provider
 
 import (
+	"context"
 	"fmt"
 	"strconv"
+	"time"
 
-	"github.com/docker/docker/client"
+	"github.com/docker/docker/api/types/container"
 	"github.com/goccy/go-yaml"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
+	"github.com/yusing/go-proxy/agent/pkg/agent"
 	"github.com/yusing/go-proxy/internal/docker"
 	"github.com/yusing/go-proxy/internal/gperr"
+	"github.com/yusing/go-proxy/internal/nerdctl"
 	"github.com/yusing/go-proxy/internal/route"
 	"github.com/yusing/go-proxy/internal/serialization"
 	"github.com/yusing/go-proxy/internal/types"
@@ -19,6 +23,7 @@ import (
 
 type DockerProvider struct {
 	name, dockerHost string
+	runtime          agent.ContainerRuntime
 	l                zerolog.Logger
 }
 
@@ -29,11 +34,12 @@ const (
 
 var ErrAliasRefIndexOutOfRange = gperr.New("index out of range")
 
-func DockerProviderImpl(name, dockerHost string, isNerdctl bool) ProviderImpl {
+func DockerProviderImpl(name, dockerHost string, runtime agent.ContainerRuntime) ProviderImpl {
 	return &DockerProvider{
 		name,
 		dockerHost,
-		log.With().Str("type", "docker").Str("name", name).Logger(),
+		runtime,
+		log.With().Str("type", "docker").Str("name", name).Str("runtime", string(runtime)).Logger(),
 	}
 }
 
@@ -54,6 +60,9 @@ func (p *DockerProvider) Logger() *zerolog.Logger {
 }
 
 func (p *DockerProvider) NewWatcher() watcher.Watcher {
+	if p.runtime == agent.ContainerRuntimeNerdctl {
+		return watcher.NewNerdctlWatcher(p.dockerHost)
+	}
 	return watcher.NewDockerWatcher(p.dockerHost)
 }
 
@@ -63,7 +72,12 @@ func (p *DockerProvider) loadRoutesImpl() (route.Routes, gperr.Error) {
 		err        error
 	)
 	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
+	defer cancel()
+	if p.runtime == agent.ContainerRuntimeNerdctl {
+		containers, err = nerdctl.ListContainers(ctx, p.dockerHost)
+	} else {
 		containers, err = docker.ListContainers(ctx, p.dockerHost)
+	}
 	if err != nil {
 		return nil, gperr.Wrap(err)
 	}

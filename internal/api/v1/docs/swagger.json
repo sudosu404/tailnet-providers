@@ -2176,6 +2176,11 @@
           "x-nullable": false,
           "x-omitempty": false
         },
+        "is_nerdctl": {
+          "type": "boolean",
+          "x-nullable": false,
+          "x-omitempty": false
+        },
         "name": {
           "type": "string",
           "x-nullable": false,
@@ -3368,6 +3373,19 @@
         "type"
       ],
       "properties": {
+        "container_runtime": {
+          "default": "docker",
+          "enum": [
+            "docker",
+            "podman",
+            "nerdctl"
+          ],
+          "allOf": [
+            {
+              "$ref": "#/definitions/agent.ContainerRuntime"
+            }
+          ]
+        },
         "host": {
           "type": "string",
           "x-nullable": false,
@@ -4129,6 +4147,11 @@
           "x-nullable": false,
           "x-omitempty": false
         },
+        "container_runtime": {
+          "$ref": "#/definitions/agent.ContainerRuntime",
+          "x-nullable": false,
+          "x-omitempty": false
+        },
         "host": {
           "type": "string",
           "x-nullable": false,
@@ -4238,6 +4261,21 @@
           "x-omitempty": false
         }
       },
+      "x-nullable": false,
+      "x-omitempty": false
+    },
+    "agent.ContainerRuntime": {
+      "type": "string",
+      "enum": [
+        "docker",
+        "podman",
+        "nerdctl"
+      ],
+      "x-enum-varnames": [
+        "ContainerRuntimeDocker",
+        "ContainerRuntimePodman",
+        "ContainerRuntimeNerdctl"
+      ],
       "x-nullable": false,
       "x-omitempty": false
     },

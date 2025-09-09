@@ -5,11 +5,14 @@ import (
 	"fmt"
 	"maps"
 	"path"
+	"strings"
 	"sync"
 	"time"
 
+	"github.com/docker/docker/client"
 	"github.com/rs/zerolog"
 	"github.com/yusing/go-proxy/agent/pkg/agent"
+	"github.com/yusing/go-proxy/internal/common"
 	"github.com/yusing/go-proxy/internal/docker"
 	"github.com/yusing/go-proxy/internal/gperr"
 	"github.com/yusing/go-proxy/internal/route"
@@ -70,8 +73,16 @@ func NewDockerProvider(name string, dockerHost string) *Provider {
 	if dockerHost == common.DockerHostFromEnv {
 		dockerHost = common.GetEnvString("DOCKER_HOST", client.DefaultDockerHost)
 	}
+	dockerHost, isNerdctl := strings.CutPrefix(dockerHost, "nerdctl://")
+	if isNerdctl {
+		dockerHost = "unix://" + dockerHost // nerdctl:///path/to/socket -> unix:///path/to/socket
+	}
+	runtime := agent.ContainerRuntimeDocker
+	if isNerdctl {
+		runtime = agent.ContainerRuntimeNerdctl
+	}
 	p := newProvider(provider.ProviderTypeDocker)
-	p.ProviderImpl = DockerProviderImpl(name, dockerHost)
+	p.ProviderImpl = DockerProviderImpl(name, dockerHost, runtime)
 	p.watcher = p.NewWatcher()
 	return p
 }
@@ -80,7 +91,7 @@ func NewAgentProvider(cfg *agent.AgentConfig) *Provider {
 	p := newProvider(provider.ProviderTypeAgent)
 	agent := &AgentProvider{
 		AgentConfig: cfg,
-		docker:      DockerProviderImpl(cfg.Name, cfg.FakeDockerHost()),
+		docker:      DockerProviderImpl(cfg.Name, cfg.FakeDockerHost(), cfg.Runtime),
 	}
 	p.ProviderImpl = agent
 	p.watcher = p.NewWatcher()

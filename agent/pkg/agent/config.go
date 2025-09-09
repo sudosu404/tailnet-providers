@@ -17,12 +17,14 @@ import (
 	"github.com/rs/zerolog/log"
 	"github.com/yusing/go-proxy/agent/pkg/certs"
 	"github.com/yusing/go-proxy/pkg"
+	"google.golang.org/grpc/credentials"
 )
 
 type AgentConfig struct {
-	Addr    string `json:"addr"`
-	Name    string `json:"name"`
-	Version string `json:"version"`
+	Addr    string           `json:"addr"`
+	Name    string           `json:"name"`
+	Version string           `json:"version"`
+	Runtime ContainerRuntime `json:"runtime"`
 
 	httpClient *http.Client
 	tlsConfig  *tls.Config
@@ -30,12 +32,14 @@ type AgentConfig struct {
 } // @name Agent
 
 const (
-	EndpointVersion    = "/version"
-	EndpointName       = "/name"
-	EndpointProxyHTTP  = "/proxy/http"
-	EndpointHealth     = "/health"
-	EndpointLogs       = "/logs"
-	EndpointSystemInfo = "/system_info"
+	EndpointVersion        = "/version"
+	EndpointName           = "/name"
+	EndpointRuntime        = "/runtime"
+	EndpointProxyHTTP      = "/proxy/http"
+	EndpointHealth         = "/health"
+	EndpointLogs           = "/logs"
+	EndpointSystemInfo     = "/system_info"
+	EndpointListContainers = "/containers/list" // nerdctl only
 
 	AgentHost = CertsDNSName
 
@@ -122,6 +126,30 @@ func (cfg *AgentConfig) StartWithCerts(ctx context.Context, ca, crt, key []byte)
 		return err
 	}
 
+	// check agent runtime
+	runtimeBytes, status, err := cfg.Fetch(ctx, EndpointRuntime)
+	if err != nil {
+		return err
+	}
+	switch status {
+	case http.StatusOK:
+		switch string(runtimeBytes) {
+		case "docker":
+			cfg.Runtime = ContainerRuntimeDocker
+		case "nerdctl":
+			cfg.Runtime = ContainerRuntimeNerdctl
+		case "podman":
+			cfg.Runtime = ContainerRuntimePodman
+		default:
+			return fmt.Errorf("invalid agent runtime: %s", runtimeBytes)
+		}
+	case http.StatusNotFound:
+		// backward compatibility, old agent does not have runtime endpoint
+		cfg.Runtime = ContainerRuntimeDocker
+	default:
+		return fmt.Errorf("failed to get agent runtime: HTTP %d %s", status, runtimeBytes)
+	}
+
 	cfg.Version = string(agentVersionBytes)
 	agentVersion := pkg.ParseVersion(cfg.Version)
 
@@ -177,6 +205,10 @@ var dialer = &net.Dialer{Timeout: 5 * time.Second}
 
 func (cfg *AgentConfig) DialContext(ctx context.Context) (net.Conn, error) {
 	return dialer.DialContext(ctx, "tcp", cfg.Addr)
+}
+
+func (cfg *AgentConfig) GrpcCredentials() credentials.TransportCredentials {
+	return credentials.NewTLS(cfg.tlsConfig)
 }
 
 func (cfg *AgentConfig) String() string {

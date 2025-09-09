@@ -3,8 +3,23 @@ services:
     image: "{{.Image}}"
     container_name: godoxy-agent
     restart: always
+    {{ if eq .ContainerRuntime "podman" -}}
+    ports:
+      - "{{.Port}}:{{.Port}}"
+    {{ else -}}
     network_mode: host # do not change this
+    {{ end -}}
     environment:
+      {{ if eq .ContainerRuntime "nerdctl" -}}
+      DOCKER_SOCKET: "/var/run/containerd/containerd.sock"
+      RUNTIME: "nerdctl"
+      {{ else if eq .ContainerRuntime "podman" -}}
+      DOCKER_SOCKET: "/var/run/podman/podman.sock"
+      RUNTIME: "podman"
+      {{ else -}}
+      DOCKER_SOCKET: "/var/run/docker.sock"
+      RUNTIME: "docker"
+      {{ end -}}
       AGENT_NAME: "{{.Name}}"
       AGENT_PORT: "{{.Port}}"
       AGENT_CA_CERT: "{{.CACert}}"
@@ -40,5 +55,12 @@ services:
       VERSION: true
       VOLUMES: false
     volumes:
+      {{ if eq .ContainerRuntime "podman" -}}
+      - /var/run/podman/podman.sock:/var/run/podman/podman.sock
+      {{ else if eq .ContainerRuntime "nerdctl" -}}
+      - /var/run/containerd/containerd.sock:/var/run/containerd/containerd.sock
+      - /var/lib/nerdctl:/var/lib/nerdctl:ro # required to read metadata like network info
+      {{ else -}}
       - /var/run/docker.sock:/var/run/docker.sock
+      {{ end -}}
       - ./data:/app/data

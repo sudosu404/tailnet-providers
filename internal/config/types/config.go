@@ -54,7 +54,7 @@ type (
 		RouteProviderList() []RouteProviderListResponse
 		SearchRoute(alias string) types.Route
 		Context() context.Context
-		VerifyNewAgent(host string, ca agent.PEMPair, client agent.PEMPair) (int, gperr.Error)
+		VerifyNewAgent(host string, ca agent.PEMPair, client agent.PEMPair, containerRuntime agent.ContainerRuntime) (int, gperr.Error)
 		AutoCertProvider() *autocert.Provider
 	}
 )

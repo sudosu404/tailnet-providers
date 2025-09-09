@@ -4,9 +4,11 @@ import (
 	"crypto/tls"
 	"crypto/x509"
 	"fmt"
+	"net"
 	"net/http"
 
 	"github.com/rs/zerolog/log"
+	"github.com/yusing/go-proxy/agent/pkg/agent"
 	"github.com/yusing/go-proxy/agent/pkg/env"
 	"github.com/yusing/go-proxy/agent/pkg/handler"
 	"github.com/yusing/go-proxy/internal/net/gphttp/server"
@@ -27,6 +29,7 @@ func StartAgentServer(parent task.Parent, opt Options) {
 		Certificates: []tls.Certificate{*opt.ServerCert},
 		ClientCAs:    caCertPool,
 		ClientAuth:   tls.RequireAndVerifyClientCert,
+		NextProtos:   []string{"h2", "http/1.1"},
 	}
 
 	if env.AgentSkipClientCertCheck {
@@ -39,5 +42,12 @@ func StartAgentServer(parent task.Parent, opt Options) {
 		TLSConfig: tlsConfig,
 	}
 
-	server.Start(parent, agentServer, nil, &log.Logger)
+	// For nerdctl runtime, use TCP multiplexing to handle both HTTP and gRPC
+	if env.Runtime == agent.ContainerRuntimeNerdctl {
+		server.Start(parent, agentServer, nil, &log.Logger, func(l net.Listener) net.Listener {
+			return NewGrpcHttpMuxListener(l, env.DockerSocket, parent.Context())
+		})
+	} else {
+		server.Start(parent, agentServer, nil, &log.Logger)
+	}
 }

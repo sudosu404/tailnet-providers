@@ -117,7 +117,7 @@ func (s *Server) Start(parent task.Parent) {
 	Start(subtask, s.https, s.acl, &s.l)
 }
 
-func Start[Server httpServer](parent task.Parent, srv Server, acl *acl.Config, logger *zerolog.Logger) (port int) {
+func Start[Server httpServer](parent task.Parent, srv Server, acl *acl.Config, logger *zerolog.Logger, tcpWrapper ...func(net.Listener) net.Listener) (port int) {
 	if srv == nil {
 		return
 	}
@@ -146,6 +146,9 @@ func Start[Server httpServer](parent task.Parent, srv Server, acl *acl.Config, l
 		}
 		if acl != nil {
 			l = acl.WrapTCP(l)
+		}
+		for _, wrapper := range tcpWrapper {
+			l = wrapper(l)
 		}
 		serveFunc = getServeFunc(l, srv.Serve)
 		task.OnCancel("stop", func() {

@@ -4,6 +4,8 @@ definitions:
     properties:
       addr:
         type: string
+      is_nerdctl:
+        type: boolean
       name:
         type: string
       version:
@@ -562,6 +564,14 @@ definitions:
     - MetricsPeriod1mo
   NewAgentRequest:
     properties:
+      container_runtime:
+        allOf:
+        - $ref: '#/definitions/agent.ContainerRuntime'
+        default: docker
+        enum:
+        - docker
+        - podman
+        - nerdctl
       host:
         type: string
       name:
@@ -934,6 +944,8 @@ definitions:
         $ref: '#/definitions/PEMPairResponse'
       client:
         $ref: '#/definitions/PEMPairResponse'
+      container_runtime:
+        $ref: '#/definitions/agent.ContainerRuntime'
       host:
         type: string
     type: object
@@ -985,6 +997,16 @@ definitions:
       status_codes:
         $ref: '#/definitions/LogFilter-StatusCodeRange'
     type: object
+  agent.ContainerRuntime:
+    enum:
+    - docker
+    - podman
+    - nerdctl
+    type: string
+    x-enum-varnames:
+    - ContainerRuntimeDocker
+    - ContainerRuntimePodman
+    - ContainerRuntimeNerdctl
   auth.UserPassAuthCallbackRequest:
     properties:
       password:

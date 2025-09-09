@@ -1,14 +1,12 @@
 package config
 
 import (
-	"slices"
-
 	"github.com/yusing/go-proxy/agent/pkg/agent"
 	"github.com/yusing/go-proxy/internal/gperr"
 	"github.com/yusing/go-proxy/internal/route/provider"
 )
 
-func (cfg *Config) VerifyNewAgent(host string, ca agent.PEMPair, client agent.PEMPair) (int, gperr.Error) {
+func (cfg *Config) VerifyNewAgent(host string, ca agent.PEMPair, client agent.PEMPair, containerRuntime agent.ContainerRuntime) (int, gperr.Error) {
 	for _, a := range cfg.value.Providers.Agents {
 		if a.Addr == host {
 			return 0, gperr.New("agent already exists")
@@ -16,7 +14,8 @@ func (cfg *Config) VerifyNewAgent(host string, ca agent.PEMPair, client agent.PE
 	}
 
 	agentCfg := agent.AgentConfig{
-		Addr: host,
+		Addr:    host,
+		Runtime: containerRuntime,
 	}
 	err := agentCfg.StartWithCerts(cfg.Task().Context(), ca.Cert, client.Cert, client.Key)
 	if err != nil {
