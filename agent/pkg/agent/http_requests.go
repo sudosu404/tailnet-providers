@@ -6,6 +6,8 @@ import (
 	"net/http"
 
 	"github.com/gorilla/websocket"
+	"github.com/yusing/go-proxy/internal/net/gphttp/reverseproxy"
+	nettypes "github.com/yusing/go-proxy/internal/net/types"
 )
 
 func (cfg *AgentConfig) Do(ctx context.Context, method, endpoint string, body io.Reader) (*http.Response, error) {
@@ -48,4 +50,15 @@ func (cfg *AgentConfig) Websocket(ctx context.Context, endpoint string) (*websoc
 	return dialer.DialContext(ctx, APIBaseURL+endpoint, http.Header{
 		"Host": {AgentHost},
 	})
+}
+
+func (cfg *AgentConfig) ReverseProxy(w http.ResponseWriter, req *http.Request, endpoint string) error {
+	rp := reverseproxy.NewReverseProxy("agent", nettypes.NewURL(AgentURL), cfg.Transport())
+	r, err := http.NewRequestWithContext(req.Context(), req.Method, APIEndpointBase+endpoint, req.Body)
+	if err != nil {
+		return err
+	}
+	r.Header = req.Header
+	rp.ServeHTTP(w, r)
+	return nil
 }

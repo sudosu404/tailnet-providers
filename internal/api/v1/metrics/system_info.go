@@ -11,8 +11,6 @@ import (
 	"github.com/yusing/go-proxy/internal/metrics/period"
 	"github.com/yusing/go-proxy/internal/metrics/systeminfo"
 	"github.com/yusing/go-proxy/internal/net/gphttp/httpheaders"
-	"github.com/yusing/go-proxy/internal/net/gphttp/reverseproxy"
-	nettypes "github.com/yusing/go-proxy/internal/net/types"
 )
 
 type SystemInfoRequest struct {
@@ -68,13 +66,10 @@ func SystemInfo(c *gin.Context) {
 		c.Status(resp.StatusCode)
 		io.Copy(c.Writer, resp.Body)
 	} else {
-		rp := reverseproxy.NewReverseProxy("agent", nettypes.NewURL(agentPkg.AgentURL), agent.Transport())
-		r, err := http.NewRequestWithContext(c.Request.Context(), c.Request.Method, agentPkg.EndpointSystemInfo+"?"+query.Encode(), c.Request.Body)
+		err := agent.ReverseProxy(c.Writer, c.Request, agentPkg.EndpointSystemInfo+"?"+query.Encode())
 		if err != nil {
-			c.Error(apitypes.InternalServerError(err, "failed to create request"))
+			c.Error(apitypes.InternalServerError(err, "failed to reverse proxy"))
 			return
 		}
-		r.Header = c.Request.Header
-		rp.ServeHTTP(c.Writer, r)
 	}
 }
