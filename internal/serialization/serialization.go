@@ -5,6 +5,7 @@ import (
 	"errors"
 	"os"
 	"reflect"
+	"regexp"
 	"strconv"
 	"strings"
 	"time"
@@ -516,7 +517,30 @@ func ConvertString(src string, dst reflect.Value) (convertible bool, convErr gpe
 	return true, Convert(reflect.ValueOf(tmp), dst, true)
 }
 
+var envRegex = regexp.MustCompile(`\$\{([^}]+)\}`) // e.g. ${CLOUDFLARE_API_KEY}
+
+func substituteEnv(data []byte) ([]byte, gperr.Error) {
+	envError := gperr.NewBuilder("env substitution error")
+	data = envRegex.ReplaceAllFunc(data, func(match []byte) []byte {
+		varName := string(match[2 : len(match)-1])
+		env, ok := os.LookupEnv(varName)
+		if !ok {
+			envError.Addf("%s is not set", varName)
+		}
+		return strconv.AppendQuote(nil, env)
+	})
+	if envError.HasError() {
+		return nil, envError.Error()
+	}
+	return data, nil
+}
+
 func UnmarshalValidateYAML[T any](data []byte, target *T) gperr.Error {
+	data, err := substituteEnv(data)
+	if err != nil {
+		return err
+	}
+
 	m := make(map[string]any)
 	if err := yaml.Unmarshal(data, &m); err != nil {
 		return gperr.Wrap(err)
@@ -525,6 +549,11 @@ func UnmarshalValidateYAML[T any](data []byte, target *T) gperr.Error {
 }
 
 func UnmarshalValidateYAMLIntercept[T any](data []byte, target *T, intercept func(m map[string]any) gperr.Error) gperr.Error {
+	data, err := substituteEnv(data)
+	if err != nil {
+		return err
+	}
+
 	m := make(map[string]any)
 	if err := yaml.Unmarshal(data, &m); err != nil {
 		return gperr.Wrap(err)
@@ -536,6 +565,11 @@ func UnmarshalValidateYAMLIntercept[T any](data []byte, target *T, intercept fun
 }
 
 func UnmarshalValidateYAMLXSync[V any](data []byte) (_ *xsync.Map[string, V], err gperr.Error) {
+	data, err = substituteEnv(data)
+	if err != nil {
+		return
+	}
+
 	m := make(map[string]any)
 	if err = gperr.Wrap(yaml.Unmarshal(data, &m)); err != nil {
 		return
