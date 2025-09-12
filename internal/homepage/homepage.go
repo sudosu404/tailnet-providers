@@ -139,10 +139,10 @@ func (c *Category) Sort(method SortMethod) {
 
 func (c *Category) sortByClicks() {
 	slices.SortStableFunc(c.Items, func(a, b *Item) int {
-		if a.Clicks < b.Clicks {
+		if a.Clicks > b.Clicks {
 			return -1
 		}
-		if a.Clicks > b.Clicks {
+		if a.Clicks < b.Clicks {
 			return 1
 		}
 		// fallback to alphabetical

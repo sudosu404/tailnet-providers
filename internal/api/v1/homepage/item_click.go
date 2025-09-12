@@ -9,7 +9,7 @@ import (
 )
 
 type HomepageOverrideItemClickParams struct {
-	Which string `query:"which" binding:"required"`
+	Which string `form:"which" binding:"required"`
 } //	@name	HomepageOverrideItemClickParams
 
 // @x-id				"item-click"

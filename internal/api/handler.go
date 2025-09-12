@@ -103,6 +103,7 @@ func NewHandler() *gin.Engine {
 			homepage.POST("/set/item_all_sort_order", homepageApi.SetItemAllSortOrder)
 			homepage.POST("/set/item_fav_sort_order", homepageApi.SetItemFavSortOrder)
 			homepage.POST("/set/category_order", homepageApi.SetCategoryOrder)
+			homepage.POST("/item_click", homepageApi.ItemClick)
 		}
 
 		cert := v1.Group("/cert")
