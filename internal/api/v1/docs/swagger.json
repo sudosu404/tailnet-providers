@@ -4030,7 +4030,7 @@
           "x-omitempty": false
         },
         "uptime": {
-          "type": "string",
+          "type": "integer",
           "x-nullable": false,
           "x-omitempty": false
         }

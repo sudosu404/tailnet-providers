@@ -853,7 +853,7 @@ definitions:
       proxies:
         $ref: '#/definitions/ProxyStats'
       uptime:
-        type: string
+        type: integer
     type: object
   StatusCodeRange:
     properties:
