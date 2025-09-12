@@ -14,6 +14,7 @@ type OverrideConfig struct {
 	CategoryOrder  map[string]int        `json:"category_order"`
 	AllSortOrder   map[string]int        `json:"all_sort_order"`
 	FavSortOrder   map[string]int        `json:"fav_sort_order"`
+	ItemClicks     map[string]int        `json:"item_clicks"`
 	ItemVisibility map[string]bool       `json:"item_visibility"`
 	ItemFavorite   map[string]bool       `json:"item_favorite"`
 	mu             sync.RWMutex
@@ -31,6 +32,7 @@ func (c *OverrideConfig) Initialize() {
 	c.CategoryOrder = make(map[string]int)
 	c.AllSortOrder = make(map[string]int)
 	c.FavSortOrder = make(map[string]int)
+	c.ItemClicks = make(map[string]int)
 	c.ItemVisibility = make(map[string]bool)
 	c.ItemFavorite = make(map[string]bool)
 }
@@ -70,6 +72,9 @@ func (c *OverrideConfig) GetOverride(item Item) Item {
 	}
 	if favSortOrder, ok := c.FavSortOrder[item.Alias]; ok {
 		item.FavSortOrder = favSortOrder
+	}
+	if clicks, ok := c.ItemClicks[item.Alias]; ok {
+		item.Clicks = clicks
 	}
 
 	if item.Category == "" {
@@ -116,4 +121,10 @@ func (c *OverrideConfig) SetCategoryOrder(key string, value int) {
 	c.mu.Lock()
 	defer c.mu.Unlock()
 	c.CategoryOrder[key] = value
+}
+
+func (c *OverrideConfig) IncrementItemClicks(key string) {
+	c.mu.Lock()
+	defer c.mu.Unlock()
+	c.ItemClicks[key]++
 }

@@ -43,6 +43,8 @@ type (
 		FavSortOrder int `json:"fav_sort_order"` // sort order in favorite
 		AllSortOrder int `json:"all_sort_order"` // sort order in all
 
+		Clicks int `json:"clicks"`
+
 		Widgets []Widget `json:"widgets,omitempty"`
 
 		Alias       string `json:"alias"`
