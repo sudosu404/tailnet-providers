@@ -5,7 +5,6 @@ package dnsproviders
 import (
 	"github.com/go-acme/lego/v4/providers/dns/acmedns"
 	"github.com/go-acme/lego/v4/providers/dns/active24"
-	"github.com/go-acme/lego/v4/providers/dns/alidns"
 	"github.com/go-acme/lego/v4/providers/dns/allinkl"
 	"github.com/go-acme/lego/v4/providers/dns/arvancloud"
 	"github.com/go-acme/lego/v4/providers/dns/auroradns"
@@ -63,7 +62,6 @@ import (
 	"github.com/go-acme/lego/v4/providers/dns/hosttech"
 	"github.com/go-acme/lego/v4/providers/dns/httpnet"
 	"github.com/go-acme/lego/v4/providers/dns/httpreq"
-	"github.com/go-acme/lego/v4/providers/dns/huaweicloud"
 	"github.com/go-acme/lego/v4/providers/dns/hurricane"
 	"github.com/go-acme/lego/v4/providers/dns/hyperone"
 	"github.com/go-acme/lego/v4/providers/dns/ibmcloud"
@@ -130,7 +128,6 @@ import (
 	"github.com/go-acme/lego/v4/providers/dns/spaceship"
 	"github.com/go-acme/lego/v4/providers/dns/stackpath"
 	"github.com/go-acme/lego/v4/providers/dns/technitium"
-	"github.com/go-acme/lego/v4/providers/dns/tencentcloud"
 	"github.com/go-acme/lego/v4/providers/dns/timewebcloud"
 	"github.com/go-acme/lego/v4/providers/dns/transip"
 	"github.com/go-acme/lego/v4/providers/dns/ultradns"
@@ -165,7 +162,6 @@ func InitProviders() {
 	autocert.Providers[Pseudo] = autocert.DNSProvider(NewDummyDefaultConfig, NewDummyDNSProviderConfig)
 	autocert.Providers["acmedns"] = autocert.DNSProvider(acmedns.NewDefaultConfig, acmedns.NewDNSProviderConfig)
 	autocert.Providers["active24"] = autocert.DNSProvider(active24.NewDefaultConfig, active24.NewDNSProviderConfig)
-	autocert.Providers["alidns"] = autocert.DNSProvider(alidns.NewDefaultConfig, alidns.NewDNSProviderConfig)
 	autocert.Providers["allinkl"] = autocert.DNSProvider(allinkl.NewDefaultConfig, allinkl.NewDNSProviderConfig)
 	autocert.Providers["arvancloud"] = autocert.DNSProvider(arvancloud.NewDefaultConfig, arvancloud.NewDNSProviderConfig)
 	autocert.Providers["auroradns"] = autocert.DNSProvider(auroradns.NewDefaultConfig, auroradns.NewDNSProviderConfig)
@@ -223,7 +219,6 @@ func InitProviders() {
 	autocert.Providers["hosttech"] = autocert.DNSProvider(hosttech.NewDefaultConfig, hosttech.NewDNSProviderConfig)
 	autocert.Providers["httpnet"] = autocert.DNSProvider(httpnet.NewDefaultConfig, httpnet.NewDNSProviderConfig)
 	autocert.Providers["httpreq"] = autocert.DNSProvider(httpreq.NewDefaultConfig, httpreq.NewDNSProviderConfig)
-	autocert.Providers["huaweicloud"] = autocert.DNSProvider(huaweicloud.NewDefaultConfig, huaweicloud.NewDNSProviderConfig)
 	autocert.Providers["hurricane"] = autocert.DNSProvider(hurricane.NewDefaultConfig, hurricane.NewDNSProviderConfig)
 	autocert.Providers["hyperone"] = autocert.DNSProvider(hyperone.NewDefaultConfig, hyperone.NewDNSProviderConfig)
 	autocert.Providers["ibmcloud"] = autocert.DNSProvider(ibmcloud.NewDefaultConfig, ibmcloud.NewDNSProviderConfig)
@@ -290,7 +285,6 @@ func InitProviders() {
 	autocert.Providers["spaceship"] = autocert.DNSProvider(spaceship.NewDefaultConfig, spaceship.NewDNSProviderConfig)
 	autocert.Providers["stackpath"] = autocert.DNSProvider(stackpath.NewDefaultConfig, stackpath.NewDNSProviderConfig)
 	autocert.Providers["technitium"] = autocert.DNSProvider(technitium.NewDefaultConfig, technitium.NewDNSProviderConfig)
-	autocert.Providers["tencentcloud"] = autocert.DNSProvider(tencentcloud.NewDefaultConfig, tencentcloud.NewDNSProviderConfig)
 	autocert.Providers["timewebcloud"] = autocert.DNSProvider(timewebcloud.NewDefaultConfig, timewebcloud.NewDNSProviderConfig)
 	autocert.Providers["transip"] = autocert.DNSProvider(transip.NewDefaultConfig, transip.NewDNSProviderConfig)
 	autocert.Providers["ultradns"] = autocert.DNSProvider(ultradns.NewDefaultConfig, ultradns.NewDNSProviderConfig)

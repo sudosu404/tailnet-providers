@@ -36,7 +36,11 @@ blacklists = [
   "namesilo",
   "binarylane",
   "edgeone",
+  # has some annoying dependencies
   "baiducloud",
+  "huaweicloud",
+  "tencentcloud",
+  "alidns"
 ]
 
 for item in data:
