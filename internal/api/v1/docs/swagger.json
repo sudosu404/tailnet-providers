@@ -1166,12 +1166,6 @@
         "parameters": [
           {
             "type": "string",
-            "description": "Search query",
-            "name": "search",
-            "in": "query"
-          },
-          {
-            "type": "string",
             "description": "Category filter",
             "name": "category",
             "in": "query"
@@ -1180,6 +1174,24 @@
             "type": "string",
             "description": "Provider filter",
             "name": "provider",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "Search query",
+            "name": "search",
+            "in": "query"
+          },
+          {
+            "enum": [
+              "clicks",
+              "alphabetical",
+              "custom"
+            ],
+            "type": "string",
+            "default": "alphabetical",
+            "description": "Sort method",
+            "name": "sort_method",
             "in": "query"
           }
         ],

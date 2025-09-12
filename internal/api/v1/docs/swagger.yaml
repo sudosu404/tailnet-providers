@@ -2190,10 +2190,6 @@ paths:
       - application/json
       description: Homepage items
       parameters:
-      - description: Search query
-        in: query
-        name: search
-        type: string
       - description: Category filter
         in: query
         name: category
@@ -2201,6 +2197,19 @@ paths:
       - description: Provider filter
         in: query
         name: provider
+        type: string
+      - description: Search query
+        in: query
+        name: search
+        type: string
+      - default: alphabetical
+        description: Sort method
+        enum:
+        - clicks
+        - alphabetical
+        - custom
+        in: query
+        name: sort_method
         type: string
       produces:
       - application/json

@@ -18,9 +18,11 @@ import (
 )
 
 type HomepageItemsRequest struct {
-	SearchQuery string `form:"search" validate:"omitempty"`
-	Category    string `form:"category" validate:"omitempty"`
-	Provider    string `form:"provider" validate:"omitempty"`
+	SearchQuery string `form:"search"`   // Search query
+	Category    string `form:"category"` // Category filter
+	Provider    string `form:"provider"` // Provider filter
+	// Sort method
+	SortMethod homepage.SortMethod `form:"sort_method" default:"alphabetical" binding:"omitempty,oneof=clicks alphabetical custom"`
 } //	@name	HomepageItemsRequest
 
 // @x-id				"items"
@@ -30,9 +32,7 @@ type HomepageItemsRequest struct {
 // @Tags			homepage,websocket
 // @Accept			json
 // @Produce		json
-// @Param			search		query		string	false	"Search query"
-// @Param			category	query		string	false	"Category filter"
-// @Param			provider	query		string	false	"Provider filter"
+// @Param			query		query		HomepageItemsRequest	false	"Query parameters"
 // @Success		200			{object}	homepage.Homepage
 // @Failure		400			{object}	apitypes.ErrorResponse
 // @Failure		403			{object}	apitypes.ErrorResponse
@@ -114,7 +114,7 @@ func HomepageItems(proto, hostname string, request *HomepageItemsRequest) homepa
 	ret := hp.Values()
 	// sort items in each category
 	for _, category := range ret {
-		category.Sort()
+		category.Sort(request.SortMethod)
 	}
 	// sort categories
 	overrides := homepage.GetOverrideConfig()

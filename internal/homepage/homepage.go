@@ -2,6 +2,7 @@ package homepage
 
 import (
 	"slices"
+	"strings"
 
 	"github.com/yusing/ds/ordered"
 	"github.com/yusing/go-proxy/internal/homepage/widgets"
@@ -52,6 +53,8 @@ type (
 		OriginURL   string `json:"origin_url"`
 		ContainerID string `json:"container_id,omitempty" extensions:"x-nullable"`
 	} // @name HomepageItem
+
+	SortMethod string // @name HomepageSortMethod
 )
 
 const (
@@ -59,6 +62,12 @@ const (
 	CategoryFavorites = "Favorites"
 	CategoryHidden    = "Hidden"
 	CategoryOthers    = "Others"
+)
+
+const (
+	SortMethodClicks       = "clicks"       // @name HomepageSortMethodClicks
+	SortMethodAlphabetical = "alphabetical" // @name HomepageSortMethodAlphabetical
+	SortMethodCustom       = "custom"       // @name HomepageSortMethodCustom
 )
 
 func init() {
@@ -117,7 +126,37 @@ func (c HomepageMap) add(item *Item, categoryName string) {
 	category.Items = append(category.Items, item)
 }
 
-func (c *Category) Sort() {
+func (c *Category) Sort(method SortMethod) {
+	switch method {
+	case SortMethodClicks:
+		c.sortByClicks()
+	case SortMethodAlphabetical:
+		c.sortByAlphabetical()
+	case SortMethodCustom:
+		c.sortByCustom()
+	}
+}
+
+func (c *Category) sortByClicks() {
+	slices.SortStableFunc(c.Items, func(a, b *Item) int {
+		if a.Clicks < b.Clicks {
+			return -1
+		}
+		if a.Clicks > b.Clicks {
+			return 1
+		}
+		// fallback to alphabetical
+		return strings.Compare(a.Name, b.Name)
+	})
+}
+
+func (c *Category) sortByAlphabetical() {
+	slices.SortStableFunc(c.Items, func(a, b *Item) int {
+		return strings.Compare(a.Name, b.Name)
+	})
+}
+
+func (c *Category) sortByCustom() {
 	switch c.Name {
 	case CategoryFavorites:
 		slices.SortStableFunc(c.Items, func(a, b *Item) int {
