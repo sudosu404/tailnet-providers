@@ -13,10 +13,10 @@ import (
 	"github.com/rs/zerolog/log"
 	"github.com/sudosu404/providers/internal/common"
 	"github.com/sudosu404/providers/internal/serialization"
-	httputils "github.com/sudosu404/tailnet-utils/http"
-	strutils "github.com/sudosu404/tailnet-utils/strings"
-	"github.com/sudosu404/tailnet-utils/synk"
-	"github.com/sudosu404/tailnet-utils/task"
+	httputils "github.com/sudosu404/go-utils/http"
+	strutils "github.com/sudosu404/go-utils/strings"
+	"github.com/sudosu404/go-utils/synk"
+	"github.com/sudosu404/go-utils/task"
 )
 
 type (

@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/sudosu404/providers/internal/homepage"
 	"github.com/sudosu404/providers/internal/route/routes"
-	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
+	apitypes "github.com/sudosu404/go-utils/apitypes"
 
 	_ "unsafe"
 )

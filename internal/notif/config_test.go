@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/sudosu404/providers/internal/serialization"
-	expect "github.com/sudosu404/tailnet-utils/testing"
+	expect "github.com/sudosu404/go-utils/testing"
 )
 
 func TestNotificationConfig(t *testing.T) {

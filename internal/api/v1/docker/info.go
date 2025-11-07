@@ -6,10 +6,10 @@ import (
 
 	dockerSystem "github.com/docker/docker/api/types/system"
 	"github.com/gin-gonic/gin"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	strutils "github.com/sudosu404/tailnet-utils/strings"
+	gperr "github.com/sudosu404/go-utils/errs"
+	strutils "github.com/sudosu404/go-utils/strings"
 
-	_ "github.com/sudosu404/tailnet-utils/apitypes"
+	_ "github.com/sudosu404/go-utils/apitypes"
 )
 
 type containerStats struct {

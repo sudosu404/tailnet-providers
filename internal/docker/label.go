@@ -6,8 +6,8 @@ import (
 
 	"github.com/goccy/go-yaml"
 	"github.com/sudosu404/providers/internal/types"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	strutils "github.com/sudosu404/tailnet-utils/strings"
+	gperr "github.com/sudosu404/go-utils/errs"
+	strutils "github.com/sudosu404/go-utils/strings"
 )
 
 var ErrInvalidLabel = gperr.New("invalid label")

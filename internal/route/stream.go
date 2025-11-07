@@ -13,8 +13,8 @@ import (
 	"github.com/sudosu404/providers/internal/route/stream"
 	"github.com/sudosu404/providers/internal/types"
 	"github.com/sudosu404/providers/internal/watcher/health/monitor"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	"github.com/sudosu404/tailnet-utils/task"
+	gperr "github.com/sudosu404/go-utils/errs"
+	"github.com/sudosu404/go-utils/task"
 )
 
 // TODO: support stream load balance.

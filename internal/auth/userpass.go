@@ -8,9 +8,9 @@ import (
 	"github.com/bytedance/sonic"
 	"github.com/golang-jwt/jwt/v5"
 	"github.com/sudosu404/providers/internal/common"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	httputils "github.com/sudosu404/tailnet-utils/http"
-	strutils "github.com/sudosu404/tailnet-utils/strings"
+	gperr "github.com/sudosu404/go-utils/errs"
+	httputils "github.com/sudosu404/go-utils/http"
+	strutils "github.com/sudosu404/go-utils/strings"
 	"golang.org/x/crypto/bcrypt"
 )
 

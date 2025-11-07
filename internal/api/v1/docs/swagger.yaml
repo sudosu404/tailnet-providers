@@ -1601,18 +1601,18 @@ definitions:
         type: string
     type: object
 externalDocs:
-  description: GoDoxy Docs
+  description: Tailnet Docs
   url: https://docs.godoxy.dev
 info:
   contact:
     name: Yusing
     url: https://github.com/sudosu404/providers/issues
-  description: GoDoxy API
+  description: Tailnet API
   license:
     name: MIT
     url: https://github.com/sudosu404/providers/blob/main/LICENSE
   termsOfService: https://github.com/sudosu404/providers/blob/main/LICENSE
-  title: GoDoxy API
+  title: Tailnet API
   version: "1.0"
 paths:
   /agent/create:
@@ -3132,7 +3132,7 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/ErrorResponse'
-      summary: Get GoDoxy stats
+      summary: Get Tailnet stats
       tags:
       - v1
       - websocket
@@ -3141,7 +3141,7 @@ paths:
     get:
       consumes:
       - application/json
-      description: Get the version of the GoDoxy
+      description: Get the version of the Tailnet
       produces:
       - text/plain
       responses:

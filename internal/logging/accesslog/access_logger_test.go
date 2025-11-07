@@ -10,8 +10,8 @@ import (
 
 	. "github.com/sudosu404/providers/internal/logging/accesslog"
 	"github.com/sudosu404/providers/internal/utils"
-	"github.com/sudosu404/tailnet-utils/task"
-	expect "github.com/sudosu404/tailnet-utils/testing"
+	"github.com/sudosu404/go-utils/task"
+	expect "github.com/sudosu404/go-utils/testing"
 )
 
 const (

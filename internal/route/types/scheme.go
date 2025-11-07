@@ -4,7 +4,7 @@ import (
 	"strconv"
 
 	"github.com/bytedance/sonic"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
+	gperr "github.com/sudosu404/go-utils/errs"
 )
 
 type Scheme uint8

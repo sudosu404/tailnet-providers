@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	gperr "github.com/sudosu404/tailnet-utils/errs"
+	gperr "github.com/sudosu404/go-utils/errs"
 )
 
 type CustomValidatingStruct struct {

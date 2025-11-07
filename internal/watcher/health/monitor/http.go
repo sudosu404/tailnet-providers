@@ -8,7 +8,7 @@ import (
 
 	"github.com/valyala/fasthttp"
 	"github.com/sudosu404/providers/internal/types"
-	"github.com/sudosu404/tailnet-utils/version"
+	"github.com/sudosu404/go-utils/version"
 )
 
 type HTTPHealthMonitor struct {
@@ -49,7 +49,7 @@ func (mon *HTTPHealthMonitor) CheckHealth() (types.HealthCheckResult, error) {
 
 	req.SetRequestURI(mon.url.Load().JoinPath(mon.config.Path).String())
 	req.Header.SetMethod(mon.method)
-	req.Header.Set("User-Agent", "GoDoxy/"+version.Get().String())
+	req.Header.Set("User-Agent", "Tailnet/"+version.Get().String())
 	req.Header.Set("Accept", "text/plain,text/html,*/*;q=0.8")
 	req.Header.Set("Accept-Encoding", "identity")
 	req.Header.Set("Cache-Control", "no-cache")

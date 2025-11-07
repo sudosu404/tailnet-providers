@@ -10,7 +10,7 @@ import (
 
 	"github.com/luthermonson/go-proxmox"
 	"github.com/sudosu404/providers/internal/net/gphttp"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
+	gperr "github.com/sudosu404/go-utils/errs"
 )
 
 type Config struct {

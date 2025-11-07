@@ -11,7 +11,7 @@ import (
 	"github.com/sudosu404/providers/internal/route"
 	"github.com/sudosu404/providers/internal/serialization"
 	W "github.com/sudosu404/providers/internal/watcher"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
+	gperr "github.com/sudosu404/go-utils/errs"
 )
 
 type FileProvider struct {

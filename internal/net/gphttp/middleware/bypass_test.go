@@ -14,9 +14,9 @@ import (
 	. "github.com/sudosu404/providers/internal/net/gphttp/middleware"
 	"github.com/sudosu404/providers/internal/route"
 	routeTypes "github.com/sudosu404/providers/internal/route/types"
-	"github.com/sudosu404/tailnet-utils/http/reverseproxy"
-	"github.com/sudosu404/tailnet-utils/task"
-	expect "github.com/sudosu404/tailnet-utils/testing"
+	"github.com/sudosu404/go-utils/http/reverseproxy"
+	"github.com/sudosu404/go-utils/task"
+	expect "github.com/sudosu404/go-utils/testing"
 )
 
 func noOpHandler(w http.ResponseWriter, r *http.Request) {}

@@ -6,8 +6,8 @@ import (
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 	"github.com/sudosu404/providers/internal/notif"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	"github.com/sudosu404/tailnet-utils/task"
+	gperr "github.com/sudosu404/go-utils/errs"
+	"github.com/sudosu404/go-utils/task"
 )
 
 var instance *MaxMind

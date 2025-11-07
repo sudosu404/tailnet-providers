@@ -6,10 +6,10 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/sudosu404/providers/internal/route/routes"
-	"github.com/sudosu404/tailnet-utils/http/httpheaders"
-	"github.com/sudosu404/tailnet-utils/http/websocket"
+	"github.com/sudosu404/go-utils/http/httpheaders"
+	"github.com/sudosu404/go-utils/http/websocket"
 
-	_ "github.com/sudosu404/tailnet-utils/apitypes"
+	_ "github.com/sudosu404/go-utils/apitypes"
 )
 
 type HealthMap = map[string]routes.HealthInfo //	@name	HealthMap

@@ -10,10 +10,10 @@ import (
 	"github.com/sudosu404/providers/agent/pkg/server"
 	"github.com/sudosu404/providers/internal/metrics/systeminfo"
 	socketproxy "github.com/sudosu404/providers/socketproxy/pkg"
-	httpServer "github.com/sudosu404/tailnet-utils/server"
-	strutils "github.com/sudosu404/tailnet-utils/strings"
-	"github.com/sudosu404/tailnet-utils/task"
-	"github.com/sudosu404/tailnet-utils/version"
+	httpServer "github.com/sudosu404/go-utils/server"
+	strutils "github.com/sudosu404/go-utils/strings"
+	"github.com/sudosu404/go-utils/task"
+	"github.com/sudosu404/go-utils/version"
 )
 
 func main() {
@@ -43,7 +43,7 @@ func main() {
 		log.Fatal().Err(err).Msg("init SSL error")
 	}
 
-	log.Info().Msgf("GoDoxy Agent version %s", version.Get())
+	log.Info().Msgf("Tailnet Agent version %s", version.Get())
 	log.Info().Msgf("Agent name: %s", env.AgentName)
 	log.Info().Msgf("Agent port: %d", env.AgentPort)
 	log.Info().Msgf("Agent runtime: %s", env.Runtime)

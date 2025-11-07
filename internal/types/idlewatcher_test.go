@@ -3,7 +3,7 @@ package types
 import (
 	"testing"
 
-	expect "github.com/sudosu404/tailnet-utils/testing"
+	expect "github.com/sudosu404/go-utils/testing"
 )
 
 func TestValidateStartEndpoint(t *testing.T) {

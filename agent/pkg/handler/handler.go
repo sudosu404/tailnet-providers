@@ -10,7 +10,7 @@ import (
 	"github.com/sudosu404/providers/agent/pkg/env"
 	"github.com/sudosu404/providers/internal/metrics/systeminfo"
 	socketproxy "github.com/sudosu404/providers/socketproxy/pkg"
-	"github.com/sudosu404/tailnet-utils/version"
+	"github.com/sudosu404/go-utils/version"
 )
 
 type ServeMux struct{ *http.ServeMux }

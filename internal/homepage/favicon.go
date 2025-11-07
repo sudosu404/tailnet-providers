@@ -16,10 +16,10 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/vincent-petithory/dataurl"
 	gphttp "github.com/sudosu404/providers/internal/net/gphttp"
-	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
-	"github.com/sudosu404/tailnet-utils/cache"
-	httputils "github.com/sudosu404/tailnet-utils/http"
-	strutils "github.com/sudosu404/tailnet-utils/strings"
+	apitypes "github.com/sudosu404/go-utils/apitypes"
+	"github.com/sudosu404/go-utils/cache"
+	httputils "github.com/sudosu404/go-utils/http"
+	strutils "github.com/sudosu404/go-utils/strings"
 )
 
 type FetchResult struct {

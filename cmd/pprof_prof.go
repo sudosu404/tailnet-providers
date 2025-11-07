@@ -10,7 +10,7 @@ import (
 	"time"
 
 	"github.com/rs/zerolog/log"
-	strutils "github.com/sudosu404/tailnet-utils/strings"
+	strutils "github.com/sudosu404/go-utils/strings"
 )
 
 func initProfiling() {

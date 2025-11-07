@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/rs/zerolog/log"
-	strutils "github.com/sudosu404/tailnet-utils/strings"
+	strutils "github.com/sudosu404/go-utils/strings"
 )
 
 func (p *Provider) Setup() (err error) {

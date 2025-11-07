@@ -7,7 +7,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/require"
-	expect "github.com/sudosu404/tailnet-utils/testing"
+	expect "github.com/sudosu404/go-utils/testing"
 )
 
 func TestDeserialize(t *testing.T) {

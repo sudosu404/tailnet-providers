@@ -9,8 +9,8 @@ import (
 	"github.com/rs/zerolog/log"
 	"github.com/sudosu404/providers/agent/pkg/env"
 	"github.com/sudosu404/providers/agent/pkg/handler"
-	"github.com/sudosu404/tailnet-utils/server"
-	"github.com/sudosu404/tailnet-utils/task"
+	"github.com/sudosu404/go-utils/server"
+	"github.com/sudosu404/go-utils/task"
 )
 
 type Options struct {

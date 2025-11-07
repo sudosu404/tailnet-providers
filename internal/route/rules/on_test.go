@@ -11,7 +11,7 @@ import (
 	"github.com/sudosu404/providers/internal/route"
 	"github.com/sudosu404/providers/internal/route/routes"
 	. "github.com/sudosu404/providers/internal/route/rules"
-	expect "github.com/sudosu404/tailnet-utils/testing"
+	expect "github.com/sudosu404/go-utils/testing"
 	"golang.org/x/crypto/bcrypt"
 )
 

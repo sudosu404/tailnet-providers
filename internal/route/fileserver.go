@@ -10,8 +10,8 @@ import (
 	"github.com/sudosu404/providers/internal/net/gphttp/middleware"
 	"github.com/sudosu404/providers/internal/route/routes"
 	"github.com/sudosu404/providers/internal/watcher/health/monitor"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	"github.com/sudosu404/tailnet-utils/task"
+	gperr "github.com/sudosu404/go-utils/errs"
+	"github.com/sudosu404/go-utils/task"
 )
 
 type (

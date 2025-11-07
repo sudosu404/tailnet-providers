@@ -7,7 +7,7 @@ import (
 	"github.com/sudosu404/providers/internal/route"
 	"github.com/sudosu404/providers/internal/route/routes"
 
-	_ "github.com/sudosu404/tailnet-utils/apitypes"
+	_ "github.com/sudosu404/go-utils/apitypes"
 )
 
 type RoutesByProvider map[string][]route.Route

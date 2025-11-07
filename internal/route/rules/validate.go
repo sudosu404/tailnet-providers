@@ -11,8 +11,8 @@ import (
 
 	"github.com/rs/zerolog"
 	nettypes "github.com/sudosu404/providers/internal/net/types"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	httputils "github.com/sudosu404/tailnet-utils/http"
+	gperr "github.com/sudosu404/go-utils/errs"
+	httputils "github.com/sudosu404/go-utils/http"
 )
 
 type (

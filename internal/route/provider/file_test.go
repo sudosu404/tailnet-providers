@@ -5,7 +5,7 @@ import (
 
 	_ "embed"
 
-	expect "github.com/sudosu404/tailnet-utils/testing"
+	expect "github.com/sudosu404/go-utils/testing"
 )
 
 //go:embed all_fields.yaml

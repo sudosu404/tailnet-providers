@@ -14,10 +14,10 @@ import (
 	"github.com/sudosu404/providers/internal/docker"
 	"github.com/sudosu404/providers/internal/notif"
 	"github.com/sudosu404/providers/internal/types"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	strutils "github.com/sudosu404/tailnet-utils/strings"
-	"github.com/sudosu404/tailnet-utils/synk"
-	"github.com/sudosu404/tailnet-utils/task"
+	gperr "github.com/sudosu404/go-utils/errs"
+	strutils "github.com/sudosu404/go-utils/strings"
+	"github.com/sudosu404/go-utils/synk"
+	"github.com/sudosu404/go-utils/task"
 )
 
 type (

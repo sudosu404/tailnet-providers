@@ -5,7 +5,7 @@ import (
 
 	. "github.com/sudosu404/providers/internal/homepage"
 
-	expect "github.com/sudosu404/tailnet-utils/testing"
+	expect "github.com/sudosu404/go-utils/testing"
 )
 
 func TestOverrideItem(t *testing.T) {

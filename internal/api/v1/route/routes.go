@@ -9,8 +9,8 @@ import (
 	"github.com/sudosu404/providers/internal/route"
 	"github.com/sudosu404/providers/internal/route/routes"
 	"github.com/sudosu404/providers/internal/types"
-	"github.com/sudosu404/tailnet-utils/http/httpheaders"
-	"github.com/sudosu404/tailnet-utils/http/websocket"
+	"github.com/sudosu404/go-utils/http/httpheaders"
+	"github.com/sudosu404/go-utils/http/websocket"
 )
 
 type RouteType route.Route // @name Route

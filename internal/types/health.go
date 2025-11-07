@@ -8,8 +8,8 @@ import (
 	"time"
 
 	"github.com/bytedance/sonic"
-	strutils "github.com/sudosu404/tailnet-utils/strings"
-	"github.com/sudosu404/tailnet-utils/task"
+	strutils "github.com/sudosu404/go-utils/strings"
+	"github.com/sudosu404/go-utils/task"
 )
 
 type (

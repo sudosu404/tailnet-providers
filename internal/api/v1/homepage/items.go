@@ -12,9 +12,9 @@ import (
 	"github.com/lithammer/fuzzysearch/fuzzy"
 	"github.com/sudosu404/providers/internal/homepage"
 	"github.com/sudosu404/providers/internal/route/routes"
-	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
-	"github.com/sudosu404/tailnet-utils/http/httpheaders"
-	"github.com/sudosu404/tailnet-utils/http/websocket"
+	apitypes "github.com/sudosu404/go-utils/apitypes"
+	"github.com/sudosu404/go-utils/http/httpheaders"
+	"github.com/sudosu404/go-utils/http/websocket"
 )
 
 type HomepageItemsRequest struct {

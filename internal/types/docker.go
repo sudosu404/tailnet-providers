@@ -6,7 +6,7 @@ import (
 	"github.com/sudosu404/go-ds/ordered"
 	"github.com/sudosu404/providers/agent/pkg/agent"
 	"github.com/sudosu404/providers/internal/utils"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
+	gperr "github.com/sudosu404/go-utils/errs"
 )
 
 type (

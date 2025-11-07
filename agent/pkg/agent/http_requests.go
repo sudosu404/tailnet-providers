@@ -10,8 +10,8 @@ import (
 	"github.com/bytedance/sonic"
 	"github.com/gorilla/websocket"
 	"github.com/valyala/fasthttp"
-	httputils "github.com/sudosu404/tailnet-utils/http"
-	"github.com/sudosu404/tailnet-utils/http/reverseproxy"
+	httputils "github.com/sudosu404/go-utils/http"
+	"github.com/sudosu404/go-utils/http/reverseproxy"
 )
 
 func (cfg *AgentConfig) Do(ctx context.Context, method, endpoint string, body io.Reader) (*http.Response, error) {

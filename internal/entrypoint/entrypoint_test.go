@@ -7,7 +7,7 @@ import (
 	"github.com/sudosu404/providers/internal/route"
 	"github.com/sudosu404/providers/internal/route/routes"
 
-	expect "github.com/sudosu404/tailnet-utils/testing"
+	expect "github.com/sudosu404/go-utils/testing"
 )
 
 var ep = NewEntrypoint()

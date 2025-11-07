@@ -3,7 +3,7 @@ package watcher
 import (
 	"context"
 
-	gperr "github.com/sudosu404/tailnet-utils/errs"
+	gperr "github.com/sudosu404/go-utils/errs"
 )
 
 type fileWatcher struct {

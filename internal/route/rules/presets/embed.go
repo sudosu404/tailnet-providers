@@ -8,7 +8,7 @@ import (
 	"github.com/rs/zerolog/log"
 	"github.com/sudosu404/providers/internal/route/rules"
 	"github.com/sudosu404/providers/internal/serialization"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
+	gperr "github.com/sudosu404/go-utils/errs"
 )
 
 //go:embed *.yml

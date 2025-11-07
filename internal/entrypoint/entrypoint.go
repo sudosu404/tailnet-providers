@@ -13,7 +13,7 @@ import (
 	"github.com/sudosu404/providers/internal/route/routes"
 	"github.com/sudosu404/providers/internal/route/rules"
 	"github.com/sudosu404/providers/internal/types"
-	"github.com/sudosu404/tailnet-utils/task"
+	"github.com/sudosu404/go-utils/task"
 )
 
 type Entrypoint struct {

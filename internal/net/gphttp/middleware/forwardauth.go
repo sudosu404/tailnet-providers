@@ -8,8 +8,8 @@ import (
 	"time"
 
 	"github.com/sudosu404/providers/internal/route/routes"
-	httputils "github.com/sudosu404/tailnet-utils/http"
-	"github.com/sudosu404/tailnet-utils/http/httpheaders"
+	httputils "github.com/sudosu404/go-utils/http"
+	"github.com/sudosu404/go-utils/http/httpheaders"
 )
 
 type (

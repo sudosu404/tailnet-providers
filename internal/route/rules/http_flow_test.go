@@ -17,7 +17,7 @@ import (
 	"github.com/sudosu404/providers/internal/route"
 	"github.com/sudosu404/providers/internal/route/routes"
 	"github.com/sudosu404/providers/internal/serialization"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
+	gperr "github.com/sudosu404/go-utils/errs"
 	"golang.org/x/crypto/bcrypt"
 
 	. "github.com/sudosu404/providers/internal/route/rules"

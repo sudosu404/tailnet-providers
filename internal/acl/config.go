@@ -15,9 +15,9 @@ import (
 	"github.com/sudosu404/providers/internal/maxmind"
 	"github.com/sudosu404/providers/internal/notif"
 	"github.com/sudosu404/providers/internal/utils"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	strutils "github.com/sudosu404/tailnet-utils/strings"
-	"github.com/sudosu404/tailnet-utils/task"
+	gperr "github.com/sudosu404/go-utils/errs"
+	strutils "github.com/sudosu404/go-utils/strings"
+	"github.com/sudosu404/go-utils/task"
 )
 
 type Config struct {

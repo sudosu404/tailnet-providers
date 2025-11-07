@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/sudosu404/providers/internal/logging/accesslog"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
+	gperr "github.com/sudosu404/go-utils/errs"
 )
 
 type noopWriteCloser struct {

@@ -15,9 +15,9 @@ import (
 	"github.com/puzpuzpuz/xsync/v4"
 	"github.com/sudosu404/providers/internal/utils"
 	gi "github.com/yusing/gointernals"
-	"github.com/sudosu404/tailnet-utils/env"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	strutils "github.com/sudosu404/tailnet-utils/strings"
+	"github.com/sudosu404/go-utils/env"
+	gperr "github.com/sudosu404/go-utils/errs"
+	strutils "github.com/sudosu404/go-utils/strings"
 )
 
 type SerializedObject = map[string]any

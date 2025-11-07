@@ -5,7 +5,7 @@ import (
 	_ "embed"
 	"text/template"
 
-	"github.com/sudosu404/tailnet-utils/http/httpheaders"
+	"github.com/sudosu404/go-utils/http/httpheaders"
 )
 
 type templateData struct {
@@ -22,11 +22,11 @@ func (w *Watcher) makeLoadingPageBody() []byte {
 	msg := w.cfg.ContainerName() + " is starting..."
 
 	data := new(templateData)
-	data.CheckRedirectHeader = httpheaders.HeaderGoDoxyCheckRedirect
+	data.CheckRedirectHeader = httpheaders.HeaderTailnetCheckRedirect
 	data.Title = w.cfg.ContainerName()
 	data.Message = msg
 
-	buf := bytes.NewBuffer(make([]byte, len(loadingPage)+len(data.Title)+len(data.Message)+len(httpheaders.HeaderGoDoxyCheckRedirect)))
+	buf := bytes.NewBuffer(make([]byte, len(loadingPage)+len(data.Title)+len(data.Message)+len(httpheaders.HeaderTailnetCheckRedirect)))
 	err := loadingPageTmpl.Execute(buf, data)
 	if err != nil { // should never happen in production
 		panic(err)

@@ -1,7 +1,7 @@
 services:
   agent:
     image: "{{.Image}}"
-    container_name: godoxy-agent
+    container_name:tailnet-agent
     restart: always
     network_mode: host # do not change this
     environment:

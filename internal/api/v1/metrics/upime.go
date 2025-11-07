@@ -5,7 +5,7 @@ import (
 	"github.com/sudosu404/providers/internal/metrics/period"
 	"github.com/sudosu404/providers/internal/metrics/uptime"
 
-	_ "github.com/sudosu404/tailnet-utils/apitypes"
+	_ "github.com/sudosu404/go-utils/apitypes"
 )
 
 type UptimeRequest struct {

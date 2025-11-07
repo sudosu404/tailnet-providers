@@ -4,7 +4,7 @@ import (
 	"os"
 
 	"github.com/sudosu404/providers/agent/pkg/agent"
-	"github.com/sudosu404/tailnet-utils/env"
+	"github.com/sudosu404/go-utils/env"
 
 	"github.com/rs/zerolog/log"
 )

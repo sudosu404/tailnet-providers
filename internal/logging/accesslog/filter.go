@@ -6,8 +6,8 @@ import (
 	"strings"
 
 	nettypes "github.com/sudosu404/providers/internal/net/types"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	strutils "github.com/sudosu404/tailnet-utils/strings"
+	gperr "github.com/sudosu404/go-utils/errs"
+	strutils "github.com/sudosu404/go-utils/strings"
 )
 
 type (

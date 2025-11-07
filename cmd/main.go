@@ -16,10 +16,10 @@ import (
 	"github.com/sudosu404/providers/internal/metrics/systeminfo"
 	"github.com/sudosu404/providers/internal/metrics/uptime"
 	"github.com/sudosu404/providers/internal/net/gphttp/middleware"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	"github.com/sudosu404/tailnet-utils/server"
-	"github.com/sudosu404/tailnet-utils/task"
-	"github.com/sudosu404/tailnet-utils/version"
+	gperr "github.com/sudosu404/go-utils/errs"
+	"github.com/sudosu404/go-utils/server"
+	"github.com/sudosu404/go-utils/task"
+	"github.com/sudosu404/go-utils/version"
 )
 
 func parallel(fns ...func()) {
@@ -34,7 +34,7 @@ func main() {
 	initProfiling()
 
 	logging.InitLogger(os.Stderr, memlogger.GetMemLogger())
-	log.Info().Msgf("GoDoxy version %s", version.Get())
+	log.Info().Msgf("Tailnet version %s", version.Get())
 	log.Trace().Msg("trace enabled")
 	parallel(
 		dnsproviders.InitProviders,

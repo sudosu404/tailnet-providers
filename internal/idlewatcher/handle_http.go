@@ -7,8 +7,8 @@ import (
 	"strconv"
 
 	"github.com/sudosu404/providers/internal/homepage"
-	httputils "github.com/sudosu404/tailnet-utils/http"
-	"github.com/sudosu404/tailnet-utils/http/httpheaders"
+	httputils "github.com/sudosu404/go-utils/http"
+	"github.com/sudosu404/go-utils/http/httpheaders"
 
 	_ "unsafe"
 )
@@ -105,7 +105,7 @@ func (w *Watcher) wakeFromHTTP(rw http.ResponseWriter, r *http.Request) (shouldN
 	accept := httputils.GetAccept(r.Header)
 	acceptHTML := (r.Method == http.MethodGet && accept.AcceptHTML() || r.RequestURI == "/" && accept.IsEmpty())
 
-	isCheckRedirect := r.Header.Get(httpheaders.HeaderGoDoxyCheckRedirect) != ""
+	isCheckRedirect := r.Header.Get(httpheaders.HeaderTailnetCheckRedirect) != ""
 	if !isCheckRedirect && acceptHTML {
 		// Send a loading response to the client
 		body := w.makeLoadingPageBody()

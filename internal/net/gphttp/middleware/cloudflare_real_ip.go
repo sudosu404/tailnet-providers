@@ -14,8 +14,8 @@ import (
 	"github.com/rs/zerolog/log"
 	"github.com/sudosu404/providers/internal/common"
 	nettypes "github.com/sudosu404/providers/internal/net/types"
-	strutils "github.com/sudosu404/tailnet-utils/strings"
-	"github.com/sudosu404/tailnet-utils/synk"
+	strutils "github.com/sudosu404/go-utils/strings"
+	"github.com/sudosu404/go-utils/synk"
 )
 
 type cloudflareRealIP struct {

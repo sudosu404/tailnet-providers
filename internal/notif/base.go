@@ -6,7 +6,7 @@ import (
 	"net/url"
 	"strings"
 
-	gperr "github.com/sudosu404/tailnet-utils/errs"
+	gperr "github.com/sudosu404/go-utils/errs"
 )
 
 type ProviderBase struct {

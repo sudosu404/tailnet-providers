@@ -1,4 +1,4 @@
-name: GoDoxy agent binary
+name: Tailnet agent binary
 
 on:
   push:
@@ -14,10 +14,10 @@ jobs:
         include:
           - runner: ubuntu-latest
             platform: linux/amd64
-            binary_name: godoxy-agent-linux-amd64
+            binary_name:tailnet-agent-linux-amd64
           - runner: ubuntu-24.04-arm
             platform: linux/arm64
-            binary_name: godoxy-agent-linux-arm64
+            binary_name:tailnet-agent-linux-arm64
     name: Build ${{ matrix.platform }}
     runs-on: ${{ matrix.runner }}
     permissions:

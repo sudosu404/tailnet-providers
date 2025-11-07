@@ -22,7 +22,7 @@ services:
       - ${SOCKET_PROXY_LISTEN_ADDR:-127.0.0.1:2375}:2375
   frontend:
     image: ghcr.io/sudosu404/tailnet-providers-frontend:${TAG:-latest}
-    container_name: godoxy-frontend
+    container_name:tailnet-frontend
     restart: unless-stopped
     env_file: .env
     user: ${TAILNET_UID:-1000}:${TAILNET_GID:-1000}
@@ -51,7 +51,7 @@ services:
       #     - 172.16.0.0/12
   app:
     image: ghcr.io/sudosu404/tailnet-providers:${TAG:-latest}
-    container_name: godoxy-proxy
+    container_name:tailnet-proxy
     restart: always
     network_mode: host # do not change this
     env_file: .env

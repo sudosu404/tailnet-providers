@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/sudosu404/providers/internal/types"
-	expect "github.com/sudosu404/tailnet-utils/testing"
+	expect "github.com/sudosu404/go-utils/testing"
 )
 
 func TestRebalance(t *testing.T) {

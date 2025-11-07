@@ -9,9 +9,9 @@ import (
 	agentPkg "github.com/sudosu404/providers/agent/pkg/agent"
 	"github.com/sudosu404/providers/internal/metrics/period"
 	"github.com/sudosu404/providers/internal/metrics/systeminfo"
-	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
-	"github.com/sudosu404/tailnet-utils/http/httpheaders"
-	"github.com/sudosu404/tailnet-utils/synk"
+	apitypes "github.com/sudosu404/go-utils/apitypes"
+	"github.com/sudosu404/go-utils/http/httpheaders"
+	"github.com/sudosu404/go-utils/synk"
 )
 
 type SystemInfoRequest struct {

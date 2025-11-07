@@ -10,7 +10,7 @@ import (
 
 	"github.com/oschwald/maxminddb-golang"
 	maxmind "github.com/sudosu404/providers/internal/maxmind/types"
-	"github.com/sudosu404/tailnet-utils/task"
+	"github.com/sudosu404/go-utils/task"
 )
 
 func testCfg() *MaxMind {

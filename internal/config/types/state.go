@@ -7,9 +7,9 @@ import (
 	"net/http"
 
 	"github.com/sudosu404/providers/internal/types"
-	"github.com/sudosu404/tailnet-utils/server"
-	"github.com/sudosu404/tailnet-utils/synk"
-	"github.com/sudosu404/tailnet-utils/task"
+	"github.com/sudosu404/go-utils/server"
+	"github.com/sudosu404/go-utils/synk"
+	"github.com/sudosu404/go-utils/task"
 )
 
 type State interface {

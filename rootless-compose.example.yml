@@ -22,7 +22,7 @@ services:
       - godoxy
   frontend:
     image: ghcr.io/sudosu404/tailnet-providers-frontend:${TAG:-latest}
-    container_name: godoxy-frontend
+    container_name:tailnet-frontend
     restart: unless-stopped
     env_file: .env
     read_only: true
@@ -45,7 +45,7 @@ services:
       - godoxy
   app:
     image: ghcr.io/sudosu404/tailnet-providers:${TAG:-latest}
-    container_name: godoxy-proxy
+    container_name:tailnet-proxy
     restart: always
     env_file: .env
     depends_on:

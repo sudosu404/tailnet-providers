@@ -8,7 +8,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/sudosu404/providers/internal/common"
-	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
+	apitypes "github.com/sudosu404/go-utils/apitypes"
 )
 
 type FileType string // @name FileType

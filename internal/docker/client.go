@@ -18,8 +18,8 @@ import (
 	"github.com/rs/zerolog/log"
 	"github.com/sudosu404/providers/agent/pkg/agent"
 	"github.com/sudosu404/providers/internal/common"
-	httputils "github.com/sudosu404/tailnet-utils/http"
-	"github.com/sudosu404/tailnet-utils/task"
+	httputils "github.com/sudosu404/go-utils/http"
+	"github.com/sudosu404/go-utils/task"
 	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
 )
 

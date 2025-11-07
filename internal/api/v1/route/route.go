@@ -6,7 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 	statequery "github.com/sudosu404/providers/internal/config/query"
 	"github.com/sudosu404/providers/internal/route/routes"
-	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
+	apitypes "github.com/sudosu404/go-utils/apitypes"
 )
 
 type ListRouteRequest struct {

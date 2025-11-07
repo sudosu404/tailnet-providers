@@ -15,10 +15,10 @@ import (
 	"github.com/sudosu404/providers/internal/route/routes"
 	"github.com/sudosu404/providers/internal/types"
 	"github.com/sudosu404/providers/internal/watcher/health/monitor"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	"github.com/sudosu404/tailnet-utils/http/reverseproxy"
-	"github.com/sudosu404/tailnet-utils/task"
-	"github.com/sudosu404/tailnet-utils/version"
+	gperr "github.com/sudosu404/go-utils/errs"
+	"github.com/sudosu404/go-utils/http/reverseproxy"
+	"github.com/sudosu404/go-utils/task"
+	"github.com/sudosu404/go-utils/version"
 )
 
 type ReveseProxyRoute struct {

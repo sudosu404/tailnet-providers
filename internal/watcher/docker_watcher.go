@@ -11,7 +11,7 @@ import (
 	"github.com/rs/zerolog/log"
 	"github.com/sudosu404/providers/internal/docker"
 	"github.com/sudosu404/providers/internal/watcher/events"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
+	gperr "github.com/sudosu404/go-utils/errs"
 )
 
 type (

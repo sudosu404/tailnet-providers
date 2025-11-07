@@ -58,7 +58,7 @@ var (
 	ErrRefreshTokenFailure = errors.New("failed to refresh token")
 )
 
-const sessionTokenIssuer = "GoDoxy"
+const sessionTokenIssuer = "Tailnet"
 
 func init() {
 	if IsOIDCEnabled() {

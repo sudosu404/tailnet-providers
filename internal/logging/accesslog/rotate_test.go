@@ -8,9 +8,9 @@ import (
 
 	. "github.com/sudosu404/providers/internal/logging/accesslog"
 	"github.com/sudosu404/providers/internal/utils"
-	strutils "github.com/sudosu404/tailnet-utils/strings"
-	"github.com/sudosu404/tailnet-utils/task"
-	expect "github.com/sudosu404/tailnet-utils/testing"
+	strutils "github.com/sudosu404/go-utils/strings"
+	"github.com/sudosu404/go-utils/task"
+	expect "github.com/sudosu404/go-utils/testing"
 )
 
 var (

@@ -9,7 +9,7 @@ import (
 	"github.com/sudosu404/providers/internal/acl"
 	"github.com/sudosu404/providers/internal/entrypoint"
 	nettypes "github.com/sudosu404/providers/internal/net/types"
-	ioutils "github.com/sudosu404/tailnet-utils/io"
+	ioutils "github.com/sudosu404/go-utils/io"
 	"go.uber.org/atomic"
 )
 

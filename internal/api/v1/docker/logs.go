@@ -11,9 +11,9 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/rs/zerolog/log"
 	"github.com/sudosu404/providers/internal/docker"
-	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
-	"github.com/sudosu404/tailnet-utils/http/websocket"
-	"github.com/sudosu404/tailnet-utils/task"
+	apitypes "github.com/sudosu404/go-utils/apitypes"
+	"github.com/sudosu404/go-utils/http/websocket"
+	"github.com/sudosu404/go-utils/task"
 )
 
 type LogsQueryParams struct {

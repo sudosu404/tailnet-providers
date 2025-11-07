@@ -9,8 +9,8 @@ import (
 
 	"github.com/rs/zerolog"
 	"github.com/sudosu404/providers/internal/utils"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	strutils "github.com/sudosu404/tailnet-utils/strings"
+	gperr "github.com/sudosu404/go-utils/errs"
+	strutils "github.com/sudosu404/go-utils/strings"
 )
 
 type supportRotate interface {

@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/sudosu404/tailnet-utils/http/httpheaders"
+	"github.com/sudosu404/go-utils/http/httpheaders"
 )
 
 type (

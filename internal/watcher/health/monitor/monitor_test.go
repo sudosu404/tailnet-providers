@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/sudosu404/providers/internal/notif"
 	"github.com/sudosu404/providers/internal/types"
-	"github.com/sudosu404/tailnet-utils/task"
+	"github.com/sudosu404/go-utils/task"
 )
 
 // Test notification tracker

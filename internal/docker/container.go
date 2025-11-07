@@ -17,7 +17,7 @@ import (
 	"github.com/sudosu404/providers/internal/serialization"
 	"github.com/sudosu404/providers/internal/types"
 	"github.com/sudosu404/providers/internal/utils"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
+	gperr "github.com/sudosu404/go-utils/errs"
 )
 
 var DummyContainer = new(types.Container)

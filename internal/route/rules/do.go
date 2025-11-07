@@ -16,9 +16,9 @@ import (
 	nettypes "github.com/sudosu404/providers/internal/net/types"
 	"github.com/sudosu404/providers/internal/notif"
 	"github.com/sudosu404/providers/internal/route/routes"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	httputils "github.com/sudosu404/tailnet-utils/http"
-	"github.com/sudosu404/tailnet-utils/http/reverseproxy"
+	gperr "github.com/sudosu404/go-utils/errs"
+	httputils "github.com/sudosu404/go-utils/http"
+	"github.com/sudosu404/go-utils/http/reverseproxy"
 )
 
 type (

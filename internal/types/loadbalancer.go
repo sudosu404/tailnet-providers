@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	nettypes "github.com/sudosu404/providers/internal/net/types"
-	strutils "github.com/sudosu404/tailnet-utils/strings"
+	strutils "github.com/sudosu404/go-utils/strings"
 )
 
 type (

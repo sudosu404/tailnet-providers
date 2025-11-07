@@ -60,7 +60,7 @@ CONFIG_EXAMPLE_FILE_NAME="config.example.yml"
 CONFIG_FILE_PATH="${CONFIG_BASE_PATH}/${CONFIG_FILE_NAME}"
 REQUIRED_DIRECTORIES=("config" "logs" "error_pages" "data" "certs")
 
-echo "Setting up GoDoxy"
+echo "Setting up Tailnet"
 echo "Branch: ${BRANCH}"
 
 # Function to check if file/directory exists

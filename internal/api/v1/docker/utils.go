@@ -7,10 +7,10 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/sudosu404/providers/internal/docker"
-	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	"github.com/sudosu404/tailnet-utils/http/httpheaders"
-	"github.com/sudosu404/tailnet-utils/http/websocket"
+	apitypes "github.com/sudosu404/go-utils/apitypes"
+	gperr "github.com/sudosu404/go-utils/errs"
+	"github.com/sudosu404/go-utils/http/httpheaders"
+	"github.com/sudosu404/go-utils/http/websocket"
 )
 
 type (

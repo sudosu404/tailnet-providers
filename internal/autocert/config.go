@@ -16,7 +16,7 @@ import (
 	"github.com/rs/zerolog/log"
 	"github.com/sudosu404/providers/internal/common"
 	"github.com/sudosu404/providers/internal/utils"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
+	gperr "github.com/sudosu404/go-utils/errs"
 )
 
 type Config struct {

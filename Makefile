@@ -7,13 +7,13 @@ WEBUI_DIR ?= ../godoxy-webui
 DOCS_DIR ?= ${WEBUI_DIR}/wiki
 
 GO_TAGS = sonic
-LDFLAGS = -X github.com/sudosu404/tailnet-utils/version.version=${VERSION} -checklinkname=0
+LDFLAGS = -X github.com/sudosu404/go-utils/version.version=${VERSION} -checklinkname=0
 
 ifeq ($(agent), 1)
-	NAME = godoxy-agent
+	NAME =tailnet-agent
 	PWD = ${shell pwd}/agent
 else ifeq ($(socket-proxy), 1)
-	NAME = godoxy-socket-proxy
+	NAME =tailnet-socket-proxy
 	PWD = ${shell pwd}/socket-proxy
 else
 	NAME = godoxy
@@ -79,7 +79,7 @@ test:
 
 docker-build-test:
 	docker build -t godoxy .
-	docker build --build-arg=MAKE_ARGS=agent=1 -t godoxy-agent .
+	docker build --build-arg=MAKE_ARGS=agent=1 -ttailnet-agent .
 
 go_ver := $(shell go version | cut -d' ' -f3 | cut -d'o' -f2)
 files := $(shell find . -name go.mod -type f -or -name Dockerfile -type f)

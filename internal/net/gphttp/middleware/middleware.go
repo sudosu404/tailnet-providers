@@ -11,9 +11,9 @@ import (
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 	"github.com/sudosu404/providers/internal/serialization"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	httputils "github.com/sudosu404/tailnet-utils/http"
-	"github.com/sudosu404/tailnet-utils/http/reverseproxy"
+	gperr "github.com/sudosu404/go-utils/errs"
+	httputils "github.com/sudosu404/go-utils/http"
+	"github.com/sudosu404/go-utils/http/reverseproxy"
 )
 
 type (

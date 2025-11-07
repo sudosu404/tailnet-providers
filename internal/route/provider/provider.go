@@ -18,9 +18,9 @@ import (
 	"github.com/sudosu404/providers/internal/types"
 	W "github.com/sudosu404/providers/internal/watcher"
 	"github.com/sudosu404/providers/internal/watcher/events"
-	"github.com/sudosu404/tailnet-utils/env"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	"github.com/sudosu404/tailnet-utils/task"
+	"github.com/sudosu404/go-utils/env"
+	gperr "github.com/sudosu404/go-utils/errs"
+	"github.com/sudosu404/go-utils/task"
 )
 
 type (

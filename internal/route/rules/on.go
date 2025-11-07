@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	"github.com/sudosu404/providers/internal/route/routes"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
+	gperr "github.com/sudosu404/go-utils/errs"
 )
 
 type RuleOn struct {

@@ -16,8 +16,8 @@ import (
 	"github.com/oschwald/maxminddb-golang"
 	"github.com/sudosu404/providers/internal/common"
 	maxmind "github.com/sudosu404/providers/internal/maxmind/types"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	"github.com/sudosu404/tailnet-utils/task"
+	gperr "github.com/sudosu404/go-utils/errs"
+	"github.com/sudosu404/go-utils/task"
 )
 
 /*

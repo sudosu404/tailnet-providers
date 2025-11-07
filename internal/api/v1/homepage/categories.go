@@ -7,7 +7,7 @@ import (
 	"github.com/sudosu404/providers/internal/homepage"
 	"github.com/sudosu404/providers/internal/route/routes"
 
-	_ "github.com/sudosu404/tailnet-utils/apitypes"
+	_ "github.com/sudosu404/go-utils/apitypes"
 )
 
 // @x-id				"categories"

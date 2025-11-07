@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "GoDoxy API",
-    "title": "GoDoxy API",
+    "description": "Tailnet API",
+    "title": "Tailnet API",
     "termsOfService": "https://github.com/sudosu404/providers/blob/main/LICENSE",
     "contact": {
       "name": "Yusing",
@@ -2283,7 +2283,7 @@
           "v1",
           "websocket"
         ],
-        "summary": "Get GoDoxy stats",
+        "summary": "Get Tailnet stats",
         "responses": {
           "200": {
             "description": "OK",
@@ -2310,7 +2310,7 @@
     },
     "/version": {
       "get": {
-        "description": "Get the version of the GoDoxy",
+        "description": "Get the version of the Tailnet",
         "consumes": [
           "application/json"
         ],
@@ -5553,7 +5553,7 @@
     }
   },
   "externalDocs": {
-    "description": "GoDoxy Docs",
+    "description": "Tailnet Docs",
     "url": "https://docs.godoxy.dev"
   }
 }

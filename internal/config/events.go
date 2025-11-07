@@ -14,10 +14,10 @@ import (
 	"github.com/sudosu404/providers/internal/notif"
 	"github.com/sudosu404/providers/internal/watcher"
 	"github.com/sudosu404/providers/internal/watcher/events"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	"github.com/sudosu404/tailnet-utils/server"
-	"github.com/sudosu404/tailnet-utils/strings/ansi"
-	"github.com/sudosu404/tailnet-utils/task"
+	gperr "github.com/sudosu404/go-utils/errs"
+	"github.com/sudosu404/go-utils/server"
+	"github.com/sudosu404/go-utils/strings/ansi"
+	"github.com/sudosu404/go-utils/task"
 )
 
 var (

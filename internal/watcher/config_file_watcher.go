@@ -4,7 +4,7 @@ import (
 	"sync"
 
 	"github.com/sudosu404/providers/internal/common"
-	"github.com/sudosu404/tailnet-utils/task"
+	"github.com/sudosu404/go-utils/task"
 )
 
 var (

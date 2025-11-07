@@ -6,7 +6,7 @@ import (
 	"github.com/docker/docker/api/types/container"
 	"github.com/sudosu404/go-ds/ordered"
 	"github.com/sudosu404/providers/internal/types"
-	strutils "github.com/sudosu404/tailnet-utils/strings"
+	strutils "github.com/sudosu404/go-utils/strings"
 )
 
 type containerHelper struct {

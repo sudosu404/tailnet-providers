@@ -8,7 +8,7 @@ import (
 	"github.com/puzpuzpuz/xsync/v4"
 	nettypes "github.com/sudosu404/providers/internal/net/types"
 	"github.com/sudosu404/providers/internal/serialization"
-	httputils "github.com/sudosu404/tailnet-utils/http"
+	httputils "github.com/sudosu404/go-utils/http"
 )
 
 type (

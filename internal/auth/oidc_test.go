@@ -16,7 +16,7 @@ import (
 	"github.com/sudosu404/providers/internal/common"
 	"golang.org/x/oauth2"
 
-	expect "github.com/sudosu404/tailnet-utils/testing"
+	expect "github.com/sudosu404/go-utils/testing"
 )
 
 // setupMockOIDC configures mock OIDC provider for testing.

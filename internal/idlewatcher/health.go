@@ -5,8 +5,8 @@ import (
 
 	idlewatcher "github.com/sudosu404/providers/internal/idlewatcher/types"
 	"github.com/sudosu404/providers/internal/types"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	"github.com/sudosu404/tailnet-utils/task"
+	gperr "github.com/sudosu404/go-utils/errs"
+	"github.com/sudosu404/go-utils/task"
 )
 
 // Start implements health.HealthMonitor.

@@ -6,7 +6,7 @@ import (
 	"github.com/sudosu404/providers/internal/docker"
 	. "github.com/sudosu404/providers/internal/logging/accesslog"
 	"github.com/sudosu404/providers/internal/serialization"
-	expect "github.com/sudosu404/tailnet-utils/testing"
+	expect "github.com/sudosu404/go-utils/testing"
 )
 
 func TestNewConfig(t *testing.T) {

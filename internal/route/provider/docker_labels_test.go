@@ -6,7 +6,7 @@ import (
 	"github.com/docker/docker/api/types/container"
 	"github.com/goccy/go-yaml"
 	"github.com/sudosu404/providers/internal/docker"
-	expect "github.com/sudosu404/tailnet-utils/testing"
+	expect "github.com/sudosu404/go-utils/testing"
 
 	_ "embed"
 )

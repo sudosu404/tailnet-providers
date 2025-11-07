@@ -7,7 +7,7 @@ import (
 	. "github.com/sudosu404/providers/internal/route"
 	route "github.com/sudosu404/providers/internal/route/types"
 	"github.com/sudosu404/providers/internal/serialization"
-	expect "github.com/sudosu404/tailnet-utils/testing"
+	expect "github.com/sudosu404/go-utils/testing"
 )
 
 func TestHTTPConfigDeserialize(t *testing.T) {

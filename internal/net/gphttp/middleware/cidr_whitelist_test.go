@@ -8,8 +8,8 @@ import (
 	"testing"
 
 	"github.com/sudosu404/providers/internal/serialization"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	expect "github.com/sudosu404/tailnet-utils/testing"
+	gperr "github.com/sudosu404/go-utils/errs"
+	expect "github.com/sudosu404/go-utils/testing"
 )
 
 //go:embed test_data/cidr_whitelist_test.yml

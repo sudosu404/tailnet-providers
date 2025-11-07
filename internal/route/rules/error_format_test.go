@@ -3,7 +3,7 @@ package rules
 import (
 	"testing"
 
-	gperr "github.com/sudosu404/tailnet-utils/errs"
+	gperr "github.com/sudosu404/go-utils/errs"
 )
 
 func TestErrorFormat(t *testing.T) {

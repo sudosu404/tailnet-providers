@@ -10,7 +10,7 @@ import (
 	"github.com/sudosu404/providers/internal/types"
 	"github.com/sudosu404/providers/internal/watcher"
 	"github.com/sudosu404/providers/internal/watcher/events"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
+	gperr "github.com/sudosu404/go-utils/errs"
 )
 
 type ProxmoxProvider struct {

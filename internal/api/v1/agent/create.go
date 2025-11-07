@@ -9,7 +9,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/sudosu404/providers/agent/pkg/agent"
-	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
+	apitypes "github.com/sudosu404/go-utils/apitypes"
 )
 
 type NewAgentRequest struct {

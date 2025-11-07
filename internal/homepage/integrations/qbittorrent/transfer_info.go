@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/sudosu404/providers/internal/homepage/widgets"
-	strutils "github.com/sudosu404/tailnet-utils/strings"
+	strutils "github.com/sudosu404/go-utils/strings"
 )
 
 const endpointTransferInfo = "/api/v2/transfer/info"

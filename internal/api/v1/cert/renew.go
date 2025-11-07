@@ -8,9 +8,9 @@ import (
 	"github.com/rs/zerolog/log"
 	"github.com/sudosu404/providers/internal/autocert"
 	"github.com/sudosu404/providers/internal/logging/memlogger"
-	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	"github.com/sudosu404/tailnet-utils/http/websocket"
+	apitypes "github.com/sudosu404/go-utils/apitypes"
+	gperr "github.com/sudosu404/go-utils/errs"
+	"github.com/sudosu404/go-utils/http/websocket"
 )
 
 // @x-id				"renew"

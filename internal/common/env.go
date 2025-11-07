@@ -5,7 +5,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/sudosu404/tailnet-utils/env"
+	"github.com/sudosu404/go-utils/env"
 )
 
 var (

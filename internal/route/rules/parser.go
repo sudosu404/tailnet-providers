@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"unicode"
 
-	"github.com/sudosu404/tailnet-utils/env"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
+	"github.com/sudosu404/go-utils/env"
+	gperr "github.com/sudosu404/go-utils/errs"
 )
 
 var escapedChars = map[rune]rune{

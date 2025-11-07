@@ -7,8 +7,8 @@ import (
 
 	. "github.com/sudosu404/providers/internal/logging/accesslog"
 	nettypes "github.com/sudosu404/providers/internal/net/types"
-	strutils "github.com/sudosu404/tailnet-utils/strings"
-	expect "github.com/sudosu404/tailnet-utils/testing"
+	strutils "github.com/sudosu404/go-utils/strings"
+	expect "github.com/sudosu404/go-utils/testing"
 )
 
 func TestStatusCodeFilter(t *testing.T) {

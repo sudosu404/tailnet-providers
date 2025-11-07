@@ -10,8 +10,8 @@ import (
 
 	"github.com/rs/zerolog/log"
 	"github.com/sudosu404/providers/internal/net/gphttp/middleware/errorpage"
-	httputils "github.com/sudosu404/tailnet-utils/http"
-	"github.com/sudosu404/tailnet-utils/http/httpheaders"
+	httputils "github.com/sudosu404/go-utils/http"
+	"github.com/sudosu404/go-utils/http/httpheaders"
 )
 
 type customErrorPage struct{}

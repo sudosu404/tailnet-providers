@@ -8,8 +8,8 @@ import (
 	"github.com/rs/zerolog/log"
 	"github.com/sudosu404/providers/internal/common"
 	"github.com/sudosu404/providers/internal/utils"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	strutils "github.com/sudosu404/tailnet-utils/strings"
+	gperr "github.com/sudosu404/go-utils/errs"
+	strutils "github.com/sudosu404/go-utils/strings"
 )
 
 // snakes and cases will be stripped on `Get`

@@ -3,7 +3,7 @@ package utils
 import (
 	"reflect"
 
-	strutils "github.com/sudosu404/tailnet-utils/strings"
+	strutils "github.com/sudosu404/go-utils/strings"
 )
 
 func NearestField(input string, s any) string {

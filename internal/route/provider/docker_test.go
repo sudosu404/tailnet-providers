@@ -10,7 +10,7 @@ import (
 	D "github.com/sudosu404/providers/internal/docker"
 	"github.com/sudosu404/providers/internal/route"
 	routeTypes "github.com/sudosu404/providers/internal/route/types"
-	expect "github.com/sudosu404/tailnet-utils/testing"
+	expect "github.com/sudosu404/go-utils/testing"
 )
 
 var dummyNames = []string{"/a"}

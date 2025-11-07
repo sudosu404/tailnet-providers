@@ -28,9 +28,9 @@ import (
 	"github.com/sudosu404/providers/internal/route/routes"
 	"github.com/sudosu404/providers/internal/serialization"
 	"github.com/sudosu404/providers/internal/types"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	"github.com/sudosu404/tailnet-utils/server"
-	"github.com/sudosu404/tailnet-utils/task"
+	gperr "github.com/sudosu404/go-utils/errs"
+	"github.com/sudosu404/go-utils/server"
+	"github.com/sudosu404/go-utils/task"
 )
 
 type state struct {

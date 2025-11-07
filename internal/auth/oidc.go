@@ -16,8 +16,8 @@ import (
 	"github.com/rs/zerolog/log"
 	"github.com/sudosu404/providers/internal/common"
 	"github.com/sudosu404/providers/internal/utils"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	httputils "github.com/sudosu404/tailnet-utils/http"
+	gperr "github.com/sudosu404/go-utils/errs"
+	httputils "github.com/sudosu404/go-utils/http"
 	"golang.org/x/oauth2"
 	"golang.org/x/time/rate"
 )

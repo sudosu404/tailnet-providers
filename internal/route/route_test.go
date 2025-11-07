@@ -7,7 +7,7 @@ import (
 	"github.com/sudosu404/providers/internal/common"
 	route "github.com/sudosu404/providers/internal/route/types"
 	"github.com/sudosu404/providers/internal/types"
-	expect "github.com/sudosu404/tailnet-utils/testing"
+	expect "github.com/sudosu404/go-utils/testing"
 )
 
 func TestRouteValidate(t *testing.T) {

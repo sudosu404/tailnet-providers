@@ -10,11 +10,11 @@ import (
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 	maxmind "github.com/sudosu404/providers/internal/maxmind/types"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	ioutils "github.com/sudosu404/tailnet-utils/io"
-	strutils "github.com/sudosu404/tailnet-utils/strings"
-	"github.com/sudosu404/tailnet-utils/synk"
-	"github.com/sudosu404/tailnet-utils/task"
+	gperr "github.com/sudosu404/go-utils/errs"
+	ioutils "github.com/sudosu404/go-utils/io"
+	strutils "github.com/sudosu404/go-utils/strings"
+	"github.com/sudosu404/go-utils/synk"
+	"github.com/sudosu404/go-utils/task"
 	"golang.org/x/time/rate"
 )
 

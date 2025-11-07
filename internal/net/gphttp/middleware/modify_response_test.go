@@ -8,7 +8,7 @@ import (
 	"testing"
 
 	nettypes "github.com/sudosu404/providers/internal/net/types"
-	expect "github.com/sudosu404/tailnet-utils/testing"
+	expect "github.com/sudosu404/go-utils/testing"
 )
 
 func TestModifyResponse(t *testing.T) {

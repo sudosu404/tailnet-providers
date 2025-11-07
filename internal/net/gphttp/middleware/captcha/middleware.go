@@ -6,7 +6,7 @@ import (
 
 	"github.com/rs/zerolog/log"
 	"github.com/sudosu404/providers/internal/auth"
-	httputils "github.com/sudosu404/tailnet-utils/http"
+	httputils "github.com/sudosu404/go-utils/http"
 
 	_ "embed"
 )

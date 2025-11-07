@@ -10,8 +10,8 @@ import (
 	"github.com/sudosu404/providers/agent/pkg/certs"
 	config "github.com/sudosu404/providers/internal/config/types"
 	"github.com/sudosu404/providers/internal/route/provider"
-	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
+	apitypes "github.com/sudosu404/go-utils/apitypes"
+	gperr "github.com/sudosu404/go-utils/errs"
 )
 
 type VerifyNewAgentRequest struct {

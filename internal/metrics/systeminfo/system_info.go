@@ -17,7 +17,7 @@ import (
 	"github.com/shirou/gopsutil/v4/warning"
 	"github.com/sudosu404/providers/internal/common"
 	"github.com/sudosu404/providers/internal/metrics/period"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
+	gperr "github.com/sudosu404/go-utils/errs"
 )
 
 // json tags are left for tests

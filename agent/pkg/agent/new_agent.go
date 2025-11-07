@@ -155,7 +155,7 @@ func NewAgent() (ca, srv, client *PEMPair, err error) {
 	caTemplate := &x509.Certificate{
 		SerialNumber: caSerialNumber,
 		Subject: pkix.Name{
-			Organization: []string{"GoDoxy"},
+			Organization: []string{"Tailnet"},
 			CommonName:   CertsDNSName,
 		},
 		NotBefore:             time.Now(),

@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	nettypes "github.com/sudosu404/providers/internal/net/types"
-	"github.com/sudosu404/tailnet-utils/http/httpheaders"
+	"github.com/sudosu404/go-utils/http/httpheaders"
 )
 
 // https://nginx.org/en/docs/http/ngx_http_realip_module.html

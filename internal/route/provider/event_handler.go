@@ -5,8 +5,8 @@ import (
 	provider "github.com/sudosu404/providers/internal/route/provider/types"
 	"github.com/sudosu404/providers/internal/watcher"
 	eventsPkg "github.com/sudosu404/providers/internal/watcher/events"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	"github.com/sudosu404/tailnet-utils/task"
+	gperr "github.com/sudosu404/go-utils/errs"
+	"github.com/sudosu404/go-utils/task"
 )
 
 type EventHandler struct {

@@ -14,12 +14,12 @@ import (
 	"github.com/sudosu404/providers/agent/pkg/agent"
 	"github.com/sudosu404/providers/internal/metrics/period"
 	"github.com/sudosu404/providers/internal/metrics/systeminfo"
-	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	httputils "github.com/sudosu404/tailnet-utils/http"
-	"github.com/sudosu404/tailnet-utils/http/httpheaders"
-	"github.com/sudosu404/tailnet-utils/http/websocket"
-	"github.com/sudosu404/tailnet-utils/synk"
+	apitypes "github.com/sudosu404/go-utils/apitypes"
+	gperr "github.com/sudosu404/go-utils/errs"
+	httputils "github.com/sudosu404/go-utils/http"
+	"github.com/sudosu404/go-utils/http/httpheaders"
+	"github.com/sudosu404/go-utils/http/websocket"
+	"github.com/sudosu404/go-utils/synk"
 )
 
 var bytesPool = synk.GetUnsizedBytesPool()
@@ -121,7 +121,7 @@ func AllSystemInfo(c *gin.Context) {
 			case <-manager.Done():
 				return
 			case dataCh <- SystemInfoData{
-				AgentName:  "GoDoxy",
+				AgentName:  "Tailnet",
 				SystemInfo: data,
 			}:
 			}

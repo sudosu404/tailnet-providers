@@ -10,8 +10,8 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/sudosu404/providers/internal/common"
 	"github.com/sudosu404/providers/internal/route/rules"
-	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
+	apitypes "github.com/sudosu404/go-utils/apitypes"
+	gperr "github.com/sudosu404/go-utils/errs"
 )
 
 type RawRule struct {

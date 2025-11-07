@@ -4,13 +4,13 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/sudosu404/tailnet-utils/version"
+	"github.com/sudosu404/go-utils/version"
 )
 
 // @x-id				"version"
 // @BasePath		/api/v1
 // @Summary		Get version
-// @Description	Get the version of the GoDoxy
+// @Description	Get the version of the Tailnet
 // @Tags			v1
 // @Accept			json
 // @Produce		plain

@@ -5,7 +5,7 @@ import (
 	"strconv"
 
 	"github.com/bytedance/sonic"
-	strutils "github.com/sudosu404/tailnet-utils/strings"
+	strutils "github.com/sudosu404/go-utils/strings"
 )
 
 type watcherDebug struct {

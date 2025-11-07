@@ -7,8 +7,8 @@ import (
 	"github.com/gin-gonic/gin"
 	statequery "github.com/sudosu404/providers/internal/config/query"
 	"github.com/sudosu404/providers/internal/types"
-	"github.com/sudosu404/tailnet-utils/http/httpheaders"
-	"github.com/sudosu404/tailnet-utils/http/websocket"
+	"github.com/sudosu404/go-utils/http/httpheaders"
+	"github.com/sudosu404/go-utils/http/websocket"
 )
 
 type StatsResponse struct {
@@ -25,7 +25,7 @@ type ProxyStats struct {
 
 // @x-id				"stats"
 // @BasePath		/api/v1
-// @Summary		Get GoDoxy stats
+// @Summary		Get Tailnet stats
 // @Description	Get stats
 // @Tags			v1,websocket
 // @Accept			json

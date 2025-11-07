@@ -225,7 +225,7 @@ chmod 640 "$log_path"
 echo "Registering the agent as a service"
 cat <<EOF >$service_file
 [Unit]
-Description=GoDoxy Agent
+Description=Tailnet Agent
 After=network.target
 After=docker.socket
 

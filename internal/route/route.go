@@ -24,9 +24,9 @@ import (
 	"github.com/sudosu404/providers/internal/proxmox"
 	"github.com/sudosu404/providers/internal/serialization"
 	"github.com/sudosu404/providers/internal/types"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	strutils "github.com/sudosu404/tailnet-utils/strings"
-	"github.com/sudosu404/tailnet-utils/task"
+	gperr "github.com/sudosu404/go-utils/errs"
+	strutils "github.com/sudosu404/go-utils/strings"
+	"github.com/sudosu404/go-utils/task"
 
 	"github.com/sudosu404/providers/internal/common"
 	"github.com/sudosu404/providers/internal/logging/accesslog"

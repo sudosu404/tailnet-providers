@@ -1,6 +1,6 @@
 package socketproxy
 
-import "github.com/sudosu404/tailnet-utils/env"
+import "github.com/sudosu404/go-utils/env"
 
 var (
 	DockerSocket,

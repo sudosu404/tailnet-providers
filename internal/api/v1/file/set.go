@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
-	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
+	apitypes "github.com/sudosu404/go-utils/apitypes"
 )
 
 type SetFileContentRequest GetFileContentRequest

@@ -6,7 +6,7 @@ import (
 	"io"
 	"path/filepath"
 
-	strutils "github.com/sudosu404/tailnet-utils/strings"
+	strutils "github.com/sudosu404/go-utils/strings"
 )
 
 const AgentCertsBasePath = "certs"

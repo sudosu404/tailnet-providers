@@ -5,7 +5,7 @@ import (
 	"strings"
 
 	"github.com/sudosu404/providers/internal/maxmind"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
+	gperr "github.com/sudosu404/go-utils/errs"
 )
 
 type MatcherFunc func(*maxmind.IPInfo) bool

@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/sudosu404/providers/internal/common"
 	"github.com/sudosu404/providers/internal/utils"
-	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
+	apitypes "github.com/sudosu404/go-utils/apitypes"
 )
 
 type ListFilesResponse struct {

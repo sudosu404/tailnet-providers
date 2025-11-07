@@ -8,9 +8,9 @@ import (
 	"github.com/rs/zerolog/log"
 	"github.com/sudosu404/providers/internal/docker"
 	"github.com/sudosu404/providers/internal/types"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	httputils "github.com/sudosu404/tailnet-utils/http"
-	"github.com/sudosu404/tailnet-utils/task"
+	gperr "github.com/sudosu404/go-utils/errs"
+	httputils "github.com/sudosu404/go-utils/http"
+	"github.com/sudosu404/go-utils/task"
 )
 
 type DockerHealthMonitor struct {

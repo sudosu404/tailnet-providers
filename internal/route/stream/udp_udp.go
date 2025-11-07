@@ -12,7 +12,7 @@ import (
 	"github.com/rs/zerolog"
 	"github.com/sudosu404/providers/internal/acl"
 	nettypes "github.com/sudosu404/providers/internal/net/types"
-	"github.com/sudosu404/tailnet-utils/synk"
+	"github.com/sudosu404/go-utils/synk"
 	"go.uber.org/atomic"
 )
 

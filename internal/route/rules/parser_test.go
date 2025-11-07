@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"testing"
 
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	expect "github.com/sudosu404/tailnet-utils/testing"
+	gperr "github.com/sudosu404/go-utils/errs"
+	expect "github.com/sudosu404/go-utils/testing"
 )
 
 func TestParser(t *testing.T) {

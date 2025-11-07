@@ -10,9 +10,9 @@ import (
 	"github.com/rs/zerolog/log"
 	"github.com/sudosu404/providers/internal/types"
 	"github.com/sudosu404/providers/internal/utils/pool"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	"github.com/sudosu404/tailnet-utils/http/httpheaders"
-	"github.com/sudosu404/tailnet-utils/task"
+	gperr "github.com/sudosu404/go-utils/errs"
+	"github.com/sudosu404/go-utils/http/httpheaders"
+	"github.com/sudosu404/go-utils/task"
 )
 
 // TODO: stats of each server.
@@ -218,7 +218,7 @@ func (lb *LoadBalancer) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
 		http.Error(rw, "Service unavailable", http.StatusServiceUnavailable)
 		return
 	}
-	if r.Header.Get(httpheaders.HeaderGoDoxyCheckRedirect) != "" {
+	if r.Header.Get(httpheaders.HeaderTailnetCheckRedirect) != "" {
 		// wake all servers
 		for _, srv := range srvs {
 			if err := srv.TryWake(); err != nil {

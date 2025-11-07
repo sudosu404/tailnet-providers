@@ -4,7 +4,7 @@ import (
 	"reflect"
 
 	"github.com/go-playground/validator/v10"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
+	gperr "github.com/sudosu404/go-utils/errs"
 )
 
 var validate = validator.New()

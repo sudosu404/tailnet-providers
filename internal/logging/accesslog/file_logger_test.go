@@ -6,8 +6,8 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/sudosu404/tailnet-utils/task"
-	expect "github.com/sudosu404/tailnet-utils/testing"
+	"github.com/sudosu404/go-utils/task"
+	expect "github.com/sudosu404/go-utils/testing"
 )
 
 func TestConcurrentFileLoggersShareSameAccessLogIO(t *testing.T) {

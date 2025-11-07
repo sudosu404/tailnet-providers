@@ -6,10 +6,10 @@ import (
 
 	"github.com/gin-gonic/gin"
 	statequery "github.com/sudosu404/providers/internal/config/query"
-	"github.com/sudosu404/tailnet-utils/http/httpheaders"
-	"github.com/sudosu404/tailnet-utils/http/websocket"
+	"github.com/sudosu404/go-utils/http/httpheaders"
+	"github.com/sudosu404/go-utils/http/websocket"
 
-	_ "github.com/sudosu404/tailnet-utils/apitypes"
+	_ "github.com/sudosu404/go-utils/apitypes"
 )
 
 // @x-id				"providers"

@@ -19,13 +19,13 @@ import (
 	routeApi "github.com/sudosu404/providers/internal/api/v1/route"
 	"github.com/sudosu404/providers/internal/auth"
 	"github.com/sudosu404/providers/internal/common"
-	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
+	apitypes "github.com/sudosu404/go-utils/apitypes"
+	gperr "github.com/sudosu404/go-utils/errs"
 )
 
-// @title           GoDoxy API
+// @title           Tailnet API
 // @version         1.0
-// @description     GoDoxy API
+// @description     Tailnet API
 // @termsOfService  https://github.com/sudosu404/providers/blob/main/LICENSE
 
 // @contact.name   Yusing
@@ -36,7 +36,7 @@ import (
 
 // @BasePath  /api/v1
 
-// @externalDocs.description  GoDoxy Docs
+// @externalDocs.description  Tailnet Docs
 // @externalDocs.url          https://docs.godoxy.dev
 func NewHandler() *gin.Engine {
 	if !common.IsDebug {

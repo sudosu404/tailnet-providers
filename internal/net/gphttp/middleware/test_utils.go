@@ -11,8 +11,8 @@ import (
 	"github.com/bytedance/sonic"
 	"github.com/sudosu404/providers/internal/common"
 	nettypes "github.com/sudosu404/providers/internal/net/types"
-	gperr "github.com/sudosu404/tailnet-utils/errs"
-	"github.com/sudosu404/tailnet-utils/http/reverseproxy"
+	gperr "github.com/sudosu404/go-utils/errs"
+	"github.com/sudosu404/go-utils/http/reverseproxy"
 )
 
 //go:embed test_data/sample_headers.json
