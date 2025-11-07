@@ -1,16 +1,16 @@
-module github.com/yusing/godoxy
+module github.com/sudosu404/tailnet-providers
 
 go 1.25.3
 
-replace github.com/yusing/godoxy/agent => ./agent
+replace github.com/sudosu404/providers/agent => ./agent
 
-replace github.com/yusing/godoxy/internal/dnsproviders => ./internal/dnsproviders
+replace github.com/sudosu404/providers/internal/dnsproviders => ./internal/dnsproviders
 
 replace github.com/coreos/go-oidc/v3 => ./internal/go-oidc
 
 replace github.com/shirou/gopsutil/v4 => ./internal/gopsutil
 
-replace github.com/yusing/goutils => ./goutils
+replace github.com/sudosu404/tailnet-utils => ./goutils
 
 require (
 	github.com/PuerkitoBio/goquery v1.10.3 // parsing HTML for extract fav icon
@@ -45,10 +45,10 @@ require (
 	github.com/samber/slog-zerolog/v2 v2.8.0 // indirect
 	github.com/spf13/afero v1.15.0
 	github.com/stretchr/testify v1.11.1
-	github.com/yusing/ds v0.3.1
-	github.com/yusing/godoxy/agent v0.0.0-20251025144347-1ec2872f3d4c
-	github.com/yusing/godoxy/internal/dnsproviders v0.0.0-20251025144347-1ec2872f3d4c
-	github.com/yusing/goutils v0.7.0
+	github.com/sudosu404/go-ds v0.3.1
+	github.com/sudosu404/providers/agent v0.0.0-20251025144347-1ec2872f3d4c
+	github.com/sudosu404/providers/internal/dnsproviders v0.0.0-20251025144347-1ec2872f3d4c
+	github.com/sudosu404/tailnet-utils v0.7.0
 )
 
 require (

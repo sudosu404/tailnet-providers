@@ -8,10 +8,10 @@ import (
 	"net/url"
 	"testing"
 
-	"github.com/yusing/godoxy/internal/route"
-	"github.com/yusing/godoxy/internal/route/routes"
-	. "github.com/yusing/godoxy/internal/route/rules"
-	expect "github.com/yusing/goutils/testing"
+	"github.com/sudosu404/providers/internal/route"
+	"github.com/sudosu404/providers/internal/route/routes"
+	. "github.com/sudosu404/providers/internal/route/rules"
+	expect "github.com/sudosu404/tailnet-utils/testing"
 	"golang.org/x/crypto/bcrypt"
 )
 

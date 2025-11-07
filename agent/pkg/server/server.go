@@ -7,10 +7,10 @@ import (
 	"net/http"
 
 	"github.com/rs/zerolog/log"
-	"github.com/yusing/godoxy/agent/pkg/env"
-	"github.com/yusing/godoxy/agent/pkg/handler"
-	"github.com/yusing/goutils/server"
-	"github.com/yusing/goutils/task"
+	"github.com/sudosu404/providers/agent/pkg/env"
+	"github.com/sudosu404/providers/agent/pkg/handler"
+	"github.com/sudosu404/tailnet-utils/server"
+	"github.com/sudosu404/tailnet-utils/task"
 )
 
 type Options struct {

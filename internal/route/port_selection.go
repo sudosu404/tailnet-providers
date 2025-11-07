@@ -1,6 +1,6 @@
 package route
 
-import route "github.com/yusing/godoxy/internal/route/types"
+import route "github.com/sudosu404/providers/internal/route/types"
 
 var (
 	ImageNamePortMapTCP = map[string]int{

@@ -3,7 +3,7 @@ package middleware
 import (
 	"net/http"
 
-	gperr "github.com/yusing/goutils/errs"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
 )
 
 type middlewareChain struct {

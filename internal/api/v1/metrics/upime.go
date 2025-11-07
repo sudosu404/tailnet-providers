@@ -2,10 +2,10 @@ package metrics
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/yusing/godoxy/internal/metrics/period"
-	"github.com/yusing/godoxy/internal/metrics/uptime"
+	"github.com/sudosu404/providers/internal/metrics/period"
+	"github.com/sudosu404/providers/internal/metrics/uptime"
 
-	_ "github.com/yusing/goutils/apitypes"
+	_ "github.com/sudosu404/tailnet-utils/apitypes"
 )
 
 type UptimeRequest struct {

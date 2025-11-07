@@ -3,10 +3,10 @@ package types
 import (
 	"github.com/bytedance/sonic"
 	"github.com/docker/docker/api/types/container"
-	"github.com/yusing/ds/ordered"
-	"github.com/yusing/godoxy/agent/pkg/agent"
-	"github.com/yusing/godoxy/internal/utils"
-	gperr "github.com/yusing/goutils/errs"
+	"github.com/sudosu404/go-ds/ordered"
+	"github.com/sudosu404/providers/agent/pkg/agent"
+	"github.com/sudosu404/providers/internal/utils"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
 )
 
 type (

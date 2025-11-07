@@ -3,7 +3,7 @@ package middleware
 import (
 	"testing"
 
-	expect "github.com/yusing/goutils/testing"
+	expect "github.com/sudosu404/tailnet-utils/testing"
 )
 
 func TestOIDCMiddlewarePerRouteConfig(t *testing.T) {

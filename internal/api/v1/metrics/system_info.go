@@ -6,12 +6,12 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	agentPkg "github.com/yusing/godoxy/agent/pkg/agent"
-	"github.com/yusing/godoxy/internal/metrics/period"
-	"github.com/yusing/godoxy/internal/metrics/systeminfo"
-	apitypes "github.com/yusing/goutils/apitypes"
-	"github.com/yusing/goutils/http/httpheaders"
-	"github.com/yusing/goutils/synk"
+	agentPkg "github.com/sudosu404/providers/agent/pkg/agent"
+	"github.com/sudosu404/providers/internal/metrics/period"
+	"github.com/sudosu404/providers/internal/metrics/systeminfo"
+	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
+	"github.com/sudosu404/tailnet-utils/http/httpheaders"
+	"github.com/sudosu404/tailnet-utils/synk"
 )
 
 type SystemInfoRequest struct {

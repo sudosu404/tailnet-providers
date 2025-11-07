@@ -1,12 +1,12 @@
-module github.com/yusing/godoxy/internal/dnsproviders
+module github.com/sudosu404/providers/internal/dnsproviders
 
 go 1.25.3
 
-replace github.com/yusing/godoxy => ../..
+replace github.com/sudosu404/tailnet-providers => ../..
 
 require (
 	github.com/go-acme/lego/v4 v4.27.0
-	github.com/yusing/godoxy v0.19.2
+	github.com/sudosu404/tailnet-providers v0.19.2
 )
 
 require (
@@ -75,7 +75,7 @@ require (
 	github.com/vultr/govultr/v3 v3.24.0 // indirect
 	github.com/youmark/pkcs8 v0.0.0-20240726163527-a2c0da244d78 // indirect
 	github.com/yusing/gointernals v0.1.16 // indirect
-	github.com/yusing/goutils v0.7.0 // indirect
+	github.com/sudosu404/tailnet-utils v0.7.0 // indirect
 	go.opentelemetry.io/auto/sdk v1.2.1 // indirect
 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.63.0 // indirect
 	go.opentelemetry.io/otel v1.38.0 // indirect

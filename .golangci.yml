@@ -107,7 +107,7 @@ linters:
         - all
         - -SA1019
       dot-import-whitelist:
-        - github.com/yusing/godoxy/internal/utils/testing
+        - github.com/sudosu404/providers/internal/utils/testing
     tagalign:
       align: false
       sort: true

@@ -4,11 +4,11 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	config "github.com/yusing/godoxy/internal/config/types"
-	"github.com/yusing/godoxy/internal/net/gphttp/middleware"
-	"github.com/yusing/godoxy/internal/route/provider"
-	apitypes "github.com/yusing/goutils/apitypes"
-	gperr "github.com/yusing/goutils/errs"
+	config "github.com/sudosu404/providers/internal/config/types"
+	"github.com/sudosu404/providers/internal/net/gphttp/middleware"
+	"github.com/sudosu404/providers/internal/route/provider"
+	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
 )
 
 type ValidateFileRequest struct {

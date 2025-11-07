@@ -2,7 +2,7 @@
 services:
   socket-proxy:
     container_name: socket-proxy
-    image: ghcr.io/yusing/socket-proxy:latest
+    image: ghcr.io/sudosu404/socket-proxy:latest
     environment:
       - ALLOW_START=1
       - ALLOW_STOP=1
@@ -21,11 +21,11 @@ services:
     ports:
       - ${SOCKET_PROXY_LISTEN_ADDR:-127.0.0.1:2375}:2375
   frontend:
-    image: ghcr.io/yusing/godoxy-frontend:${TAG:-latest}
+    image: ghcr.io/sudosu404/tailnet-providers-frontend:${TAG:-latest}
     container_name: godoxy-frontend
     restart: unless-stopped
     env_file: .env
-    user: ${GODOXY_UID:-1000}:${GODOXY_GID:-1000}
+    user: ${TAILNET_UID:-1000}:${TAILNET_GID:-1000}
     read_only: true
     tmpfs:
       - /app/.next/cache # next image caching
@@ -40,7 +40,7 @@ services:
     depends_on:
       - app
     labels:
-      proxy.aliases: ${GODOXY_FRONTEND_ALIASES:-godoxy}
+      proxy.aliases: ${TAILNET_FRONTEND_ALIASES:-godoxy}
       # proxy.#1.middlewares.cidr_whitelist: |
       #   status: 403
       #   message: IP not allowed
@@ -50,12 +50,12 @@ services:
       #     - 192.168.0.0/16
       #     - 172.16.0.0/12
   app:
-    image: ghcr.io/yusing/godoxy:${TAG:-latest}
+    image: ghcr.io/sudosu404/tailnet-providers:${TAG:-latest}
     container_name: godoxy-proxy
     restart: always
     network_mode: host # do not change this
     env_file: .env
-    user: ${GODOXY_UID:-1000}:${GODOXY_GID:-1000}
+    user: ${TAILNET_UID:-1000}:${TAILNET_GID:-1000}
     depends_on:
       socket-proxy:
         condition: service_started

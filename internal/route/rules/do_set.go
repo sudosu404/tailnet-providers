@@ -6,8 +6,8 @@ import (
 	"net/url"
 	"strconv"
 
-	gperr "github.com/yusing/goutils/errs"
-	ioutils "github.com/yusing/goutils/io"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	ioutils "github.com/sudosu404/tailnet-utils/io"
 )
 
 type (

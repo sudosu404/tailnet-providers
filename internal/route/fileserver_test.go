@@ -10,7 +10,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	expect "github.com/yusing/goutils/testing"
+	expect "github.com/sudosu404/tailnet-utils/testing"
 )
 
 func TestPathTraversalAttack(t *testing.T) {

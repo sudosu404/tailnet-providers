@@ -11,8 +11,8 @@ import (
 	"github.com/shirou/gopsutil/v4/mem"
 	"github.com/shirou/gopsutil/v4/net"
 	"github.com/shirou/gopsutil/v4/sensors"
-	"github.com/yusing/goutils/num"
-	expect "github.com/yusing/goutils/testing"
+	"github.com/sudosu404/tailnet-utils/num"
+	expect "github.com/sudosu404/tailnet-utils/testing"
 )
 
 // Create test data

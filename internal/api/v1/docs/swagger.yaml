@@ -1606,12 +1606,12 @@ externalDocs:
 info:
   contact:
     name: Yusing
-    url: https://github.com/yusing/godoxy/issues
+    url: https://github.com/sudosu404/providers/issues
   description: GoDoxy API
   license:
     name: MIT
-    url: https://github.com/yusing/godoxy/blob/main/LICENSE
-  termsOfService: https://github.com/yusing/godoxy/blob/main/LICENSE
+    url: https://github.com/sudosu404/providers/blob/main/LICENSE
+  termsOfService: https://github.com/sudosu404/providers/blob/main/LICENSE
   title: GoDoxy API
   version: "1.0"
 paths:

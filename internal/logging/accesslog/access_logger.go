@@ -9,12 +9,12 @@ import (
 
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
-	maxmind "github.com/yusing/godoxy/internal/maxmind/types"
-	gperr "github.com/yusing/goutils/errs"
-	ioutils "github.com/yusing/goutils/io"
-	strutils "github.com/yusing/goutils/strings"
-	"github.com/yusing/goutils/synk"
-	"github.com/yusing/goutils/task"
+	maxmind "github.com/sudosu404/providers/internal/maxmind/types"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	ioutils "github.com/sudosu404/tailnet-utils/io"
+	strutils "github.com/sudosu404/tailnet-utils/strings"
+	"github.com/sudosu404/tailnet-utils/synk"
+	"github.com/sudosu404/tailnet-utils/task"
 	"golang.org/x/time/rate"
 )
 

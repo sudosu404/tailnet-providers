@@ -7,9 +7,9 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/yusing/godoxy/internal/route/routes"
-	httputils "github.com/yusing/goutils/http"
-	"github.com/yusing/goutils/http/httpheaders"
+	"github.com/sudosu404/providers/internal/route/routes"
+	httputils "github.com/sudosu404/tailnet-utils/http"
+	"github.com/sudosu404/tailnet-utils/http/httpheaders"
 )
 
 type (

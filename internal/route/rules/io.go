@@ -4,8 +4,8 @@ import (
 	"io"
 	"os"
 
-	"github.com/yusing/godoxy/internal/logging/accesslog"
-	gperr "github.com/yusing/goutils/errs"
+	"github.com/sudosu404/providers/internal/logging/accesslog"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
 )
 
 type noopWriteCloser struct {

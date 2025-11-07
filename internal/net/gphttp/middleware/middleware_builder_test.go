@@ -5,8 +5,8 @@ import (
 	"encoding/json"
 	"testing"
 
-	gperr "github.com/yusing/goutils/errs"
-	expect "github.com/yusing/goutils/testing"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	expect "github.com/sudosu404/tailnet-utils/testing"
 )
 
 //go:embed test_data/middleware_compose.yml

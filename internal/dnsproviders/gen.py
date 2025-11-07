@@ -19,7 +19,7 @@ names: list[str] = [
     'Local = "local"',
     'Pseudo = "pseudo"',
 ]
-imports: list[str] = ['"github.com/yusing/godoxy/internal/autocert"']
+imports: list[str] = ['"github.com/sudosu404/providers/internal/autocert"']
 genMap: list[str] = [
     "autocert.Providers[Local] = autocert.DNSProvider(NewDummyDefaultConfig, NewDummyDNSProviderConfig)",
     "autocert.Providers[Pseudo] = autocert.DNSProvider(NewDummyDefaultConfig, NewDummyDNSProviderConfig)",

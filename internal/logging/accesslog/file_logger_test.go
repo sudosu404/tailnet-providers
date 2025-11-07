@@ -6,8 +6,8 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/yusing/goutils/task"
-	expect "github.com/yusing/goutils/testing"
+	"github.com/sudosu404/tailnet-utils/task"
+	expect "github.com/sudosu404/tailnet-utils/testing"
 )
 
 func TestConcurrentFileLoggersShareSameAccessLogIO(t *testing.T) {

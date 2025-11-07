@@ -6,9 +6,9 @@ import (
 
 	"github.com/docker/docker/api/types/container"
 	"github.com/gin-gonic/gin"
-	gperr "github.com/yusing/goutils/errs"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
 
-	_ "github.com/yusing/goutils/apitypes"
+	_ "github.com/sudosu404/tailnet-utils/apitypes"
 )
 
 type ContainerState = container.ContainerState // @name ContainerState

@@ -4,8 +4,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/yusing/godoxy/internal/config"
-	apitypes "github.com/yusing/goutils/apitypes"
+	"github.com/sudosu404/providers/internal/config"
+	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
 )
 
 // @x-id				"reload"

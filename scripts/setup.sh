@@ -200,7 +200,7 @@ fi
 fetch_file "$DOT_ENV_EXAMPLE_PATH" "$DOT_ENV_PATH"
 
 # set random JWT secret
-setenv "GODOXY_API_JWT_SECRET" "$(openssl rand -base64 32)"
+setenv "TAILNET_API_JWT_SECRET" "$(openssl rand -base64 32)"
 
 # set timezone
 get_timezone
@@ -221,8 +221,8 @@ echo "Setting up login user"
 ask_while_empty "Enter login username: " LOGIN_USERNAME
 ask_while_empty "Enter login password: " LOGIN_PASSWORD
 echo "Setting up login user \"$LOGIN_USERNAME\" with password \"$LOGIN_PASSWORD\""
-setenv "GODOXY_API_USER" "$LOGIN_USERNAME"
-setenv "GODOXY_API_PASSWORD" "$LOGIN_PASSWORD"
+setenv "TAILNET_API_USER" "$LOGIN_USERNAME"
+setenv "TAILNET_API_PASSWORD" "$LOGIN_PASSWORD"
 
 # 8. setup autocert
 ask_while_empty "Configure autocert? (y/n): " ENABLE_AUTOCERT
@@ -291,8 +291,8 @@ fi
 if [ "$USE_ROOTLESS_DOCKER" == "true" ]; then
 	setenv "DOCKER_SOCKET" "/var/run/user/$(id -u)/docker.sock"
 else
-	setenv "GODOXY_UID" "$(id -u)"
-	setenv "GODOXY_GID" "$(id -g)"
+	setenv "TAILNET_UID" "$(id -u)"
+	setenv "TAILNET_GID" "$(id -g)"
 fi
 
 # 10. proxy network (rootless docker only)

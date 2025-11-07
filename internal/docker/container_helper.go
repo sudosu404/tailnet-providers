@@ -4,9 +4,9 @@ import (
 	"strings"
 
 	"github.com/docker/docker/api/types/container"
-	"github.com/yusing/ds/ordered"
-	"github.com/yusing/godoxy/internal/types"
-	strutils "github.com/yusing/goutils/strings"
+	"github.com/sudosu404/go-ds/ordered"
+	"github.com/sudosu404/providers/internal/types"
+	strutils "github.com/sudosu404/tailnet-utils/strings"
 )
 
 type containerHelper struct {

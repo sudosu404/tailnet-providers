@@ -10,10 +10,10 @@ import (
 	"github.com/bytedance/sonic"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
-	"github.com/yusing/godoxy/internal/serialization"
-	gperr "github.com/yusing/goutils/errs"
-	httputils "github.com/yusing/goutils/http"
-	"github.com/yusing/goutils/http/reverseproxy"
+	"github.com/sudosu404/providers/internal/serialization"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	httputils "github.com/sudosu404/tailnet-utils/http"
+	"github.com/sudosu404/tailnet-utils/http/reverseproxy"
 )
 
 type (

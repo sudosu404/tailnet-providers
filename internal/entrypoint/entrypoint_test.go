@@ -3,11 +3,11 @@ package entrypoint_test
 import (
 	"testing"
 
-	. "github.com/yusing/godoxy/internal/entrypoint"
-	"github.com/yusing/godoxy/internal/route"
-	"github.com/yusing/godoxy/internal/route/routes"
+	. "github.com/sudosu404/providers/internal/entrypoint"
+	"github.com/sudosu404/providers/internal/route"
+	"github.com/sudosu404/providers/internal/route/routes"
 
-	expect "github.com/yusing/goutils/testing"
+	expect "github.com/sudosu404/tailnet-utils/testing"
 )
 
 var ep = NewEntrypoint()

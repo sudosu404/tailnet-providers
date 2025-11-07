@@ -5,12 +5,12 @@ import (
 	"strconv"
 	"time"
 
-	idlewatcher "github.com/yusing/godoxy/internal/idlewatcher/types"
-	"github.com/yusing/godoxy/internal/proxmox"
-	"github.com/yusing/godoxy/internal/types"
-	"github.com/yusing/godoxy/internal/watcher"
-	"github.com/yusing/godoxy/internal/watcher/events"
-	gperr "github.com/yusing/goutils/errs"
+	idlewatcher "github.com/sudosu404/providers/internal/idlewatcher/types"
+	"github.com/sudosu404/providers/internal/proxmox"
+	"github.com/sudosu404/providers/internal/types"
+	"github.com/sudosu404/providers/internal/watcher"
+	"github.com/sudosu404/providers/internal/watcher/events"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
 )
 
 type ProxmoxProvider struct {

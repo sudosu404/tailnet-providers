@@ -3,7 +3,7 @@ package maxmind
 import (
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
-	gperr "github.com/yusing/goutils/errs"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
 )
 
 type (

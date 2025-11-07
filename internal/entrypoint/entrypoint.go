@@ -6,14 +6,14 @@ import (
 	"sync/atomic"
 
 	"github.com/rs/zerolog/log"
-	entrypoint "github.com/yusing/godoxy/internal/entrypoint/types"
-	"github.com/yusing/godoxy/internal/logging/accesslog"
-	"github.com/yusing/godoxy/internal/net/gphttp/middleware"
-	"github.com/yusing/godoxy/internal/net/gphttp/middleware/errorpage"
-	"github.com/yusing/godoxy/internal/route/routes"
-	"github.com/yusing/godoxy/internal/route/rules"
-	"github.com/yusing/godoxy/internal/types"
-	"github.com/yusing/goutils/task"
+	entrypoint "github.com/sudosu404/providers/internal/entrypoint/types"
+	"github.com/sudosu404/providers/internal/logging/accesslog"
+	"github.com/sudosu404/providers/internal/net/gphttp/middleware"
+	"github.com/sudosu404/providers/internal/net/gphttp/middleware/errorpage"
+	"github.com/sudosu404/providers/internal/route/routes"
+	"github.com/sudosu404/providers/internal/route/rules"
+	"github.com/sudosu404/providers/internal/types"
+	"github.com/sudosu404/tailnet-utils/task"
 )
 
 type Entrypoint struct {

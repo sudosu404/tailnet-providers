@@ -10,9 +10,9 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/require"
-	"github.com/yusing/godoxy/agent/pkg/agent"
-	"github.com/yusing/godoxy/agent/pkg/handler"
-	"github.com/yusing/godoxy/internal/types"
+	"github.com/sudosu404/providers/agent/pkg/agent"
+	"github.com/sudosu404/providers/agent/pkg/handler"
+	"github.com/sudosu404/providers/internal/types"
 )
 
 func TestCheckHealthHTTP(t *testing.T) {

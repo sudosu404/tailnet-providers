@@ -7,10 +7,10 @@ import (
 	"github.com/docker/docker/api/types/container"
 	"github.com/docker/docker/api/types/network"
 	"github.com/docker/docker/client"
-	D "github.com/yusing/godoxy/internal/docker"
-	"github.com/yusing/godoxy/internal/route"
-	routeTypes "github.com/yusing/godoxy/internal/route/types"
-	expect "github.com/yusing/goutils/testing"
+	D "github.com/sudosu404/providers/internal/docker"
+	"github.com/sudosu404/providers/internal/route"
+	routeTypes "github.com/sudosu404/providers/internal/route/types"
+	expect "github.com/sudosu404/tailnet-utils/testing"
 )
 
 var dummyNames = []string{"/a"}

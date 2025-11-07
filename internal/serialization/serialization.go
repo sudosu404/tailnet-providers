@@ -13,11 +13,11 @@ import (
 	"github.com/go-playground/validator/v10"
 	"github.com/goccy/go-yaml"
 	"github.com/puzpuzpuz/xsync/v4"
-	"github.com/yusing/godoxy/internal/utils"
+	"github.com/sudosu404/providers/internal/utils"
 	gi "github.com/yusing/gointernals"
-	"github.com/yusing/goutils/env"
-	gperr "github.com/yusing/goutils/errs"
-	strutils "github.com/yusing/goutils/strings"
+	"github.com/sudosu404/tailnet-utils/env"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	strutils "github.com/sudosu404/tailnet-utils/strings"
 )
 
 type SerializedObject = map[string]any
@@ -574,7 +574,7 @@ func substituteEnv(data []byte) ([]byte, gperr.Error) {
 	data = envRegex.ReplaceAllFunc(data, func(match []byte) []byte {
 		varName := string(match[2 : len(match)-1])
 		// NOTE: use env.LookupEnv instead of os.LookupEnv to support environment variable prefixes
-		// like ${API_ADDR} will lookup for GODOXY_API_ADDR, GOPROXY_API_ADDR and API_ADDR.
+		// like ${API_ADDR} will lookup for TAILNET_API_ADDR, GOPROXY_API_ADDR and API_ADDR.
 		env, ok := env.LookupEnv(varName)
 		if !ok {
 			envError.Addf("%s is not set", varName)

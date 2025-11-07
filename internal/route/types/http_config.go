@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	gperr "github.com/yusing/goutils/errs"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
 )
 
 type HTTPConfig struct {

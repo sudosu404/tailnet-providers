@@ -3,10 +3,10 @@ package accesslog_test
 import (
 	"testing"
 
-	"github.com/yusing/godoxy/internal/docker"
-	. "github.com/yusing/godoxy/internal/logging/accesslog"
-	"github.com/yusing/godoxy/internal/serialization"
-	expect "github.com/yusing/goutils/testing"
+	"github.com/sudosu404/providers/internal/docker"
+	. "github.com/sudosu404/providers/internal/logging/accesslog"
+	"github.com/sudosu404/providers/internal/serialization"
+	expect "github.com/sudosu404/tailnet-utils/testing"
 )
 
 func TestNewConfig(t *testing.T) {

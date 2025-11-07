@@ -16,10 +16,10 @@ import (
 	"github.com/docker/cli/cli/connhelper"
 	"github.com/docker/docker/client"
 	"github.com/rs/zerolog/log"
-	"github.com/yusing/godoxy/agent/pkg/agent"
-	"github.com/yusing/godoxy/internal/common"
-	httputils "github.com/yusing/goutils/http"
-	"github.com/yusing/goutils/task"
+	"github.com/sudosu404/providers/agent/pkg/agent"
+	"github.com/sudosu404/providers/internal/common"
+	httputils "github.com/sudosu404/tailnet-utils/http"
+	"github.com/sudosu404/tailnet-utils/task"
 	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
 )
 

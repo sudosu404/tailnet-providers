@@ -6,10 +6,10 @@ import (
 	"net/url"
 
 	"github.com/gin-gonic/gin"
-	metricsutils "github.com/yusing/godoxy/internal/metrics/utils"
-	apitypes "github.com/yusing/goutils/apitypes"
-	"github.com/yusing/goutils/http/httpheaders"
-	"github.com/yusing/goutils/http/websocket"
+	metricsutils "github.com/sudosu404/providers/internal/metrics/utils"
+	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
+	"github.com/sudosu404/tailnet-utils/http/httpheaders"
+	"github.com/sudosu404/tailnet-utils/http/websocket"
 )
 
 type ResponseType[AggregateT any] struct {

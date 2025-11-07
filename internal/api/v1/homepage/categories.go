@@ -4,10 +4,10 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/yusing/godoxy/internal/homepage"
-	"github.com/yusing/godoxy/internal/route/routes"
+	"github.com/sudosu404/providers/internal/homepage"
+	"github.com/sudosu404/providers/internal/route/routes"
 
-	_ "github.com/yusing/goutils/apitypes"
+	_ "github.com/sudosu404/tailnet-utils/apitypes"
 )
 
 // @x-id				"categories"

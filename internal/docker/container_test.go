@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/docker/docker/api/types/container"
-	expect "github.com/yusing/goutils/testing"
+	expect "github.com/sudosu404/tailnet-utils/testing"
 )
 
 func TestContainerExplicit(t *testing.T) {

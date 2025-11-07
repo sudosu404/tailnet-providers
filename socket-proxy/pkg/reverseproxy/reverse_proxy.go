@@ -19,7 +19,7 @@ import (
 	"strings"
 	"sync"
 
-	ioutils "github.com/yusing/goutils/io"
+	ioutils "github.com/sudosu404/tailnet-utils/io"
 	"golang.org/x/net/http/httpguts"
 )
 

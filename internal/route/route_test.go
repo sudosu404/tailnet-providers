@@ -4,10 +4,10 @@ import (
 	"testing"
 
 	"github.com/docker/docker/api/types/container"
-	"github.com/yusing/godoxy/internal/common"
-	route "github.com/yusing/godoxy/internal/route/types"
-	"github.com/yusing/godoxy/internal/types"
-	expect "github.com/yusing/goutils/testing"
+	"github.com/sudosu404/providers/internal/common"
+	route "github.com/sudosu404/providers/internal/route/types"
+	"github.com/sudosu404/providers/internal/types"
+	expect "github.com/sudosu404/tailnet-utils/testing"
 )
 
 func TestRouteValidate(t *testing.T) {

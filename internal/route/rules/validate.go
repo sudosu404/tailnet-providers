@@ -10,9 +10,9 @@ import (
 	"strings"
 
 	"github.com/rs/zerolog"
-	nettypes "github.com/yusing/godoxy/internal/net/types"
-	gperr "github.com/yusing/goutils/errs"
-	httputils "github.com/yusing/goutils/http"
+	nettypes "github.com/sudosu404/providers/internal/net/types"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	httputils "github.com/sudosu404/tailnet-utils/http"
 )
 
 type (

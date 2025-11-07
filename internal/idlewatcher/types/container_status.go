@@ -1,6 +1,6 @@
 package idlewatcher
 
-import gperr "github.com/yusing/goutils/errs"
+import gperr "github.com/sudosu404/tailnet-utils/errs"
 
 type ContainerStatus string
 

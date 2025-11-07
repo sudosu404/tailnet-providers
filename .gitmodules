@@ -6,4 +6,4 @@
 	url = https://github.com/godoxy-app/go-oidc.git
 [submodule "goutils"]
 	path = goutils
-	url = https://github.com/yusing/goutils.git
+	url = https://github.com/sudosu404/tailnet-utils.git

@@ -3,7 +3,7 @@ package homepage_test
 import (
 	"testing"
 
-	. "github.com/yusing/godoxy/internal/homepage"
+	. "github.com/sudosu404/providers/internal/homepage"
 )
 
 const walkxcodeIcons = `{

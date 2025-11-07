@@ -9,8 +9,8 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/puzpuzpuz/xsync/v4"
-	apitypes "github.com/yusing/goutils/apitypes"
-	"github.com/yusing/goutils/http/websocket"
+	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
+	"github.com/sudosu404/tailnet-utils/http/websocket"
 )
 
 type logEntryRange struct {

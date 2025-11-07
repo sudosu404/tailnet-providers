@@ -19,7 +19,7 @@ COPY go.mod go.sum ./
 # remove godoxy stuff from go.mod first
 RUN --mount=type=cache,target=/root/.cache/go-build \
   --mount=type=cache,target=/root/go/pkg/mod \
-  sed -i '/^module github\.com\/yusing\/godoxy/!{/github\.com\/yusing\/godoxy/d}' go.mod && go mod download -x
+  sed -i '/^module github\.com\/sudosu404\/tailnet-providers/!{/github\.com\/sudosu404\/tailnet-providers/d}' go.mod && go mod download -x
 
 # Stage 2: builder
 FROM deps AS builder
@@ -48,7 +48,7 @@ RUN --mount=type=cache,target=/root/.cache/go-build \
 # Stage 3: Final image
 FROM scratch
 
-LABEL maintainer="yusing@6uo.me"
+LABEL maintainer="hector@email.gnx"
 LABEL proxy.exclude=1
 LABEL proxy.#1.healthcheck.disable=true
 

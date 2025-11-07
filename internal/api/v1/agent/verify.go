@@ -6,12 +6,12 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
-	"github.com/yusing/godoxy/agent/pkg/agent"
-	"github.com/yusing/godoxy/agent/pkg/certs"
-	config "github.com/yusing/godoxy/internal/config/types"
-	"github.com/yusing/godoxy/internal/route/provider"
-	apitypes "github.com/yusing/goutils/apitypes"
-	gperr "github.com/yusing/goutils/errs"
+	"github.com/sudosu404/providers/agent/pkg/agent"
+	"github.com/sudosu404/providers/agent/pkg/certs"
+	config "github.com/sudosu404/providers/internal/config/types"
+	"github.com/sudosu404/providers/internal/route/provider"
+	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
 )
 
 type VerifyNewAgentRequest struct {

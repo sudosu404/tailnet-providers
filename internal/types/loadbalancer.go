@@ -3,8 +3,8 @@ package types
 import (
 	"net/http"
 
-	nettypes "github.com/yusing/godoxy/internal/net/types"
-	strutils "github.com/yusing/goutils/strings"
+	nettypes "github.com/sudosu404/providers/internal/net/types"
+	strutils "github.com/sudosu404/tailnet-utils/strings"
 )
 
 type (

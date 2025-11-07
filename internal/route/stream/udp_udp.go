@@ -10,9 +10,9 @@ import (
 	"time"
 
 	"github.com/rs/zerolog"
-	"github.com/yusing/godoxy/internal/acl"
-	nettypes "github.com/yusing/godoxy/internal/net/types"
-	"github.com/yusing/goutils/synk"
+	"github.com/sudosu404/providers/internal/acl"
+	nettypes "github.com/sudosu404/providers/internal/net/types"
+	"github.com/sudosu404/tailnet-utils/synk"
 	"go.uber.org/atomic"
 )
 

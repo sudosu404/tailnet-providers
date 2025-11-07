@@ -5,10 +5,10 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	statequery "github.com/yusing/godoxy/internal/config/query"
-	"github.com/yusing/godoxy/internal/types"
-	"github.com/yusing/goutils/http/httpheaders"
-	"github.com/yusing/goutils/http/websocket"
+	statequery "github.com/sudosu404/providers/internal/config/query"
+	"github.com/sudosu404/providers/internal/types"
+	"github.com/sudosu404/tailnet-utils/http/httpheaders"
+	"github.com/sudosu404/tailnet-utils/http/websocket"
 )
 
 type StatsResponse struct {

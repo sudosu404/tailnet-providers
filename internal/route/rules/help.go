@@ -6,8 +6,8 @@ import (
 	"strconv"
 	"strings"
 
-	gperr "github.com/yusing/goutils/errs"
-	"github.com/yusing/goutils/strings/ansi"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	"github.com/sudosu404/tailnet-utils/strings/ansi"
 )
 
 type Help struct {

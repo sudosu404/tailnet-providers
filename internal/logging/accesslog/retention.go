@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strconv"
 
-	gperr "github.com/yusing/goutils/errs"
-	strutils "github.com/yusing/goutils/strings"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	strutils "github.com/sudosu404/tailnet-utils/strings"
 )
 
 type Retention struct {

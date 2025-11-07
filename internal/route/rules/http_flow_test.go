@@ -14,13 +14,13 @@ import (
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/yusing/godoxy/internal/route"
-	"github.com/yusing/godoxy/internal/route/routes"
-	"github.com/yusing/godoxy/internal/serialization"
-	gperr "github.com/yusing/goutils/errs"
+	"github.com/sudosu404/providers/internal/route"
+	"github.com/sudosu404/providers/internal/route/routes"
+	"github.com/sudosu404/providers/internal/serialization"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
 	"golang.org/x/crypto/bcrypt"
 
-	. "github.com/yusing/godoxy/internal/route/rules"
+	. "github.com/sudosu404/providers/internal/route/rules"
 )
 
 // mockUpstream creates a simple upstream handler for testing

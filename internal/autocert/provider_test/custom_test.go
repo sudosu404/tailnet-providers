@@ -20,8 +20,8 @@ import (
 	"time"
 
 	"github.com/stretchr/testify/require"
-	"github.com/yusing/godoxy/internal/autocert"
-	"github.com/yusing/godoxy/internal/dnsproviders"
+	"github.com/sudosu404/providers/internal/autocert"
+	"github.com/sudosu404/providers/internal/dnsproviders"
 )
 
 func TestMain(m *testing.M) {

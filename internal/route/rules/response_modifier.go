@@ -8,8 +8,8 @@ import (
 	"net/http"
 	"strconv"
 
-	gperr "github.com/yusing/goutils/errs"
-	"github.com/yusing/goutils/synk"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	"github.com/sudosu404/tailnet-utils/synk"
 )
 
 type ResponseModifier struct {

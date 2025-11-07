@@ -5,16 +5,16 @@ import (
 	"sync/atomic"
 
 	"github.com/go-playground/validator/v10"
-	"github.com/yusing/godoxy/agent/pkg/agent"
-	"github.com/yusing/godoxy/internal/acl"
-	"github.com/yusing/godoxy/internal/autocert"
-	entrypoint "github.com/yusing/godoxy/internal/entrypoint/types"
-	homepage "github.com/yusing/godoxy/internal/homepage/types"
-	maxmind "github.com/yusing/godoxy/internal/maxmind/types"
-	"github.com/yusing/godoxy/internal/notif"
-	"github.com/yusing/godoxy/internal/proxmox"
-	"github.com/yusing/godoxy/internal/serialization"
-	gperr "github.com/yusing/goutils/errs"
+	"github.com/sudosu404/providers/agent/pkg/agent"
+	"github.com/sudosu404/providers/internal/acl"
+	"github.com/sudosu404/providers/internal/autocert"
+	entrypoint "github.com/sudosu404/providers/internal/entrypoint/types"
+	homepage "github.com/sudosu404/providers/internal/homepage/types"
+	maxmind "github.com/sudosu404/providers/internal/maxmind/types"
+	"github.com/sudosu404/providers/internal/notif"
+	"github.com/sudosu404/providers/internal/proxmox"
+	"github.com/sudosu404/providers/internal/serialization"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
 )
 
 type (

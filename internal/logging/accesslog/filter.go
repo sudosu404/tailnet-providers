@@ -5,9 +5,9 @@ import (
 	"net/http"
 	"strings"
 
-	nettypes "github.com/yusing/godoxy/internal/net/types"
-	gperr "github.com/yusing/goutils/errs"
-	strutils "github.com/yusing/goutils/strings"
+	nettypes "github.com/sudosu404/providers/internal/net/types"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	strutils "github.com/sudosu404/tailnet-utils/strings"
 )
 
 type (

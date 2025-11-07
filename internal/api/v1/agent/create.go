@@ -8,8 +8,8 @@ import (
 	_ "embed"
 
 	"github.com/gin-gonic/gin"
-	"github.com/yusing/godoxy/agent/pkg/agent"
-	apitypes "github.com/yusing/goutils/apitypes"
+	"github.com/sudosu404/providers/agent/pkg/agent"
+	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
 )
 
 type NewAgentRequest struct {

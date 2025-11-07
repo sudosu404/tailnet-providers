@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	"github.com/rs/zerolog"
-	"github.com/yusing/godoxy/internal/common"
+	"github.com/sudosu404/providers/internal/common"
 
 	zerologlog "github.com/rs/zerolog/log"
 )

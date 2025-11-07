@@ -3,7 +3,7 @@ package middleware
 import (
 	"net/http"
 
-	"github.com/yusing/godoxy/internal/route/rules"
+	"github.com/sudosu404/providers/internal/route/rules"
 )
 
 type Bypass []rules.RuleOn

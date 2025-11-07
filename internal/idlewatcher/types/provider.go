@@ -3,9 +3,9 @@ package idlewatcher
 import (
 	"context"
 
-	"github.com/yusing/godoxy/internal/types"
-	"github.com/yusing/godoxy/internal/watcher/events"
-	gperr "github.com/yusing/goutils/errs"
+	"github.com/sudosu404/providers/internal/types"
+	"github.com/sudosu404/providers/internal/watcher/events"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
 )
 
 type Provider interface {

@@ -9,9 +9,9 @@ import (
 	"github.com/docker/docker/api/types/filters"
 	"github.com/docker/docker/client"
 	"github.com/rs/zerolog/log"
-	"github.com/yusing/godoxy/internal/docker"
-	"github.com/yusing/godoxy/internal/watcher/events"
-	gperr "github.com/yusing/goutils/errs"
+	"github.com/sudosu404/providers/internal/docker"
+	"github.com/sudosu404/providers/internal/watcher/events"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
 )
 
 type (

@@ -3,8 +3,8 @@ package homepage_test
 import (
 	"testing"
 
-	. "github.com/yusing/godoxy/internal/homepage"
-	expect "github.com/yusing/goutils/testing"
+	. "github.com/sudosu404/providers/internal/homepage"
+	expect "github.com/sudosu404/tailnet-utils/testing"
 )
 
 func strPtr(s string) *string {

@@ -8,10 +8,10 @@ import (
 	"strings"
 
 	"github.com/gin-gonic/gin"
-	"github.com/yusing/godoxy/internal/common"
-	"github.com/yusing/godoxy/internal/route/rules"
-	apitypes "github.com/yusing/goutils/apitypes"
-	gperr "github.com/yusing/goutils/errs"
+	"github.com/sudosu404/providers/internal/common"
+	"github.com/sudosu404/providers/internal/route/rules"
+	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
 )
 
 type RawRule struct {

@@ -2,10 +2,10 @@ package provider
 
 import (
 	"github.com/rs/zerolog"
-	"github.com/yusing/godoxy/agent/pkg/agent"
-	"github.com/yusing/godoxy/internal/route"
-	"github.com/yusing/godoxy/internal/watcher"
-	gperr "github.com/yusing/goutils/errs"
+	"github.com/sudosu404/providers/agent/pkg/agent"
+	"github.com/sudosu404/providers/internal/route"
+	"github.com/sudosu404/providers/internal/watcher"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
 )
 
 type AgentProvider struct {

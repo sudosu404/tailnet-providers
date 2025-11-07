@@ -5,9 +5,9 @@ import (
 	"strings"
 
 	"github.com/gin-gonic/gin"
-	"github.com/yusing/godoxy/internal/common"
-	"github.com/yusing/godoxy/internal/utils"
-	apitypes "github.com/yusing/goutils/apitypes"
+	"github.com/sudosu404/providers/internal/common"
+	"github.com/sudosu404/providers/internal/utils"
+	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
 )
 
 type ListFilesResponse struct {

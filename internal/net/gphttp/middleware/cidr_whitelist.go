@@ -6,9 +6,9 @@ import (
 
 	"github.com/go-playground/validator/v10"
 	"github.com/puzpuzpuz/xsync/v4"
-	nettypes "github.com/yusing/godoxy/internal/net/types"
-	"github.com/yusing/godoxy/internal/serialization"
-	httputils "github.com/yusing/goutils/http"
+	nettypes "github.com/sudosu404/providers/internal/net/types"
+	"github.com/sudosu404/providers/internal/serialization"
+	httputils "github.com/sudosu404/tailnet-utils/http"
 )
 
 type (

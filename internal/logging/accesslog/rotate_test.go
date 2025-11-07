@@ -6,11 +6,11 @@ import (
 	"testing"
 	"time"
 
-	. "github.com/yusing/godoxy/internal/logging/accesslog"
-	"github.com/yusing/godoxy/internal/utils"
-	strutils "github.com/yusing/goutils/strings"
-	"github.com/yusing/goutils/task"
-	expect "github.com/yusing/goutils/testing"
+	. "github.com/sudosu404/providers/internal/logging/accesslog"
+	"github.com/sudosu404/providers/internal/utils"
+	strutils "github.com/sudosu404/tailnet-utils/strings"
+	"github.com/sudosu404/tailnet-utils/task"
+	expect "github.com/sudosu404/tailnet-utils/testing"
 )
 
 var (

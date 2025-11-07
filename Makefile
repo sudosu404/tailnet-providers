@@ -7,7 +7,7 @@ WEBUI_DIR ?= ../godoxy-webui
 DOCS_DIR ?= ${WEBUI_DIR}/wiki
 
 GO_TAGS = sonic
-LDFLAGS = -X github.com/yusing/goutils/version.version=${VERSION} -checklinkname=0
+LDFLAGS = -X github.com/sudosu404/tailnet-utils/version.version=${VERSION} -checklinkname=0
 
 ifeq ($(agent), 1)
 	NAME = godoxy-agent
@@ -22,18 +22,18 @@ endif
 
 ifeq ($(trace), 1)
 	debug = 1
-	GODOXY_TRACE ?= 1
+	TAILNET_TRACE ?= 1
 	GODEBUG = gctrace=1 inittrace=1 schedtrace=3000
 endif
 
 ifeq ($(race), 1)
 	CGO_ENABLED = 1
-	GODOXY_DEBUG = 1
+	TAILNET_DEBUG = 1
 	GO_TAGS += debug
 	BUILD_FLAGS += -race
 else ifeq ($(debug), 1)
 	CGO_ENABLED = 1
-	GODOXY_DEBUG = 1
+	TAILNET_DEBUG = 1
 	GO_TAGS += debug
 	BUILD_FLAGS += -asan # FIXME: -gcflags=all='-N -l'
 else ifeq ($(pprof), 1)
@@ -53,8 +53,8 @@ BIN_PATH := $(shell pwd)/bin/${NAME}
 
 export NAME
 export CGO_ENABLED
-export GODOXY_DEBUG
-export GODOXY_TRACE
+export TAILNET_DEBUG
+export TAILNET_TRACE
 export GODEBUG
 export GORACE
 export BUILD_FLAGS

@@ -4,9 +4,9 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/yusing/ds/ordered"
-	"github.com/yusing/godoxy/internal/homepage/widgets"
-	"github.com/yusing/godoxy/internal/serialization"
+	"github.com/sudosu404/go-ds/ordered"
+	"github.com/sudosu404/providers/internal/homepage/widgets"
+	"github.com/sudosu404/providers/internal/serialization"
 )
 
 type (

@@ -6,11 +6,11 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/yusing/godoxy/internal/route"
-	"github.com/yusing/godoxy/internal/route/routes"
-	"github.com/yusing/godoxy/internal/types"
-	"github.com/yusing/goutils/http/httpheaders"
-	"github.com/yusing/goutils/http/websocket"
+	"github.com/sudosu404/providers/internal/route"
+	"github.com/sudosu404/providers/internal/route/routes"
+	"github.com/sudosu404/providers/internal/types"
+	"github.com/sudosu404/tailnet-utils/http/httpheaders"
+	"github.com/sudosu404/tailnet-utils/http/websocket"
 )
 
 type RouteType route.Route // @name Route

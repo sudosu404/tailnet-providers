@@ -3,8 +3,8 @@ package loadbalancer
 import (
 	"testing"
 
-	"github.com/yusing/godoxy/internal/types"
-	expect "github.com/yusing/goutils/testing"
+	"github.com/sudosu404/providers/internal/types"
+	expect "github.com/sudosu404/tailnet-utils/testing"
 )
 
 func TestRebalance(t *testing.T) {

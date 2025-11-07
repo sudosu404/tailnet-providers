@@ -3,8 +3,8 @@ package watcher
 import (
 	"sync"
 
-	"github.com/yusing/godoxy/internal/common"
-	"github.com/yusing/goutils/task"
+	"github.com/sudosu404/providers/internal/common"
+	"github.com/sudosu404/tailnet-utils/task"
 )
 
 var (

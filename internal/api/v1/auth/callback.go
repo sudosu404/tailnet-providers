@@ -3,7 +3,7 @@ package auth
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/yusing/godoxy/internal/auth"
+	"github.com/sudosu404/providers/internal/auth"
 )
 
 // @x-id				"callback"

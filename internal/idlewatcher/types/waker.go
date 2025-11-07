@@ -3,8 +3,8 @@ package idlewatcher
 import (
 	"net/http"
 
-	nettypes "github.com/yusing/godoxy/internal/net/types"
-	"github.com/yusing/godoxy/internal/types"
+	nettypes "github.com/sudosu404/providers/internal/net/types"
+	"github.com/sudosu404/providers/internal/types"
 )
 
 type Waker interface {

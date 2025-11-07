@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/rs/zerolog"
-	gperr "github.com/yusing/goutils/errs"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
 )
 
 // See https://docs.ntfy.sh/publish

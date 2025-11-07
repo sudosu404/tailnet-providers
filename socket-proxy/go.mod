@@ -1,14 +1,14 @@
-module github.com/yusing/godoxy/socketproxy
+module github.com/sudosu404/providers/socketproxy
 
 go 1.25.3
 
-exclude github.com/yusing/goutils v0.4.2
+exclude github.com/sudosu404/tailnet-utils v0.4.2
 
-replace github.com/yusing/goutils => ../goutils
+replace github.com/sudosu404/tailnet-utils => ../goutils
 
 require (
 	github.com/gorilla/mux v1.8.1
-	github.com/yusing/goutils v0.7.0
+	github.com/sudosu404/tailnet-utils v0.7.0
 	golang.org/x/net v0.46.0
 )
 

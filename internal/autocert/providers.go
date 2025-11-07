@@ -2,8 +2,8 @@ package autocert
 
 import (
 	"github.com/go-acme/lego/v4/challenge"
-	"github.com/yusing/godoxy/internal/serialization"
-	gperr "github.com/yusing/goutils/errs"
+	"github.com/sudosu404/providers/internal/serialization"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
 )
 
 type Generator func(map[string]any) (challenge.Provider, gperr.Error)

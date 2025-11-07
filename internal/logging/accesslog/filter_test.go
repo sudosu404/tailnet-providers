@@ -5,10 +5,10 @@ import (
 	"net/http"
 	"testing"
 
-	. "github.com/yusing/godoxy/internal/logging/accesslog"
-	nettypes "github.com/yusing/godoxy/internal/net/types"
-	strutils "github.com/yusing/goutils/strings"
-	expect "github.com/yusing/goutils/testing"
+	. "github.com/sudosu404/providers/internal/logging/accesslog"
+	nettypes "github.com/sudosu404/providers/internal/net/types"
+	strutils "github.com/sudosu404/tailnet-utils/strings"
+	expect "github.com/sudosu404/tailnet-utils/testing"
 )
 
 func TestStatusCodeFilter(t *testing.T) {

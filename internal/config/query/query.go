@@ -1,8 +1,8 @@
 package statequery
 
 import (
-	config "github.com/yusing/godoxy/internal/config/types"
-	"github.com/yusing/godoxy/internal/types"
+	config "github.com/sudosu404/providers/internal/config/types"
+	"github.com/sudosu404/providers/internal/types"
 )
 
 type RouteProviderListResponse struct {

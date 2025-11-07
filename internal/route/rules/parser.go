@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"unicode"
 
-	"github.com/yusing/goutils/env"
-	gperr "github.com/yusing/goutils/errs"
+	"github.com/sudosu404/tailnet-utils/env"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
 )
 
 var escapedChars = map[rune]rune{
@@ -114,7 +114,7 @@ func parse(v string) (subject string, args []string, err gperr.Error) {
 		case '}':
 			if inEnvVar {
 				// NOTE: use env.LookupEnv instead of os.LookupEnv to support environment variable prefixes
-				// like ${API_ADDR} will lookup for GODOXY_API_ADDR, GOPROXY_API_ADDR and API_ADDR.
+				// like ${API_ADDR} will lookup for TAILNET_API_ADDR, GOPROXY_API_ADDR and API_ADDR.
 				envValue, ok := env.LookupEnv(envVar.String())
 				if !ok {
 					missingEnvVars = append(missingEnvVars, envVar.String())

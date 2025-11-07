@@ -10,11 +10,11 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/lithammer/fuzzysearch/fuzzy"
-	"github.com/yusing/godoxy/internal/homepage"
-	"github.com/yusing/godoxy/internal/route/routes"
-	apitypes "github.com/yusing/goutils/apitypes"
-	"github.com/yusing/goutils/http/httpheaders"
-	"github.com/yusing/goutils/http/websocket"
+	"github.com/sudosu404/providers/internal/homepage"
+	"github.com/sudosu404/providers/internal/route/routes"
+	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
+	"github.com/sudosu404/tailnet-utils/http/httpheaders"
+	"github.com/sudosu404/tailnet-utils/http/websocket"
 )
 
 type HomepageItemsRequest struct {

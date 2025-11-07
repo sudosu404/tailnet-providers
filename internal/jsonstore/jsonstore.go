@@ -9,10 +9,10 @@ import (
 	"github.com/bytedance/sonic"
 	"github.com/puzpuzpuz/xsync/v4"
 	"github.com/rs/zerolog/log"
-	"github.com/yusing/godoxy/internal/common"
-	"github.com/yusing/godoxy/internal/serialization"
-	gperr "github.com/yusing/goutils/errs"
-	"github.com/yusing/goutils/task"
+	"github.com/sudosu404/providers/internal/common"
+	"github.com/sudosu404/providers/internal/serialization"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	"github.com/sudosu404/tailnet-utils/task"
 )
 
 type namespace string

@@ -6,11 +6,11 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/rs/zerolog/log"
-	"github.com/yusing/godoxy/internal/autocert"
-	"github.com/yusing/godoxy/internal/logging/memlogger"
-	apitypes "github.com/yusing/goutils/apitypes"
-	gperr "github.com/yusing/goutils/errs"
-	"github.com/yusing/goutils/http/websocket"
+	"github.com/sudosu404/providers/internal/autocert"
+	"github.com/sudosu404/providers/internal/logging/memlogger"
+	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	"github.com/sudosu404/tailnet-utils/http/websocket"
 )
 
 // @x-id				"renew"

@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	gperr "github.com/yusing/goutils/errs"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
 )
 
 type CustomValidatingPointerStruct struct {

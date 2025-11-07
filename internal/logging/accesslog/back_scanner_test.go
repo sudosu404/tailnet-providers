@@ -9,10 +9,10 @@ import (
 	"testing"
 
 	"github.com/spf13/afero"
-	expect "github.com/yusing/goutils/testing"
+	expect "github.com/sudosu404/tailnet-utils/testing"
 
-	strutils "github.com/yusing/goutils/strings"
-	"github.com/yusing/goutils/task"
+	strutils "github.com/sudosu404/tailnet-utils/strings"
+	"github.com/sudosu404/tailnet-utils/task"
 )
 
 func TestBackScanner(t *testing.T) {

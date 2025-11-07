@@ -7,8 +7,8 @@ import (
 	"net/url"
 
 	"github.com/bytedance/sonic"
-	"github.com/yusing/godoxy/internal/homepage/widgets"
-	gperr "github.com/yusing/goutils/errs"
+	"github.com/sudosu404/providers/internal/homepage/widgets"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
 )
 
 type Client struct {

@@ -15,25 +15,25 @@ import (
 
 	"github.com/docker/docker/api/types/container"
 	"github.com/rs/zerolog/log"
-	"github.com/yusing/godoxy/agent/pkg/agent"
-	"github.com/yusing/godoxy/internal/docker"
-	"github.com/yusing/godoxy/internal/homepage"
-	homepagecfg "github.com/yusing/godoxy/internal/homepage/types"
-	netutils "github.com/yusing/godoxy/internal/net"
-	nettypes "github.com/yusing/godoxy/internal/net/types"
-	"github.com/yusing/godoxy/internal/proxmox"
-	"github.com/yusing/godoxy/internal/serialization"
-	"github.com/yusing/godoxy/internal/types"
-	gperr "github.com/yusing/goutils/errs"
-	strutils "github.com/yusing/goutils/strings"
-	"github.com/yusing/goutils/task"
+	"github.com/sudosu404/providers/agent/pkg/agent"
+	"github.com/sudosu404/providers/internal/docker"
+	"github.com/sudosu404/providers/internal/homepage"
+	homepagecfg "github.com/sudosu404/providers/internal/homepage/types"
+	netutils "github.com/sudosu404/providers/internal/net"
+	nettypes "github.com/sudosu404/providers/internal/net/types"
+	"github.com/sudosu404/providers/internal/proxmox"
+	"github.com/sudosu404/providers/internal/serialization"
+	"github.com/sudosu404/providers/internal/types"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	strutils "github.com/sudosu404/tailnet-utils/strings"
+	"github.com/sudosu404/tailnet-utils/task"
 
-	"github.com/yusing/godoxy/internal/common"
-	"github.com/yusing/godoxy/internal/logging/accesslog"
-	"github.com/yusing/godoxy/internal/route/rules"
-	rulepresets "github.com/yusing/godoxy/internal/route/rules/presets"
-	route "github.com/yusing/godoxy/internal/route/types"
-	"github.com/yusing/godoxy/internal/utils"
+	"github.com/sudosu404/providers/internal/common"
+	"github.com/sudosu404/providers/internal/logging/accesslog"
+	"github.com/sudosu404/providers/internal/route/rules"
+	rulepresets "github.com/sudosu404/providers/internal/route/rules/presets"
+	route "github.com/sudosu404/providers/internal/route/types"
+	"github.com/sudosu404/providers/internal/utils"
 )
 
 type (
@@ -207,7 +207,7 @@ func (r *Route) Validate() gperr.Error {
 		r.Idlewatcher = r.Container.IdlewatcherConfig
 	}
 
-	// return error if route is localhost:<godoxy_port> but route is not agent
+	// return error if route is localhost:<tailnet_port> but route is not agent
 	if !r.IsAgent() {
 		switch r.Host {
 		case "localhost", "127.0.0.1":

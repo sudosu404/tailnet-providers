@@ -4,9 +4,9 @@ import (
 	"runtime/debug"
 	"time"
 
-	"github.com/yusing/godoxy/internal/common"
-	gperr "github.com/yusing/goutils/errs"
-	"github.com/yusing/goutils/task"
+	"github.com/sudosu404/providers/internal/common"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	"github.com/sudosu404/tailnet-utils/task"
 )
 
 type (

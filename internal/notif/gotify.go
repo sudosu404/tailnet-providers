@@ -7,7 +7,7 @@ import (
 	"github.com/bytedance/sonic"
 	"github.com/gotify/server/v2/model"
 	"github.com/rs/zerolog"
-	gperr "github.com/yusing/goutils/errs"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
 )
 
 type (

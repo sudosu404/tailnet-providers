@@ -12,10 +12,10 @@ import (
 	"time"
 
 	"github.com/rs/zerolog/log"
-	"github.com/yusing/godoxy/internal/common"
-	nettypes "github.com/yusing/godoxy/internal/net/types"
-	strutils "github.com/yusing/goutils/strings"
-	"github.com/yusing/goutils/synk"
+	"github.com/sudosu404/providers/internal/common"
+	nettypes "github.com/sudosu404/providers/internal/net/types"
+	strutils "github.com/sudosu404/tailnet-utils/strings"
+	"github.com/sudosu404/tailnet-utils/synk"
 )
 
 type cloudflareRealIP struct {

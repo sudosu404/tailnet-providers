@@ -3,7 +3,7 @@ package autocert
 import (
 	"crypto/tls"
 
-	"github.com/yusing/goutils/task"
+	"github.com/sudosu404/tailnet-utils/task"
 )
 
 type Provider interface {

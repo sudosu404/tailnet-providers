@@ -5,7 +5,7 @@ import (
 	_ "embed"
 	"text/template"
 
-	"github.com/yusing/goutils/http/httpheaders"
+	"github.com/sudosu404/tailnet-utils/http/httpheaders"
 )
 
 type templateData struct {

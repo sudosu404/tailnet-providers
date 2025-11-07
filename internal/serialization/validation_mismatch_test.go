@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	gperr "github.com/yusing/goutils/errs"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
 )
 
 // Test cases for when *T implements CustomValidator but T is passed in

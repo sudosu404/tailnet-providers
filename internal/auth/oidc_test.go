@@ -13,10 +13,10 @@ import (
 
 	"github.com/coreos/go-oidc/v3/oidc"
 	"github.com/golang-jwt/jwt/v5"
-	"github.com/yusing/godoxy/internal/common"
+	"github.com/sudosu404/providers/internal/common"
 	"golang.org/x/oauth2"
 
-	expect "github.com/yusing/goutils/testing"
+	expect "github.com/sudosu404/tailnet-utils/testing"
 )
 
 // setupMockOIDC configures mock OIDC provider for testing.

@@ -9,9 +9,9 @@ import (
 	"github.com/fsnotify/fsnotify"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
-	"github.com/yusing/godoxy/internal/watcher/events"
-	gperr "github.com/yusing/goutils/errs"
-	"github.com/yusing/goutils/task"
+	"github.com/sudosu404/providers/internal/watcher/events"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	"github.com/sudosu404/tailnet-utils/task"
 )
 
 type DirWatcher struct {

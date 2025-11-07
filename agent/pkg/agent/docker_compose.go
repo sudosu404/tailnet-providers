@@ -14,8 +14,8 @@ var (
 )
 
 const (
-	DockerImageProduction = "ghcr.io/yusing/godoxy-agent:latest"
-	DockerImageNightly    = "ghcr.io/yusing/godoxy-agent:nightly"
+	DockerImageProduction = "ghcr.io/sudosu404/tailnet-providers-agent:latest"
+	DockerImageNightly    = "ghcr.io/sudosu404/tailnet-providers-agent:nightly"
 )
 
 func (c *AgentComposeConfig) Generate() (string, error) {

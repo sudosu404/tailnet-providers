@@ -9,9 +9,9 @@ import (
 	"strings"
 
 	"github.com/rs/zerolog/log"
-	"github.com/yusing/godoxy/internal/net/gphttp/middleware/errorpage"
-	httputils "github.com/yusing/goutils/http"
-	"github.com/yusing/goutils/http/httpheaders"
+	"github.com/sudosu404/providers/internal/net/gphttp/middleware/errorpage"
+	httputils "github.com/sudosu404/tailnet-utils/http"
+	"github.com/sudosu404/tailnet-utils/http/httpheaders"
 )
 
 type customErrorPage struct{}

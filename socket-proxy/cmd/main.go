@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	socketproxy "github.com/yusing/godoxy/socketproxy/pkg"
+	socketproxy "github.com/sudosu404/providers/socketproxy/pkg"
 )
 
 func main() {

@@ -18,11 +18,11 @@ import (
 	"github.com/go-acme/lego/v4/registration"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
-	"github.com/yusing/godoxy/internal/common"
-	"github.com/yusing/godoxy/internal/notif"
-	gperr "github.com/yusing/goutils/errs"
-	strutils "github.com/yusing/goutils/strings"
-	"github.com/yusing/goutils/task"
+	"github.com/sudosu404/providers/internal/common"
+	"github.com/sudosu404/providers/internal/notif"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	strutils "github.com/sudosu404/tailnet-utils/strings"
+	"github.com/sudosu404/tailnet-utils/task"
 )
 
 type (

@@ -4,7 +4,7 @@ import (
 	urlPkg "net/url"
 
 	"github.com/bytedance/sonic"
-	"github.com/yusing/godoxy/internal/utils"
+	"github.com/sudosu404/providers/internal/utils"
 )
 
 type URL struct {

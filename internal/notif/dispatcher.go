@@ -10,7 +10,7 @@ import (
 	"github.com/puzpuzpuz/xsync/v4"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
-	"github.com/yusing/goutils/task"
+	"github.com/sudosu404/tailnet-utils/task"
 )
 
 type (

@@ -7,8 +7,8 @@ import (
 	"time"
 
 	"github.com/valyala/fasthttp"
-	"github.com/yusing/godoxy/internal/types"
-	"github.com/yusing/goutils/version"
+	"github.com/sudosu404/providers/internal/types"
+	"github.com/sudosu404/tailnet-utils/version"
 )
 
 type HTTPHealthMonitor struct {

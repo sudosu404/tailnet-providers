@@ -3,14 +3,14 @@ package types
 import (
 	"net/http"
 
-	"github.com/yusing/godoxy/agent/pkg/agent"
-	"github.com/yusing/godoxy/internal/homepage"
-	nettypes "github.com/yusing/godoxy/internal/net/types"
-	provider "github.com/yusing/godoxy/internal/route/provider/types"
-	"github.com/yusing/godoxy/internal/utils/pool"
-	gperr "github.com/yusing/goutils/errs"
-	"github.com/yusing/goutils/http/reverseproxy"
-	"github.com/yusing/goutils/task"
+	"github.com/sudosu404/providers/agent/pkg/agent"
+	"github.com/sudosu404/providers/internal/homepage"
+	nettypes "github.com/sudosu404/providers/internal/net/types"
+	provider "github.com/sudosu404/providers/internal/route/provider/types"
+	"github.com/sudosu404/providers/internal/utils/pool"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	"github.com/sudosu404/tailnet-utils/http/reverseproxy"
+	"github.com/sudosu404/tailnet-utils/task"
 )
 
 type (

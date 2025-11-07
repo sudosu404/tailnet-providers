@@ -6,9 +6,9 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/yusing/godoxy/internal/homepage"
-	httputils "github.com/yusing/goutils/http"
-	"github.com/yusing/goutils/http/httpheaders"
+	"github.com/sudosu404/providers/internal/homepage"
+	httputils "github.com/sudosu404/tailnet-utils/http"
+	"github.com/sudosu404/tailnet-utils/http/httpheaders"
 
 	_ "unsafe"
 )

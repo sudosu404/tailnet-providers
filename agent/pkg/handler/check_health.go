@@ -8,8 +8,8 @@ import (
 	"strings"
 
 	"github.com/bytedance/sonic"
-	"github.com/yusing/godoxy/internal/types"
-	"github.com/yusing/godoxy/internal/watcher/health/monitor"
+	"github.com/sudosu404/providers/internal/types"
+	"github.com/sudosu404/providers/internal/watcher/health/monitor"
 )
 
 var defaultHealthConfig = types.DefaultHealthConfig()

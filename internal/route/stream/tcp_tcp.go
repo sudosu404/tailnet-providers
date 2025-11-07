@@ -6,10 +6,10 @@ import (
 
 	"github.com/pires/go-proxyproto"
 	"github.com/rs/zerolog"
-	"github.com/yusing/godoxy/internal/acl"
-	"github.com/yusing/godoxy/internal/entrypoint"
-	nettypes "github.com/yusing/godoxy/internal/net/types"
-	ioutils "github.com/yusing/goutils/io"
+	"github.com/sudosu404/providers/internal/acl"
+	"github.com/sudosu404/providers/internal/entrypoint"
+	nettypes "github.com/sudosu404/providers/internal/net/types"
+	ioutils "github.com/sudosu404/tailnet-utils/io"
 	"go.uber.org/atomic"
 )
 

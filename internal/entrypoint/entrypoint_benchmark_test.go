@@ -10,12 +10,12 @@ import (
 	"strings"
 	"testing"
 
-	. "github.com/yusing/godoxy/internal/entrypoint"
-	"github.com/yusing/godoxy/internal/route"
-	"github.com/yusing/godoxy/internal/route/routes"
-	routeTypes "github.com/yusing/godoxy/internal/route/types"
-	"github.com/yusing/godoxy/internal/types"
-	"github.com/yusing/goutils/task"
+	. "github.com/sudosu404/providers/internal/entrypoint"
+	"github.com/sudosu404/providers/internal/route"
+	"github.com/sudosu404/providers/internal/route/routes"
+	routeTypes "github.com/sudosu404/providers/internal/route/types"
+	"github.com/sudosu404/providers/internal/types"
+	"github.com/sudosu404/tailnet-utils/task"
 )
 
 type noopResponseWriter struct {

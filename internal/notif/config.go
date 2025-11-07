@@ -1,8 +1,8 @@
 package notif
 
 import (
-	"github.com/yusing/godoxy/internal/serialization"
-	gperr "github.com/yusing/goutils/errs"
+	"github.com/sudosu404/providers/internal/serialization"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
 )
 
 type NotificationConfig struct {

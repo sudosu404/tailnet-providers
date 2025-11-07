@@ -13,11 +13,11 @@ import (
 
 	"github.com/docker/docker/api/types/container"
 	"github.com/docker/go-connections/nat"
-	"github.com/yusing/godoxy/agent/pkg/agent"
-	"github.com/yusing/godoxy/internal/serialization"
-	"github.com/yusing/godoxy/internal/types"
-	"github.com/yusing/godoxy/internal/utils"
-	gperr "github.com/yusing/goutils/errs"
+	"github.com/sudosu404/providers/agent/pkg/agent"
+	"github.com/sudosu404/providers/internal/serialization"
+	"github.com/sudosu404/providers/internal/types"
+	"github.com/sudosu404/providers/internal/utils"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
 )
 
 var DummyContainer = new(types.Container)

@@ -7,8 +7,8 @@ import (
 	"strings"
 
 	"github.com/gin-gonic/gin"
-	"github.com/yusing/godoxy/internal/common"
-	apitypes "github.com/yusing/goutils/apitypes"
+	"github.com/sudosu404/providers/internal/common"
+	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
 )
 
 type FileType string // @name FileType

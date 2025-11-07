@@ -3,8 +3,8 @@ package env
 import (
 	"os"
 
-	"github.com/yusing/godoxy/agent/pkg/agent"
-	"github.com/yusing/goutils/env"
+	"github.com/sudosu404/providers/agent/pkg/agent"
+	"github.com/sudosu404/tailnet-utils/env"
 
 	"github.com/rs/zerolog/log"
 )

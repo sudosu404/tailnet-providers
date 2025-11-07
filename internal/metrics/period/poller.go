@@ -12,9 +12,9 @@ import (
 
 	"github.com/bytedance/sonic"
 	"github.com/rs/zerolog/log"
-	gperr "github.com/yusing/goutils/errs"
-	"github.com/yusing/goutils/synk"
-	"github.com/yusing/goutils/task"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	"github.com/sudosu404/tailnet-utils/synk"
+	"github.com/sudosu404/tailnet-utils/task"
 )
 
 type (

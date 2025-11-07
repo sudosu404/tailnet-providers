@@ -4,8 +4,8 @@ import (
 	"net"
 	"net/http"
 
-	nettypes "github.com/yusing/godoxy/internal/net/types"
-	"github.com/yusing/goutils/http/httpheaders"
+	nettypes "github.com/sudosu404/providers/internal/net/types"
+	"github.com/sudosu404/tailnet-utils/http/httpheaders"
 )
 
 // https://nginx.org/en/docs/http/ngx_http_realip_module.html

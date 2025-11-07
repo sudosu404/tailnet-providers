@@ -7,7 +7,7 @@ import (
 
 	"github.com/bytedance/sonic"
 	"github.com/luthermonson/go-proxmox"
-	"github.com/yusing/godoxy/internal/utils/pool"
+	"github.com/sudosu404/providers/internal/utils/pool"
 )
 
 type Node struct {

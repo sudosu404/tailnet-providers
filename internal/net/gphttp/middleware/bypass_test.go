@@ -10,13 +10,13 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/yusing/godoxy/internal/entrypoint"
-	. "github.com/yusing/godoxy/internal/net/gphttp/middleware"
-	"github.com/yusing/godoxy/internal/route"
-	routeTypes "github.com/yusing/godoxy/internal/route/types"
-	"github.com/yusing/goutils/http/reverseproxy"
-	"github.com/yusing/goutils/task"
-	expect "github.com/yusing/goutils/testing"
+	"github.com/sudosu404/providers/internal/entrypoint"
+	. "github.com/sudosu404/providers/internal/net/gphttp/middleware"
+	"github.com/sudosu404/providers/internal/route"
+	routeTypes "github.com/sudosu404/providers/internal/route/types"
+	"github.com/sudosu404/tailnet-utils/http/reverseproxy"
+	"github.com/sudosu404/tailnet-utils/task"
+	expect "github.com/sudosu404/tailnet-utils/testing"
 )
 
 func noOpHandler(w http.ResponseWriter, r *http.Request) {}

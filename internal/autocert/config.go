@@ -14,9 +14,9 @@ import (
 	"github.com/go-acme/lego/v4/challenge/dns01"
 	"github.com/go-acme/lego/v4/lego"
 	"github.com/rs/zerolog/log"
-	"github.com/yusing/godoxy/internal/common"
-	"github.com/yusing/godoxy/internal/utils"
-	gperr "github.com/yusing/goutils/errs"
+	"github.com/sudosu404/providers/internal/common"
+	"github.com/sudosu404/providers/internal/utils"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
 )
 
 type Config struct {

@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/yusing/godoxy/internal/route/routes"
+	"github.com/sudosu404/providers/internal/route/routes"
 )
 
 type (

@@ -5,13 +5,13 @@ import (
 	"path"
 	"path/filepath"
 
-	"github.com/yusing/godoxy/internal/logging/accesslog"
-	gphttp "github.com/yusing/godoxy/internal/net/gphttp"
-	"github.com/yusing/godoxy/internal/net/gphttp/middleware"
-	"github.com/yusing/godoxy/internal/route/routes"
-	"github.com/yusing/godoxy/internal/watcher/health/monitor"
-	gperr "github.com/yusing/goutils/errs"
-	"github.com/yusing/goutils/task"
+	"github.com/sudosu404/providers/internal/logging/accesslog"
+	gphttp "github.com/sudosu404/providers/internal/net/gphttp"
+	"github.com/sudosu404/providers/internal/net/gphttp/middleware"
+	"github.com/sudosu404/providers/internal/route/routes"
+	"github.com/sudosu404/providers/internal/watcher/health/monitor"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	"github.com/sudosu404/tailnet-utils/task"
 )
 
 type (

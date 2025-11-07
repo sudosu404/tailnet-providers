@@ -5,8 +5,8 @@ import (
 
 	"github.com/docker/docker/api/types/container"
 	"github.com/goccy/go-yaml"
-	"github.com/yusing/godoxy/internal/docker"
-	expect "github.com/yusing/goutils/testing"
+	"github.com/sudosu404/providers/internal/docker"
+	expect "github.com/sudosu404/tailnet-utils/testing"
 
 	_ "embed"
 )

@@ -1,8 +1,8 @@
 package entrypoint
 
 import (
-	"github.com/yusing/godoxy/internal/logging/accesslog"
-	"github.com/yusing/godoxy/internal/route/rules"
+	"github.com/sudosu404/providers/internal/logging/accesslog"
+	"github.com/sudosu404/providers/internal/route/rules"
 )
 
 type Config struct {

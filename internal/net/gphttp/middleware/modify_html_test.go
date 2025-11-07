@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	expect "github.com/yusing/goutils/testing"
+	expect "github.com/sudosu404/tailnet-utils/testing"
 )
 
 func TestInjectCSS(t *testing.T) {

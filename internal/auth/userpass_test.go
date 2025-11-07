@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	expect "github.com/yusing/goutils/testing"
+	expect "github.com/sudosu404/tailnet-utils/testing"
 	"golang.org/x/crypto/bcrypt"
 )
 

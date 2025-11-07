@@ -14,10 +14,10 @@ import (
 
 	"github.com/coreos/go-oidc/v3/oidc"
 	"github.com/rs/zerolog/log"
-	"github.com/yusing/godoxy/internal/common"
-	"github.com/yusing/godoxy/internal/utils"
-	gperr "github.com/yusing/goutils/errs"
-	httputils "github.com/yusing/goutils/http"
+	"github.com/sudosu404/providers/internal/common"
+	"github.com/sudosu404/providers/internal/utils"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	httputils "github.com/sudosu404/tailnet-utils/http"
 	"golang.org/x/oauth2"
 	"golang.org/x/time/rate"
 )
@@ -42,9 +42,9 @@ var _ Provider = (*OIDCProvider)(nil)
 
 // Cookie names for OIDC authentication
 const (
-	CookieOauthState        = "godoxy_oidc_state"
-	CookieOauthToken        = "godoxy_oauth_token"   //nolint:gosec
-	CookieOauthSessionToken = "godoxy_session_token" //nolint:gosec
+	CookieOauthState        = "tailnet_oidc_state"
+	CookieOauthToken        = "tailnet_oauth_token"   //nolint:gosec
+	CookieOauthSessionToken = "tailnet_session_token" //nolint:gosec
 )
 
 // getAppScopedCookieName returns a cookie name scoped to the specific application

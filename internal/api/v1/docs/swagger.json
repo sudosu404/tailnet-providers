@@ -3,14 +3,14 @@
   "info": {
     "description": "GoDoxy API",
     "title": "GoDoxy API",
-    "termsOfService": "https://github.com/yusing/godoxy/blob/main/LICENSE",
+    "termsOfService": "https://github.com/sudosu404/providers/blob/main/LICENSE",
     "contact": {
       "name": "Yusing",
-      "url": "https://github.com/yusing/godoxy/issues"
+      "url": "https://github.com/sudosu404/providers/issues"
     },
     "license": {
       "name": "MIT",
-      "url": "https://github.com/yusing/godoxy/blob/main/LICENSE"
+      "url": "https://github.com/sudosu404/providers/blob/main/LICENSE"
     },
     "version": "1.0"
   },

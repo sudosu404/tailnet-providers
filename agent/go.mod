@@ -1,14 +1,14 @@
-module github.com/yusing/godoxy/agent
+module github.com/sudosu404/providers/agent
 
 go 1.25.3
 
-replace github.com/yusing/godoxy => ..
+replace github.com/sudosu404/tailnet-providers => ..
 
-replace github.com/yusing/godoxy/socketproxy => ../socket-proxy
+replace github.com/sudosu404/providers/socketproxy => ../socket-proxy
 
 replace github.com/shirou/gopsutil/v4 => ../internal/gopsutil
 
-replace github.com/yusing/goutils => ../goutils
+replace github.com/sudosu404/tailnet-utils => ../goutils
 
 exclude github.com/containerd/nerdctl/mod/tigron v0.0.0
 
@@ -20,9 +20,9 @@ require (
 	github.com/rs/zerolog v1.34.0
 	github.com/stretchr/testify v1.11.1
 	github.com/valyala/fasthttp v1.68.0
-	github.com/yusing/godoxy v0.19.2
-	github.com/yusing/godoxy/socketproxy v0.0.0-00010101000000-000000000000
-	github.com/yusing/goutils v0.7.0
+	github.com/sudosu404/tailnet-providers v0.19.2
+	github.com/sudosu404/providers/socketproxy v0.0.0-00010101000000-000000000000
+	github.com/sudosu404/tailnet-utils v0.7.0
 )
 
 require (
@@ -90,7 +90,7 @@ require (
 	github.com/ugorji/go/codec v1.3.0 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/vincent-petithory/dataurl v1.0.0 // indirect
-	github.com/yusing/ds v0.3.1 // indirect
+	github.com/sudosu404/go-ds v0.3.1 // indirect
 	github.com/yusing/gointernals v0.1.16 // indirect
 	github.com/yusufpapurcu/wmi v1.2.4 // indirect
 	go.opentelemetry.io/auto/sdk v1.2.1 // indirect

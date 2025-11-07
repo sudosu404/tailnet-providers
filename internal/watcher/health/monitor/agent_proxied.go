@@ -3,8 +3,8 @@ package monitor
 import (
 	"net/url"
 
-	agentPkg "github.com/yusing/godoxy/agent/pkg/agent"
-	"github.com/yusing/godoxy/internal/types"
+	agentPkg "github.com/sudosu404/providers/agent/pkg/agent"
+	"github.com/sudosu404/providers/internal/types"
 )
 
 type (

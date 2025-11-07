@@ -7,8 +7,8 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/yusing/godoxy/internal/auth"
-	gperr "github.com/yusing/goutils/errs"
+	"github.com/sudosu404/providers/internal/auth"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
 )
 
 type oidcMiddleware struct {

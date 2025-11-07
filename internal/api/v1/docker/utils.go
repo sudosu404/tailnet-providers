@@ -6,11 +6,11 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/yusing/godoxy/internal/docker"
-	apitypes "github.com/yusing/goutils/apitypes"
-	gperr "github.com/yusing/goutils/errs"
-	"github.com/yusing/goutils/http/httpheaders"
-	"github.com/yusing/goutils/http/websocket"
+	"github.com/sudosu404/providers/internal/docker"
+	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	"github.com/sudosu404/tailnet-utils/http/httpheaders"
+	"github.com/sudosu404/tailnet-utils/http/websocket"
 )
 
 type (

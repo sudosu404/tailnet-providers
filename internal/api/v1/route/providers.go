@@ -5,11 +5,11 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	statequery "github.com/yusing/godoxy/internal/config/query"
-	"github.com/yusing/goutils/http/httpheaders"
-	"github.com/yusing/goutils/http/websocket"
+	statequery "github.com/sudosu404/providers/internal/config/query"
+	"github.com/sudosu404/tailnet-utils/http/httpheaders"
+	"github.com/sudosu404/tailnet-utils/http/websocket"
 
-	_ "github.com/yusing/goutils/apitypes"
+	_ "github.com/sudosu404/tailnet-utils/apitypes"
 )
 
 // @x-id				"providers"

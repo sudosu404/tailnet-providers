@@ -6,9 +6,9 @@ import (
 	"net/http"
 	"sync"
 
-	"github.com/yusing/godoxy/internal/net/gphttp/middleware"
-	"github.com/yusing/godoxy/internal/types"
-	gperr "github.com/yusing/goutils/errs"
+	"github.com/sudosu404/providers/internal/net/gphttp/middleware"
+	"github.com/sudosu404/providers/internal/types"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
 )
 
 type ipHash struct {

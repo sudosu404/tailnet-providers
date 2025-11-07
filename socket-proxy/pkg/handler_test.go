@@ -6,7 +6,7 @@ import (
 	"os"
 	"testing"
 
-	. "github.com/yusing/godoxy/socketproxy/pkg"
+	. "github.com/sudosu404/providers/socketproxy/pkg"
 )
 
 func mockDockerSocketHandler(_ string) http.HandlerFunc {

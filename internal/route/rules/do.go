@@ -10,15 +10,15 @@ import (
 	"strings"
 
 	"github.com/rs/zerolog"
-	"github.com/yusing/godoxy/internal/auth"
-	"github.com/yusing/godoxy/internal/logging"
-	gphttp "github.com/yusing/godoxy/internal/net/gphttp"
-	nettypes "github.com/yusing/godoxy/internal/net/types"
-	"github.com/yusing/godoxy/internal/notif"
-	"github.com/yusing/godoxy/internal/route/routes"
-	gperr "github.com/yusing/goutils/errs"
-	httputils "github.com/yusing/goutils/http"
-	"github.com/yusing/goutils/http/reverseproxy"
+	"github.com/sudosu404/providers/internal/auth"
+	"github.com/sudosu404/providers/internal/logging"
+	gphttp "github.com/sudosu404/providers/internal/net/gphttp"
+	nettypes "github.com/sudosu404/providers/internal/net/types"
+	"github.com/sudosu404/providers/internal/notif"
+	"github.com/sudosu404/providers/internal/route/routes"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	httputils "github.com/sudosu404/tailnet-utils/http"
+	"github.com/sudosu404/tailnet-utils/http/reverseproxy"
 )
 
 type (

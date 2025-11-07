@@ -31,7 +31,7 @@ import (
 	"github.com/go-acme/lego/v4/providers/dns/timewebcloud"
 	"github.com/go-acme/lego/v4/providers/dns/vercel"
 	"github.com/go-acme/lego/v4/providers/dns/vultr"
-	"github.com/yusing/godoxy/internal/autocert"
+	"github.com/sudosu404/providers/internal/autocert"
 )
 
 const (

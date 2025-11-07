@@ -10,17 +10,17 @@ import (
 
 	"github.com/docker/docker/client"
 	"github.com/rs/zerolog"
-	"github.com/yusing/godoxy/agent/pkg/agent"
-	"github.com/yusing/godoxy/internal/common"
-	"github.com/yusing/godoxy/internal/docker"
-	"github.com/yusing/godoxy/internal/route"
-	provider "github.com/yusing/godoxy/internal/route/provider/types"
-	"github.com/yusing/godoxy/internal/types"
-	W "github.com/yusing/godoxy/internal/watcher"
-	"github.com/yusing/godoxy/internal/watcher/events"
-	"github.com/yusing/goutils/env"
-	gperr "github.com/yusing/goutils/errs"
-	"github.com/yusing/goutils/task"
+	"github.com/sudosu404/providers/agent/pkg/agent"
+	"github.com/sudosu404/providers/internal/common"
+	"github.com/sudosu404/providers/internal/docker"
+	"github.com/sudosu404/providers/internal/route"
+	provider "github.com/sudosu404/providers/internal/route/provider/types"
+	"github.com/sudosu404/providers/internal/types"
+	W "github.com/sudosu404/providers/internal/watcher"
+	"github.com/sudosu404/providers/internal/watcher/events"
+	"github.com/sudosu404/tailnet-utils/env"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	"github.com/sudosu404/tailnet-utils/task"
 )
 
 type (

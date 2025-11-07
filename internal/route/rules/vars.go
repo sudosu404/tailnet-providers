@@ -8,7 +8,7 @@ import (
 	"regexp"
 	"strings"
 
-	ioutils "github.com/yusing/goutils/io"
+	ioutils "github.com/sudosu404/tailnet-utils/io"
 )
 
 // TODO: remove middleware/vars.go and use this instead

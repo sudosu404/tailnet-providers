@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"sync/atomic"
 
-	"github.com/yusing/godoxy/internal/types"
+	"github.com/sudosu404/providers/internal/types"
 )
 
 type roundRobin struct {

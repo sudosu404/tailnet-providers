@@ -8,9 +8,9 @@ import (
 	"time"
 
 	"github.com/rs/zerolog"
-	"github.com/yusing/godoxy/internal/utils"
-	gperr "github.com/yusing/goutils/errs"
-	strutils "github.com/yusing/goutils/strings"
+	"github.com/sudosu404/providers/internal/utils"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	strutils "github.com/sudosu404/tailnet-utils/strings"
 )
 
 type supportRotate interface {

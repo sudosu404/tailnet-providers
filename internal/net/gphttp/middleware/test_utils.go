@@ -9,10 +9,10 @@ import (
 	"net/http/httptest"
 
 	"github.com/bytedance/sonic"
-	"github.com/yusing/godoxy/internal/common"
-	nettypes "github.com/yusing/godoxy/internal/net/types"
-	gperr "github.com/yusing/goutils/errs"
-	"github.com/yusing/goutils/http/reverseproxy"
+	"github.com/sudosu404/providers/internal/common"
+	nettypes "github.com/sudosu404/providers/internal/net/types"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	"github.com/sudosu404/tailnet-utils/http/reverseproxy"
 )
 
 //go:embed test_data/sample_headers.json

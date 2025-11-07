@@ -6,10 +6,10 @@ import (
 	"iter"
 	"net/http"
 
-	"github.com/yusing/godoxy/internal/types"
-	"github.com/yusing/goutils/server"
-	"github.com/yusing/goutils/synk"
-	"github.com/yusing/goutils/task"
+	"github.com/sudosu404/providers/internal/types"
+	"github.com/sudosu404/tailnet-utils/server"
+	"github.com/sudosu404/tailnet-utils/synk"
+	"github.com/sudosu404/tailnet-utils/task"
 )
 
 type State interface {

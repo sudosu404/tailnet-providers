@@ -9,15 +9,15 @@ import (
 
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
-	"github.com/yusing/godoxy/internal/common"
-	config "github.com/yusing/godoxy/internal/config/types"
-	"github.com/yusing/godoxy/internal/notif"
-	"github.com/yusing/godoxy/internal/watcher"
-	"github.com/yusing/godoxy/internal/watcher/events"
-	gperr "github.com/yusing/goutils/errs"
-	"github.com/yusing/goutils/server"
-	"github.com/yusing/goutils/strings/ansi"
-	"github.com/yusing/goutils/task"
+	"github.com/sudosu404/providers/internal/common"
+	config "github.com/sudosu404/providers/internal/config/types"
+	"github.com/sudosu404/providers/internal/notif"
+	"github.com/sudosu404/providers/internal/watcher"
+	"github.com/sudosu404/providers/internal/watcher/events"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	"github.com/sudosu404/tailnet-utils/server"
+	"github.com/sudosu404/tailnet-utils/strings/ansi"
+	"github.com/sudosu404/tailnet-utils/task"
 )
 
 var (

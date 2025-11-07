@@ -8,31 +8,31 @@ import (
 	"github.com/gin-gonic/gin/codec/json"
 	"github.com/gorilla/websocket"
 	"github.com/rs/zerolog/log"
-	apiV1 "github.com/yusing/godoxy/internal/api/v1"
-	agentApi "github.com/yusing/godoxy/internal/api/v1/agent"
-	authApi "github.com/yusing/godoxy/internal/api/v1/auth"
-	certApi "github.com/yusing/godoxy/internal/api/v1/cert"
-	dockerApi "github.com/yusing/godoxy/internal/api/v1/docker"
-	fileApi "github.com/yusing/godoxy/internal/api/v1/file"
-	homepageApi "github.com/yusing/godoxy/internal/api/v1/homepage"
-	metricsApi "github.com/yusing/godoxy/internal/api/v1/metrics"
-	routeApi "github.com/yusing/godoxy/internal/api/v1/route"
-	"github.com/yusing/godoxy/internal/auth"
-	"github.com/yusing/godoxy/internal/common"
-	apitypes "github.com/yusing/goutils/apitypes"
-	gperr "github.com/yusing/goutils/errs"
+	apiV1 "github.com/sudosu404/providers/internal/api/v1"
+	agentApi "github.com/sudosu404/providers/internal/api/v1/agent"
+	authApi "github.com/sudosu404/providers/internal/api/v1/auth"
+	certApi "github.com/sudosu404/providers/internal/api/v1/cert"
+	dockerApi "github.com/sudosu404/providers/internal/api/v1/docker"
+	fileApi "github.com/sudosu404/providers/internal/api/v1/file"
+	homepageApi "github.com/sudosu404/providers/internal/api/v1/homepage"
+	metricsApi "github.com/sudosu404/providers/internal/api/v1/metrics"
+	routeApi "github.com/sudosu404/providers/internal/api/v1/route"
+	"github.com/sudosu404/providers/internal/auth"
+	"github.com/sudosu404/providers/internal/common"
+	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
 )
 
 // @title           GoDoxy API
 // @version         1.0
 // @description     GoDoxy API
-// @termsOfService  https://github.com/yusing/godoxy/blob/main/LICENSE
+// @termsOfService  https://github.com/sudosu404/providers/blob/main/LICENSE
 
 // @contact.name   Yusing
-// @contact.url    https://github.com/yusing/godoxy/issues
+// @contact.url    https://github.com/sudosu404/providers/issues
 
 // @license.name  MIT
-// @license.url   https://github.com/yusing/godoxy/blob/main/LICENSE
+// @license.url   https://github.com/sudosu404/providers/blob/main/LICENSE
 
 // @BasePath  /api/v1
 

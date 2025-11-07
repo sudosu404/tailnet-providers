@@ -5,13 +5,13 @@ import (
 	"text/template"
 
 	"github.com/rs/zerolog/log"
-	"github.com/yusing/godoxy/internal/auth"
-	httputils "github.com/yusing/goutils/http"
+	"github.com/sudosu404/providers/internal/auth"
+	httputils "github.com/sudosu404/tailnet-utils/http"
 
 	_ "embed"
 )
 
-const cookieName = "godoxy_captcha_session"
+const cookieName = "tailnet_captcha_session"
 
 //go:embed captcha.html
 var captchaPageHTML string

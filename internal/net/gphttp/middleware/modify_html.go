@@ -8,9 +8,9 @@ import (
 
 	"github.com/PuerkitoBio/goquery"
 	"github.com/rs/zerolog/log"
-	httputils "github.com/yusing/goutils/http"
-	ioutils "github.com/yusing/goutils/io"
-	"github.com/yusing/goutils/synk"
+	httputils "github.com/sudosu404/tailnet-utils/http"
+	ioutils "github.com/sudosu404/tailnet-utils/io"
+	"github.com/sudosu404/tailnet-utils/synk"
 	"golang.org/x/net/html"
 )
 

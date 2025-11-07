@@ -3,8 +3,8 @@ package accesslog_test
 import (
 	"testing"
 
-	. "github.com/yusing/godoxy/internal/logging/accesslog"
-	expect "github.com/yusing/goutils/testing"
+	. "github.com/sudosu404/providers/internal/logging/accesslog"
+	expect "github.com/sudosu404/tailnet-utils/testing"
 )
 
 // Cookie header should be removed,

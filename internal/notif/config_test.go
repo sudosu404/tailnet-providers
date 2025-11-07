@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/yusing/godoxy/internal/serialization"
-	expect "github.com/yusing/goutils/testing"
+	"github.com/sudosu404/providers/internal/serialization"
+	expect "github.com/sudosu404/tailnet-utils/testing"
 )
 
 func TestNotificationConfig(t *testing.T) {

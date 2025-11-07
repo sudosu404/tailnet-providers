@@ -4,8 +4,8 @@ import (
 	"maps"
 	"sync"
 
-	"github.com/yusing/godoxy/internal/common"
-	"github.com/yusing/godoxy/internal/jsonstore"
+	"github.com/sudosu404/providers/internal/common"
+	"github.com/sudosu404/providers/internal/jsonstore"
 )
 
 type OverrideConfig struct {

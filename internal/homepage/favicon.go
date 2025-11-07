@@ -15,11 +15,11 @@ import (
 	"github.com/PuerkitoBio/goquery"
 	"github.com/gin-gonic/gin"
 	"github.com/vincent-petithory/dataurl"
-	gphttp "github.com/yusing/godoxy/internal/net/gphttp"
-	apitypes "github.com/yusing/goutils/apitypes"
-	"github.com/yusing/goutils/cache"
-	httputils "github.com/yusing/goutils/http"
-	strutils "github.com/yusing/goutils/strings"
+	gphttp "github.com/sudosu404/providers/internal/net/gphttp"
+	apitypes "github.com/sudosu404/tailnet-utils/apitypes"
+	"github.com/sudosu404/tailnet-utils/cache"
+	httputils "github.com/sudosu404/tailnet-utils/http"
+	strutils "github.com/sudosu404/tailnet-utils/strings"
 )
 
 type FetchResult struct {

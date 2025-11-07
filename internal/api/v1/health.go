@@ -5,11 +5,11 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/yusing/godoxy/internal/route/routes"
-	"github.com/yusing/goutils/http/httpheaders"
-	"github.com/yusing/goutils/http/websocket"
+	"github.com/sudosu404/providers/internal/route/routes"
+	"github.com/sudosu404/tailnet-utils/http/httpheaders"
+	"github.com/sudosu404/tailnet-utils/http/websocket"
 
-	_ "github.com/yusing/goutils/apitypes"
+	_ "github.com/sudosu404/tailnet-utils/apitypes"
 )
 
 type HealthMap = map[string]routes.HealthInfo //	@name	HealthMap

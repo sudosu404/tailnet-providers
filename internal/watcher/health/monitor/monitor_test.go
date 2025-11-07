@@ -8,9 +8,9 @@ import (
 
 	"github.com/rs/zerolog"
 	"github.com/stretchr/testify/require"
-	"github.com/yusing/godoxy/internal/notif"
-	"github.com/yusing/godoxy/internal/types"
-	"github.com/yusing/goutils/task"
+	"github.com/sudosu404/providers/internal/notif"
+	"github.com/sudosu404/providers/internal/types"
+	"github.com/sudosu404/tailnet-utils/task"
 )
 
 // Test notification tracker

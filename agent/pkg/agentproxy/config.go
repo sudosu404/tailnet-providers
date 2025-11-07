@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/bytedance/sonic"
-	route "github.com/yusing/godoxy/internal/route/types"
+	route "github.com/sudosu404/providers/internal/route/types"
 )
 
 type Config struct {

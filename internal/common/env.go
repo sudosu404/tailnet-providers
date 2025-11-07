@@ -5,7 +5,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/yusing/goutils/env"
+	"github.com/sudosu404/tailnet-utils/env"
 )
 
 var (

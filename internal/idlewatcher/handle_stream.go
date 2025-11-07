@@ -4,7 +4,7 @@ import (
 	"context"
 	"net"
 
-	nettypes "github.com/yusing/godoxy/internal/net/types"
+	nettypes "github.com/sudosu404/providers/internal/net/types"
 )
 
 var _ nettypes.Stream = (*Watcher)(nil)

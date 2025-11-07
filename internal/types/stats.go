@@ -1,6 +1,6 @@
 package types
 
-import provider "github.com/yusing/godoxy/internal/route/provider/types"
+import provider "github.com/sudosu404/providers/internal/route/provider/types"
 
 type (
 	RouteStats struct {

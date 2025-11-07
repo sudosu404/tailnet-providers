@@ -3,7 +3,7 @@ package middleware
 import (
 	"net/http"
 
-	"github.com/yusing/godoxy/internal/net/gphttp/middleware/captcha"
+	"github.com/sudosu404/providers/internal/net/gphttp/middleware/captcha"
 )
 
 type hCaptcha struct {

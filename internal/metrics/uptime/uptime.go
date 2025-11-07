@@ -8,11 +8,11 @@ import (
 
 	"github.com/bytedance/sonic"
 	"github.com/lithammer/fuzzysearch/fuzzy"
-	statequery "github.com/yusing/godoxy/internal/config/query"
-	"github.com/yusing/godoxy/internal/metrics/period"
-	metricsutils "github.com/yusing/godoxy/internal/metrics/utils"
-	"github.com/yusing/godoxy/internal/route/routes"
-	"github.com/yusing/godoxy/internal/types"
+	statequery "github.com/sudosu404/providers/internal/config/query"
+	"github.com/sudosu404/providers/internal/metrics/period"
+	metricsutils "github.com/sudosu404/providers/internal/metrics/utils"
+	"github.com/sudosu404/providers/internal/route/routes"
+	"github.com/sudosu404/providers/internal/types"
 )
 
 type (

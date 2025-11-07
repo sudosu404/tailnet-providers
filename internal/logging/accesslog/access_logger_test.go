@@ -8,10 +8,10 @@ import (
 	"testing"
 	"time"
 
-	. "github.com/yusing/godoxy/internal/logging/accesslog"
-	"github.com/yusing/godoxy/internal/utils"
-	"github.com/yusing/goutils/task"
-	expect "github.com/yusing/goutils/testing"
+	. "github.com/sudosu404/providers/internal/logging/accesslog"
+	"github.com/sudosu404/providers/internal/utils"
+	"github.com/sudosu404/tailnet-utils/task"
+	expect "github.com/sudosu404/tailnet-utils/testing"
 )
 
 const (

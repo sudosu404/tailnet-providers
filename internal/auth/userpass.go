@@ -7,10 +7,10 @@ import (
 
 	"github.com/bytedance/sonic"
 	"github.com/golang-jwt/jwt/v5"
-	"github.com/yusing/godoxy/internal/common"
-	gperr "github.com/yusing/goutils/errs"
-	httputils "github.com/yusing/goutils/http"
-	strutils "github.com/yusing/goutils/strings"
+	"github.com/sudosu404/providers/internal/common"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	httputils "github.com/sudosu404/tailnet-utils/http"
+	strutils "github.com/sudosu404/tailnet-utils/strings"
 	"golang.org/x/crypto/bcrypt"
 )
 
@@ -57,7 +57,7 @@ func NewUserPassAuthFromEnv() (*UserPassAuth, error) {
 }
 
 func (auth *UserPassAuth) TokenCookieName() string {
-	return "godoxy_token"
+	return "tailnet_token"
 }
 
 func (auth *UserPassAuth) NewToken() (token string, err error) {

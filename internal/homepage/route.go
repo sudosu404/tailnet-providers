@@ -3,8 +3,8 @@ package homepage
 import (
 	"net/http"
 
-	nettypes "github.com/yusing/godoxy/internal/net/types"
-	"github.com/yusing/godoxy/internal/utils/pool"
+	nettypes "github.com/sudosu404/providers/internal/net/types"
+	"github.com/sudosu404/providers/internal/utils/pool"
 )
 
 type route interface {

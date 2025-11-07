@@ -1,9 +1,9 @@
 <div align="center">
 
-<img src="assets/godoxy.png" width="200">
+<img src="assets/logo.png" width="200">
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=yusing_go-proxy&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=yusing_go-proxy)
-![GitHub last commit](https://img.shields.io/github/last-commit/yusing/godoxy)
+![GitHub last commit](https://img.shields.io/github/last-commit/sudosu404/tailnet-providers)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=yusing_go-proxy&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=yusing_go-proxy)
 
 ![Demo](https://img.shields.io/website?url=https%3A%2F%2Fdemo.godoxy.dev&label=Demo&link=https%3A%2F%2Fdemo.godoxy.dev)
@@ -106,7 +106,7 @@
 2. 在目錄內運行安裝腳本，或[手動安裝](#手動安裝)
 
    ```shell
-   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/yusing/godoxy/main/scripts/setup.sh)"
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/sudosu404/providers/main/scripts/setup.sh)"
    ```
 
 3. 現在可以在 WebUI `https://godoxy.yourdomain.com` 進行額外配置
@@ -115,15 +115,15 @@
 
 1. 建立 `config` 目錄，然後將 `config.example.yml` 下載到 `config/config.yml`
 
-   `mkdir -p config && wget https://raw.githubusercontent.com/yusing/godoxy/main/config.example.yml -O config/config.yml`
+   `mkdir -p config && wget https://raw.githubusercontent.com/sudosu404/providers/main/config.example.yml -O config/config.yml`
 
 2. 將 `.env.example` 下載到 `.env`
 
-   `wget https://raw.githubusercontent.com/yusing/godoxy/main/.env.example -O .env`
+   `wget https://raw.githubusercontent.com/sudosu404/providers/main/.env.example -O .env`
 
 3. 將 `compose.example.yml` 下載到 `compose.yml`
 
-   `wget https://raw.githubusercontent.com/yusing/godoxy/main/compose.example.yml -O compose.yml`
+   `wget https://raw.githubusercontent.com/sudosu404/providers/main/compose.example.yml -O compose.yml`
 
 ### 資料夾結構
 
@@ -151,13 +151,13 @@
 更新：
 
 ```bash
-sudo /bin/bash -c "$(curl -fsSL https://github.com/yusing/godoxy/raw/refs/heads/main/scripts/install-agent.sh)" -- update
+sudo /bin/bash -c "$(curl -fsSL https://github.com/sudosu404/providers/raw/refs/heads/main/scripts/install-agent.sh)" -- update
 ```
 
 卸載：
 
 ```bash
-sudo /bin/bash -c "$(curl -fsSL https://github.com/yusing/godoxy/raw/refs/heads/main/scripts/install-agent.sh)" -- uninstall
+sudo /bin/bash -c "$(curl -fsSL https://github.com/sudosu404/providers/raw/refs/heads/main/scripts/install-agent.sh)" -- uninstall
 ```
 
 ## 截圖
@@ -183,7 +183,7 @@ sudo /bin/bash -c "$(curl -fsSL https://github.com/yusing/godoxy/raw/refs/heads/
 
 ## 自行編譯
 
-1. 克隆儲存庫 `git clone https://github.com/yusing/godoxy --depth=1`
+1. 克隆儲存庫 `git clone https://github.com/sudosu404/tailnet-providers --depth=1`
 
 2. 如果尚未安裝，請安裝/升級 [go (>=1.22)](https://go.dev/doc/install) 和 `make`
 

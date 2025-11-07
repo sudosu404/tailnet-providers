@@ -6,7 +6,7 @@ import (
 	"github.com/go-acme/lego/v4/providers/dns/ovh"
 	"github.com/goccy/go-yaml"
 	"github.com/stretchr/testify/require"
-	"github.com/yusing/godoxy/internal/serialization"
+	"github.com/sudosu404/providers/internal/serialization"
 )
 
 // type Config struct {

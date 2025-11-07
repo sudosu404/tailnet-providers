@@ -7,9 +7,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/yusing/godoxy/internal/serialization"
-	gperr "github.com/yusing/goutils/errs"
-	expect "github.com/yusing/goutils/testing"
+	"github.com/sudosu404/providers/internal/serialization"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	expect "github.com/sudosu404/tailnet-utils/testing"
 )
 
 //go:embed test_data/cidr_whitelist_test.yml

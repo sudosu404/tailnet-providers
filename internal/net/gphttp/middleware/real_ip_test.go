@@ -6,9 +6,9 @@ import (
 	"strings"
 	"testing"
 
-	nettypes "github.com/yusing/godoxy/internal/net/types"
-	"github.com/yusing/goutils/http/httpheaders"
-	expect "github.com/yusing/goutils/testing"
+	nettypes "github.com/sudosu404/providers/internal/net/types"
+	"github.com/sudosu404/tailnet-utils/http/httpheaders"
+	expect "github.com/sudosu404/tailnet-utils/testing"
 )
 
 func TestSetRealIPOpts(t *testing.T) {

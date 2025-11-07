@@ -6,11 +6,11 @@ import (
 	"github.com/bytedance/sonic"
 	"github.com/docker/docker/api/types/container"
 	"github.com/rs/zerolog/log"
-	"github.com/yusing/godoxy/internal/docker"
-	"github.com/yusing/godoxy/internal/types"
-	gperr "github.com/yusing/goutils/errs"
-	httputils "github.com/yusing/goutils/http"
-	"github.com/yusing/goutils/task"
+	"github.com/sudosu404/providers/internal/docker"
+	"github.com/sudosu404/providers/internal/types"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	httputils "github.com/sudosu404/tailnet-utils/http"
+	"github.com/sudosu404/tailnet-utils/task"
 )
 
 type DockerHealthMonitor struct {

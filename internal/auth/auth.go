@@ -3,7 +3,7 @@ package auth
 import (
 	"net/http"
 
-	"github.com/yusing/godoxy/internal/common"
+	"github.com/sudosu404/providers/internal/common"
 )
 
 var defaultAuth Provider

@@ -4,10 +4,10 @@ import (
 	"testing"
 	"time"
 
-	. "github.com/yusing/godoxy/internal/route"
-	route "github.com/yusing/godoxy/internal/route/types"
-	"github.com/yusing/godoxy/internal/serialization"
-	expect "github.com/yusing/goutils/testing"
+	. "github.com/sudosu404/providers/internal/route"
+	route "github.com/sudosu404/providers/internal/route/types"
+	"github.com/sudosu404/providers/internal/serialization"
+	expect "github.com/sudosu404/tailnet-utils/testing"
 )
 
 func TestHTTPConfigDeserialize(t *testing.T) {

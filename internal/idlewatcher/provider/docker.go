@@ -4,11 +4,11 @@ import (
 	"context"
 
 	"github.com/docker/docker/api/types/container"
-	"github.com/yusing/godoxy/internal/docker"
-	idlewatcher "github.com/yusing/godoxy/internal/idlewatcher/types"
-	"github.com/yusing/godoxy/internal/types"
-	"github.com/yusing/godoxy/internal/watcher"
-	gperr "github.com/yusing/goutils/errs"
+	"github.com/sudosu404/providers/internal/docker"
+	idlewatcher "github.com/sudosu404/providers/internal/idlewatcher/types"
+	"github.com/sudosu404/providers/internal/types"
+	"github.com/sudosu404/providers/internal/watcher"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
 )
 
 type DockerProvider struct {

@@ -3,8 +3,8 @@ package qbittorrent
 import (
 	"context"
 
-	"github.com/yusing/godoxy/internal/homepage/widgets"
-	strutils "github.com/yusing/goutils/strings"
+	"github.com/sudosu404/providers/internal/homepage/widgets"
+	strutils "github.com/sudosu404/tailnet-utils/strings"
 )
 
 const endpointTransferInfo = "/api/v2/transfer/info"

@@ -36,7 +36,7 @@ RUN make ${MAKE_ARGS} docker=1 build
 # Stage 3: Final image
 FROM scratch
 
-LABEL maintainer="yusing@6uo.me"
+LABEL maintainer="hector@email.gnx"
 LABEL proxy.exclude=1
 
 # copy timezone data

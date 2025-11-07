@@ -3,8 +3,8 @@ package rules
 import (
 	"testing"
 
-	gperr "github.com/yusing/goutils/errs"
-	expect "github.com/yusing/goutils/testing"
+	gperr "github.com/sudosu404/tailnet-utils/errs"
+	expect "github.com/sudosu404/tailnet-utils/testing"
 )
 
 func TestSplitPipe(t *testing.T) {

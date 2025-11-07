@@ -1,8 +1,8 @@
 package routes
 
 import (
-	"github.com/yusing/godoxy/internal/types"
-	"github.com/yusing/godoxy/internal/utils/pool"
+	"github.com/sudosu404/providers/internal/types"
+	"github.com/sudosu404/providers/internal/utils/pool"
 )
 
 var (

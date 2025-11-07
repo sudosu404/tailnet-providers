@@ -16,8 +16,8 @@ import (
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 	"github.com/valyala/fasthttp"
-	"github.com/yusing/godoxy/agent/pkg/certs"
-	"github.com/yusing/goutils/version"
+	"github.com/sudosu404/providers/agent/pkg/certs"
+	"github.com/sudosu404/tailnet-utils/version"
 )
 
 type AgentConfig struct {

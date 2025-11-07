@@ -1,6 +1,6 @@
 package docker
 
-import "github.com/yusing/godoxy/internal/types"
+import "github.com/sudosu404/providers/internal/types"
 
 var imageBlacklist = map[string]struct{}{
 	// pure databases without UI

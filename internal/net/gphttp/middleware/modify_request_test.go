@@ -7,8 +7,8 @@ import (
 	"slices"
 	"testing"
 
-	nettypes "github.com/yusing/godoxy/internal/net/types"
-	expect "github.com/yusing/goutils/testing"
+	nettypes "github.com/sudosu404/providers/internal/net/types"
+	expect "github.com/sudosu404/tailnet-utils/testing"
 )
 
 func TestModifyRequest(t *testing.T) {

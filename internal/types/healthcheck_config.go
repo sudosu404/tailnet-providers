@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/yusing/godoxy/internal/common"
+	"github.com/sudosu404/providers/internal/common"
 )
 
 type HealthCheckConfig struct {

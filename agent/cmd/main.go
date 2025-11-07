@@ -5,15 +5,15 @@ import (
 
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
-	"github.com/yusing/godoxy/agent/pkg/agent"
-	"github.com/yusing/godoxy/agent/pkg/env"
-	"github.com/yusing/godoxy/agent/pkg/server"
-	"github.com/yusing/godoxy/internal/metrics/systeminfo"
-	socketproxy "github.com/yusing/godoxy/socketproxy/pkg"
-	httpServer "github.com/yusing/goutils/server"
-	strutils "github.com/yusing/goutils/strings"
-	"github.com/yusing/goutils/task"
-	"github.com/yusing/goutils/version"
+	"github.com/sudosu404/providers/agent/pkg/agent"
+	"github.com/sudosu404/providers/agent/pkg/env"
+	"github.com/sudosu404/providers/agent/pkg/server"
+	"github.com/sudosu404/providers/internal/metrics/systeminfo"
+	socketproxy "github.com/sudosu404/providers/socketproxy/pkg"
+	httpServer "github.com/sudosu404/tailnet-utils/server"
+	strutils "github.com/sudosu404/tailnet-utils/strings"
+	"github.com/sudosu404/tailnet-utils/task"
+	"github.com/sudosu404/tailnet-utils/version"
 )
 
 func main() {

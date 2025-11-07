@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/yusing/goutils/version"
+	"github.com/sudosu404/tailnet-utils/version"
 )
 
 // @x-id				"version"

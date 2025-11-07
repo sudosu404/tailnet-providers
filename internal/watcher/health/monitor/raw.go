@@ -5,7 +5,7 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/yusing/godoxy/internal/types"
+	"github.com/sudosu404/providers/internal/types"
 )
 
 type (
